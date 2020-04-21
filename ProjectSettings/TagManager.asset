@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - gm
+  - form_manager
+  - orb_spawner
+  - part
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: part
+    uniqueID: 1392891931
+    locked: 0
+  - name: frame
+    uniqueID: 1448778657
+    locked: 0
+  - name: orb
+    uniqueID: 3021080055
+    locked: 0
+  - name: GUI
+    uniqueID: 2777743809
+    locked: 0

@@ -1,0 +1,23 @@
+Key,English,Russian
+GameMenu.PRESTART,TAP TO START,"НАЖМИТЕ, ЧТОБЫ НАЧАТЬ"
+GameMenu.PAUSETITLE,PAUSE,ПАУЗА
+GameMenu.CONTINUE,CONTINUE,ПРОДОЛЖИТЬ
+GameMenu.MAINMENU,MAIN MENU,МЕНЮ
+GameMenu.CONTROLTITLE,CONTROL,УПРАВЛЕНИЕ
+GameMenu.PARTSELECTION,PART SELECTION,ВЫБОР СЕКТОРА
+GameMenu.SWIPE,SWIPE,СВАЙП
+GameMenu.LEFTRIGHT,HALFS OF THE SCREEN,ПОЛОВИНКИ ЭКРАНА
+GameMenu.MUSIC,MUSIC,МУЗЫКА
+GameMenu.SOUND,SOUND,ЗВУК
+GameMenu.Timer,TIME: ,ВРЕМЯ: 
+GameMenu.restart,RESTART,ЗАНОВО
+GameMenu.GAMEOVER_TITLE,GAME STATISTIC,СТАТИСТИКА ИГРЫ
+GameMenu.GAMEOVER_totalOrbsCounter,ORBS COLLECTED:,СОБРАННО СФЕР:
+GameMenu.GAMEOVER_maxLvl,MAXIMUM LVL:,MAX УРОВЕНЬ:
+GameMenu.GAMEOVER_gameTime,GAME TIME:,ВРЕМЯ ИГРЫ:
+GameMenu.GAMEOVER_collectedBafsCount,BONUSES COLLECTED:,БОНУСОВ СОБРАНО:
+GameMenu.LEVELS.next,NEXT LEVEL,СЛЕДУЮЩИЙ УРОВЕНЬ
+GameMenu.LEVELS.title,LEVEL COMPLETE!,УРОВЕНЬ ПРОЙДЕН!
+GameMenu.OBJECTIVES.title,OBJECTIVES,ЦЕЛИ
+GameMenu.OBJECTIVES.level,LEVEL,УРОВЕНЬ
+GameMenu.OBJECTIVES.objectives,Collect orbs*Reach form level*Collect bonuses*Play seconds,Собрать всего сфер*Достичь уровня формы*Собрать бонусов*Сыграть секунд
