@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Runtime.Remoting.Messaging;
 
 public class AudioManager : MonoBehaviour
 {
@@ -28,13 +29,13 @@ public class AudioManager : MonoBehaviour
 	/// Gets a value indicating whether this <see cref="T:AudioManager"/> allow audio.
 	/// </summary>
 	/// <value><c>true</c> if allow audio; otherwise, <c>false</c>.</value>
-	protected bool allowAudio { get; private set; } = true;
+	public bool allowAudio { get; private set; } = true;
 
 	/// <summary>
 	/// Sets the state of the audio.
 	/// </summary>
 	/// <param name="allowAudio">If set to <c>true</c> allow audio.</param>
-	protected void setAudioState(bool allowAudio)
+	public void setAudioState(bool allowAudio)
 	{
 		this.allowAudio = allowAudio;
 		if (audioSource != null) switchAudio();
@@ -47,10 +48,21 @@ public class AudioManager : MonoBehaviour
 	{
 		if (allowAudio)
 		{
+			if (audioSource.clip == null) return;
+
 			audioSource.Play();
 			return;
 		}
 
 		audioSource.Stop();
+	}
+
+	/// <summary>
+	/// Plaies the audio clip one time.
+	/// </summary>
+	/// <param name="audioClip">Audio clip.</param>
+	protected void playOneShot(AudioClip audioClip)
+	{
+		if(allowAudio) audioSource.PlayOneShot(audioClip);
 	}
 }

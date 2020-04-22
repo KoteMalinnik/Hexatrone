@@ -6,9 +6,6 @@
 public class MusicManager : AudioManager
 {
 	[SerializeField]
-	/// <summary>
-	/// The music array
-	/// </summary>
 	AudioClip[] music = null;
 
 	void Awake()
@@ -22,4 +19,6 @@ public class MusicManager : AudioManager
 		//Надо переключить Источник Музыки вручную.
 		switchAudio();
 	}
+
+
 }
