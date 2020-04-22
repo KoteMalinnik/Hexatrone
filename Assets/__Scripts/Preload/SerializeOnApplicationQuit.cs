@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(SoundManager))]
+[RequireComponent(typeof(MusicManager))]
 /// <summary>
 /// Serialize on application quit.
 /// </summary>

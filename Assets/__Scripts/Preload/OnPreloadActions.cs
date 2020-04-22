@@ -5,12 +5,15 @@
 /// </summary>
 public class OnPreloadActions : MonoBehaviour
 {
+	[SerializeField]
+	bool loadMainMenuScene = true;
+
     //Т.к. объект находится только на сцене Preload,
 	//С его помощью необходимо перейти на другую сцену
 	void Awake()
 	{
 		Serialization.loadAllParametrs();
 
-		RegularMethods.LoadScene(1);
+		if(loadMainMenuScene) RegularMethods.LoadScene(1);
 	}
 }
