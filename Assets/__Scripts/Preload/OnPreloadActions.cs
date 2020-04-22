@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class OnPreload : MonoBehaviour
+/// <summary>
+/// On Preload Actions
+/// </summary>
+public class OnPreloadActions : MonoBehaviour
 {
     //Т.к. объект находится только на сцене Preload,
 	//С его помощью необходимо перейти на другую сцену
@@ -9,6 +11,6 @@ public class OnPreload : MonoBehaviour
 	{
 		Serialization.loadAllParametrs();
 
-		SceneManager.LoadScene("MainMenu");
+		RegularMethods.LoadScene(1);
 	}
 }
