@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Настройка звука
+/// Audio manager.
 /// </summary>
-public class AudioManager : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
 	[SerializeField]
 	/// <summary>
-	/// Основная музыкальная тема
+	/// The music array
 	/// </summary>
-	AudioClip mainThemeMusic = null;
-	static AudioSource mainThemeMusicSource = null;
+	AudioClip[] music = null;
+
+	/// <summary>
+	/// The music audio source.
+	/// </summary>
+	static AudioSource musicAudioSource = null;
 
 	[SerializeField]
 	/// <summary>
@@ -19,18 +23,12 @@ public class AudioManager : MonoBehaviour
 	AudioClip gameOverSound = null;
 	static AudioSource gameOverSoundSource = null;
 
-	[SerializeField]
-	/// <summary>
-	/// Звук, воспроизводимый при столкновении с объектом Soul
-	/// </summary>
-	AudioClip collectingSoulSound = null;
-	static AudioSource collectingSoulSoundSource = null;
 
 	void Awake()
 	{
 		DontDestroyOnLoad(this);
 
-		setupAudioSource(audioSource: ref mainThemeMusicSource, audioClip: mainThemeMusic, volume: 0.4f, loop: true, playOnAwake: true);
+		setupAudioSource(audioSource: ref musicAudioSource, audioClip: music, volume: 0.4f, loop: true, playOnAwake: true);
 		setupAudioSource(audioSource: ref gameOverSoundSource, audioClip: gameOverSound, volume: 0.2f, loop: false, playOnAwake: false);
 		setupAudioSource(audioSource: ref collectingSoulSoundSource, audioClip: collectingSoulSound, volume: 0.2f, loop: false, playOnAwake: false);
 	}
@@ -68,7 +66,7 @@ public class AudioManager : MonoBehaviour
 		Debug.Log($"Звук: {newAudioStatement}");
 		allowAudio = newAudioStatement;
 
-		if (mainThemeMusicSource != null) switchMusic();
+		if (musicAudioSource != null) switchMusic();
 	}
 
 	/// <summary>
@@ -78,11 +76,11 @@ public class AudioManager : MonoBehaviour
 	{
 		if(allowAudio)
 		{
-			mainThemeMusicSource.Play();
+			musicAudioSource.Play();
 			return;
 		}
 
-		mainThemeMusicSource.Stop();
+		musicAudioSource.Stop();
 	}
 
 	/// <summary>
@@ -93,16 +91,9 @@ public class AudioManager : MonoBehaviour
 		if (gameOverSoundSource != null && allowAudio) gameOverSoundSource.Play();
 	}
 
-	/// <summary>
-	/// Воспроизвести звук при столкновении с объектом Soul
-	/// </summary>
-	public static void playCollectingSoulSound()
-	{
-		if (collectingSoulSoundSource != null && allowAudio) collectingSoulSoundSource.Play();
-	}
-
 	void OnApplicationQuit()
 	{
-		Serialisation.saveAllParametrs();
+		//т.к. объект существует на всех сценах, то припишем ему сохранить все параметры по выходу
+		Serialization.saveAllParametrs(); 
 	}
 }
