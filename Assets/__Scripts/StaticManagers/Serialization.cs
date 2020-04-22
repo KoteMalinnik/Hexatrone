@@ -16,15 +16,19 @@ public static class Serialization
 	{
 		Debug.Log("Загрузка параметров из PlayerPrefs");
 
-		//var newAudioStatement = loadParametr(key_audioStatement, true);
-		//AudioManager.setAudioStatement(newAudioStatement);
+		var musicState = loadValue(key_musicStatement, true);
+		MusicManager.setAudioState(musicState);
+
+		var soundState = loadValue(key_soundStatement, true);
+		MusicManager.setAudioState(soundState);
 	}
 
 	public static void saveAllParametrs()
 	{
 		Debug.Log("Сохранение параметров в PlayerPrefs");
 
-		//saveParametr();
+		saveValue(key_soundStatement, SoundManager.allowAudio);
+		saveValue(key_musicStatement, MusicManager.allowAudio);
 	}
 
 	/// <summary>
@@ -32,7 +36,7 @@ public static class Serialization
 	/// </summary>
 	/// <param name="key">Ключ.</param>
 	/// <param name="defaultValue">Значение по умолчанию.</param>
-	static int loadParametr(string key, int defaultValue)
+	static int loadValue(string key, int defaultValue)
 	{
 		var parametrValue = PlayerPrefs.GetInt(key, defaultValue);
 
@@ -46,9 +50,9 @@ public static class Serialization
 	/// </summary>
 	/// <param name="key">Ключ.</param>
 	/// <param name="defaultValue">Значение по умолчанию.</param>
-	static bool loadParametr(string key, bool defaultValue)
+	static bool loadValue(string key, bool defaultValue)
 	{
-		var parametrValue = loadParametr(key, defaultValue ? 1 : 0);
+		var parametrValue = loadValue(key, defaultValue ? 1 : 0);
 		bool statementValue = parametrValue == 1;
 
 		return statementValue;
@@ -57,7 +61,7 @@ public static class Serialization
 	/// <summary>
 	/// Сохранение параметра типа int с ключом key
 	/// </summary>
-	static void saveParametr(string key, int parametrValue)
+	static void saveValue(string key, int parametrValue)
 	{
 		PlayerPrefs.SetInt(key, parametrValue);
 
@@ -67,9 +71,9 @@ public static class Serialization
 	/// <summary>
 	/// Сохранение параметра типа bool с ключом key
 	/// </summary>
-	static void saveParametr(string key, bool statementValue)
+	static void saveValue(string key, bool statementValue)
 	{
 		int parametrValue = statementValue ? 1 : 0;
-		saveParametr(key, parametrValue);
+		saveValue(key, parametrValue);
 	}
 }
