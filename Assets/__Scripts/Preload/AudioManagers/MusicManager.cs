@@ -18,9 +18,9 @@ public class MusicManager : MonoBehaviour
 
 	void Awake()
 	{
-		setupAudioSource(audioSource: ref musicAudioSource, audioClip: music, volume: 0.4f, loop: true, playOnAwake: true);
-		setupAudioSource(audioSource: ref gameOverSoundSource, audioClip: gameOverSound, volume: 0.2f, loop: false, playOnAwake: false);
-		setupAudioSource(audioSource: ref collectingSoulSoundSource, audioClip: collectingSoulSound, volume: 0.2f, loop: false, playOnAwake: false);
+		//setupAudioSource(audioSource: ref musicAudioSource, audioClip: music, volume: 0.4f, loop: true, playOnAwake: true);
+		//setupAudioSource(audioSource: ref gameOverSoundSource, audioClip: gameOverSound, volume: 0.2f, loop: false, playOnAwake: false);
+		//setupAudioSource(audioSource: ref collectingSoulSoundSource, audioClip: collectingSoulSound, volume: 0.2f, loop: false, playOnAwake: false);
 	}
 
 	/// <summary>
@@ -78,6 +78,6 @@ public class MusicManager : MonoBehaviour
 	/// </summary>
 	public static void playGameOverSound()
 	{
-		if (gameOverSoundSource != null && allowAudio) gameOverSoundSource.Play();
+		//if (gameOverSoundSource != null && allowAudio) gameOverSoundSource.Play();
 	}
 }

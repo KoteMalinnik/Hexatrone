@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour//helpBehaviour
 
 	public int level { get; set; }
 
-	public Serialization _serialization { get; private set;}
+	//public Serialization _serialization;// { get; private set; }
 
 	//МЕНЕДЖЕРЫ
 	public LevelsGenerator _levelsGenerator { get; set; } = null;
@@ -69,10 +69,10 @@ public class GameManager : MonoBehaviour//helpBehaviour
 
 	void Start()
 	{
-		_serialization = GetComponent<Serialization>();
+		//_serialization = GetComponent<Serialization>();
 
 		//Загрузка настроек из реестра
-		_serialization.LoadSettings();
+		//_serialization.LoadSettings();
 
 		//ЛОКАЛИЗАЦИЯ
 		//инициализация словаря

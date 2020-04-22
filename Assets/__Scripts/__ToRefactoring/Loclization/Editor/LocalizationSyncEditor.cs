@@ -17,7 +17,7 @@ namespace Assets.SimpleLocalization.Editor
 
             if (GUILayout.Button("Sync"))
             {
-	            component.Sync();
+	            //component.Sync();
             }
 		}
     }

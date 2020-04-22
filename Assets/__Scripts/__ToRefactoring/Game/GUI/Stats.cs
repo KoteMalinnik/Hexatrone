@@ -43,12 +43,12 @@ public class Stats : helpBehaviour
 	public void Restart()
 	{
 		//Загружаем сцену заново
-		LoadScene(2);
+		//LoadScene(2);
 	}
 
 	public void toMainMenu()
 	{
-		LoadScene(1); //загружаем сцену с Меню
+		//LoadScene(1); //загружаем сцену с Меню
 	}
 
 	void Start()

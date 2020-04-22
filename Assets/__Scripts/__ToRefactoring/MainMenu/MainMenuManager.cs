@@ -85,7 +85,7 @@ public class MainMenuManager : helpBehaviour
 	public void button_PLAY()
 	{
 		//Загружаем игровую сцену
-		LoadScene(2);
+		//LoadScene(2);
 	}
 
 	//НАЖАТИЕ НА Кнопку типа ИГРЫ

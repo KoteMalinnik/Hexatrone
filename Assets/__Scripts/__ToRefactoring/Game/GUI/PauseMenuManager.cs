@@ -86,7 +86,7 @@ public class PauseMenuManager : helpBehaviour
 	{
 		RemoveListeners(FindObjectsOfType<Toggle>());
 
-		LoadScene(1); //загружаем сцену с Меню
+		//LoadScene(1); //загружаем сцену с Меню
 	}
 
 	//кнопка продолжения

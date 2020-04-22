@@ -27,7 +27,7 @@ public sealed class SoulsController : ObjectsController
 		Transform objTransform = obj.transform;
 
 		setupPosition(objTransform);
-		objTransform.GetComponent<SoulAnimation>().setStartParametrs();
+		//objTransform.GetComponent<SoulAnimation>().setStartParametrs();
 	}
 
 	protected override void setupPosition(Transform objTransform)
