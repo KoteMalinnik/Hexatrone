@@ -18,8 +18,6 @@ public class MusicManager : MonoBehaviour
 
 	void Awake()
 	{
-		DontDestroyOnLoad(this);
-
 		setupAudioSource(audioSource: ref musicAudioSource, audioClip: music, volume: 0.4f, loop: true, playOnAwake: true);
 		setupAudioSource(audioSource: ref gameOverSoundSource, audioClip: gameOverSound, volume: 0.2f, loop: false, playOnAwake: false);
 		setupAudioSource(audioSource: ref collectingSoulSoundSource, audioClip: collectingSoulSound, volume: 0.2f, loop: false, playOnAwake: false);
