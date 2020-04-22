@@ -16,14 +16,6 @@ public class MusicManager : MonoBehaviour
 	/// </summary>
 	static AudioSource musicAudioSource = null;
 
-	[SerializeField]
-	/// <summary>
-	/// Звук, воспроизводимый при проигрыше
-	/// </summary>
-	AudioClip gameOverSound = null;
-	static AudioSource gameOverSoundSource = null;
-
-
 	void Awake()
 	{
 		DontDestroyOnLoad(this);
