@@ -82,10 +82,4 @@ public class MusicManager : MonoBehaviour
 	{
 		if (gameOverSoundSource != null && allowAudio) gameOverSoundSource.Play();
 	}
-
-	void OnApplicationQuit()
-	{
-		//т.к. объект существует на всех сценах, то припишем ему сохранить все параметры по выходу
-		Serialization.saveAllParametrs(); 
-	}
 }
