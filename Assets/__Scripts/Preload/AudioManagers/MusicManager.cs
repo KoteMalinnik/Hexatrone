@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Audio manager.
+/// Music manager.
 /// </summary>
 public class MusicManager : AudioManager
 {
 	[SerializeField]
-	AudioClip[] music = null;
+	AudioClip musicClip = null;
 
 	void Awake()
 	{
-		setupAudioSource(volume: 1, loop: true, playOnAwake: true);
+		if (musicClip == null) musicClip = (AudioClip)Resources.Load("Audio/Music/mainTheme");
+
+		setupAudioSource(volume: 1, loop: true, playOnAwake: false, clip: musicClip);
 	}
 
 	void Start()
@@ -19,6 +21,4 @@ public class MusicManager : AudioManager
 		//Надо переключить Источник Музыки вручную.
 		switchAudio();
 	}
-
-
 }

@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 	/// <summary>
 	/// The music audio source.
 	/// </summary>
-	AudioSource audioSource = null;
+	protected AudioSource audioSource { get; private set; } = null;
 
     /// <summary>
     /// Setups the audio source.
@@ -14,12 +14,13 @@ public class AudioManager : MonoBehaviour
     /// <param name="volume">Volume.</param>
     /// <param name="loop">If set to <c>true</c> loop.</param>
     /// <param name="playOnAwake">If set to <c>true</c> play on awake.</param>
-	protected void setupAudioSource(float volume, bool loop, bool playOnAwake)
+	protected void setupAudioSource(float volume, bool loop, bool playOnAwake, AudioClip clip = null)
 	{
 		if (volume < 0) volume = 0;
 		if (volume > 1.0f) volume = 1.0f;
 
 		audioSource = gameObject.AddComponent<AudioSource>();
+		audioSource.clip = clip;
 		audioSource.volume = volume;
 		audioSource.loop = loop;
 		audioSource.playOnAwake = playOnAwake;
@@ -42,14 +43,12 @@ public class AudioManager : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Switchs the audio.
+	/// Switches playing the audio.
 	/// </summary>
 	protected void switchAudio()
 	{
 		if (allowAudio)
 		{
-			if (audioSource.clip == null) return;
-
 			audioSource.Play();
 			return;
 		}
@@ -58,7 +57,7 @@ public class AudioManager : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Plaies the audio clip one time.
+	/// Plays the audio clip one time.
 	/// </summary>
 	/// <param name="audioClip">Audio clip.</param>
 	protected void playOneShot(AudioClip audioClip)

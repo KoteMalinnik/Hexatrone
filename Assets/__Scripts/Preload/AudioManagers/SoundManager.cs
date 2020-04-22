@@ -23,10 +23,10 @@ public class SoundManager : AudioManager
 	}
 
 	/// <summary>
-	/// Plaies the audio clip by the key.
+	/// Plays the sound by the key.
 	/// </summary>
 	/// <param name="key">0-CollectCorrectOrb. 1-CollectWrongOrb. 2-CollectBaff. 3-levelUp. 4-levelDown.</param>
-	public void playAudioClip(int key)
+	public void playSound(int key)
 	{
 		switch (key)
 		{
