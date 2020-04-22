@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : AudioManager
 {
-    [SerializeField]
-	/// <summary>
-	/// Звук, воспроизводимый при проигрыше
-	/// </summary>
-	AudioClip gameOverSound = null;
-	static AudioSource gameOverSoundSource = null;
+	void Awake()
+	{
+		setupAudioSource(volume: 1, loop: false, playOnAwake: false);
+	}
+
 }
