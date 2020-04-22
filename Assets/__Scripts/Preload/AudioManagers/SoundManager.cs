@@ -17,6 +17,15 @@ public class SoundManager : AudioManager
 	[SerializeField]
 	AudioClip levelDown = null;
 
+	[SerializeField]
+	AudioClip gameOver = null;
+
+	[SerializeField]
+	AudioClip goalAchieved = null;
+
+	[SerializeField]
+	AudioClip clickGUI = null;
+
 	void Awake()
 	{
 		setupAudioSource(volume: 1, loop: false, playOnAwake: false);
@@ -25,7 +34,7 @@ public class SoundManager : AudioManager
 	/// <summary>
 	/// Plays the sound by the key.
 	/// </summary>
-	/// <param name="key">0-CollectCorrectOrb. 1-CollectWrongOrb. 2-CollectBaff. 3-levelUp. 4-levelDown.</param>
+	/// <param name="key">0-CollectCorrectOrb. 1-CollectWrongOrb. 2-CollectBaff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved. 7-clickGUI.</param>
 	public void playSound(int key)
 	{
 		switch (key)
@@ -44,6 +53,15 @@ public class SoundManager : AudioManager
 				break;
 			case 4:
 				playOneShot(CollectCorrectOrb);
+				break;
+			case 5:
+				playOneShot(gameOver);
+				break;
+			case 6:
+				playOneShot(goalAchieved);
+				break;
+			case 7:
+				playOneShot(clickGUI);
 				break;
 			default:
 				Debug.Log("[SoundManager] Неверный ключ аудио дорожки");
