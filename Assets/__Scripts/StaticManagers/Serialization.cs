@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 
-
 /// <summary>
 /// Сериализация данных
 /// </summary>
-public static class SerializeParametrs
+public static class Serialization
 {
 	//Ключи для сериализуемых параметров
-	const string key_bestScoreValue = "bestScoreValue";
-	const string key_collectedSoulsValue = "collectedSoulsValue";
-	const string key_recoveryCostValue = "recoveryCostValue";
-	const string key_audioStatement = "audioStatement";
+	const string key_musicStatement = "key_musicStatement";
+	const string key_soundStatement = "key_soundStatement";
 
 	/// <summary>
 	/// Загрузка всех параметров
@@ -19,17 +16,15 @@ public static class SerializeParametrs
 	{
 		Debug.Log("Загрузка параметров из PlayerPrefs");
 
-		var newBestScoreValue = loadParametr(key_bestScoreValue, 0);
-		ValuesController.setBestScoreValue(newBestScoreValue);
+		//var newAudioStatement = loadParametr(key_audioStatement, true);
+		//AudioManager.setAudioStatement(newAudioStatement);
+	}
 
-		var newCollectedSoulsValue = loadParametr(key_collectedSoulsValue, 0);
-		ValuesController.setСolectedSoulsValue(newCollectedSoulsValue);
+	public static void saveAllParametrs()
+	{
+		Debug.Log("Сохранение параметров в PlayerPrefs");
 
-		var newRecoveryCostValue = loadParametr(key_recoveryCostValue, 100);
-		ValuesController.setRecoveryCostValue(newRecoveryCostValue);
-
-		var newAudioStatement = loadParametr(key_audioStatement, true);
-		AudioManager.setAudioStatement(newAudioStatement);
+		//saveParametr();
 	}
 
 	/// <summary>
@@ -60,7 +55,7 @@ public static class SerializeParametrs
 	}
 
 	/// <summary>
-	/// Сохранение параметра parametrValue типа int с ключом key
+	/// Сохранение параметра типа int с ключом key
 	/// </summary>
 	static void saveParametr(string key, int parametrValue)
 	{
@@ -70,21 +65,11 @@ public static class SerializeParametrs
 	}
 
 	/// <summary>
-	/// Сохранение параметра statementValue типа bool с ключом key
+	/// Сохранение параметра типа bool с ключом key
 	/// </summary>
 	static void saveParametr(string key, bool statementValue)
 	{
 		int parametrValue = statementValue ? 1 : 0;
 		saveParametr(key, parametrValue);
-	}
-
-	public static void saveAllParametrs()
-	{
-		Debug.Log("Сохранение параметров в PlayerPrefs");
-
-		saveParametr(key_audioStatement, AudioManager.allowAudio);
-		saveParametr(key_bestScoreValue, ValuesController.bestScoreValue);
-		saveParametr(key_collectedSoulsValue, ValuesController.colectedSoulsValue);
-		saveParametr(key_recoveryCostValue, ValuesController.recoveryCostValue);
 	}
 }

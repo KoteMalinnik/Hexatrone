@@ -17,14 +17,6 @@ public class helpBehaviour : MonoBehaviour
 
 	protected AudioSource audioSource; // Источник звука кликов
 
-	/// <summary>
-	/// Загрузка сцены с индексом sceneID
-	/// </summary>
-	protected void LoadScene(int sceneID)
-	{
-		SceneManager.LoadScene(sceneID);
-	}
-
 	protected void playClick()
 	{ 
 		if (gm.isSoundOn) audioSource.Play();
@@ -303,5 +295,4 @@ public class helpBehaviour : MonoBehaviour
 	{
 		return obj.GetComponent<Image>();
 	}
-
 }

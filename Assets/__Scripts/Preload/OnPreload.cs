@@ -7,7 +7,7 @@ public class OnPreload : MonoBehaviour
 	//С его помощью необходимо перейти на другую сцену
 	void Awake()
 	{
-		SerializeParametrs.loadAllParametrs();
+		Serialization.loadAllParametrs();
 
 		SceneManager.LoadScene("MainMenu");
 	}

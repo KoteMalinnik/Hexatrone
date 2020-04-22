@@ -103,6 +103,6 @@ public class AudioManager : MonoBehaviour
 
 	void OnApplicationQuit()
 	{
-		SerializeParametrs.saveAllParametrs();
+		Serialisation.saveAllParametrs();
 	}
 }
