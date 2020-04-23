@@ -1,32 +1,52 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 /// <summary>
 /// Form part controller.
 /// </summary>
 public class FormPartController : MonoBehaviour
 {
-	void OnTriggerEnter2D(Collider2D coll) //coll - коллайдер сферы
+	SpriteRenderer spriteRenderer = null;
+	void Awake()
 	{
-		Debug.Log($"Столкновение {name} с объектом {coll.name}.");
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	//void OnTriggerEnter2D(Collider2D coll) //coll - коллайдер сферы
-	//	{
-	//		//отправляем событие столкновения на обработку
-	//		if (coll.gameObject.tag != "part")
-	//		{
-	//		Form_Processing_Orbs.instance.DoubleTouch
-	//			(
-	//			     get_SpriteRenderer(coll.gameObject).color, //получаем цвет сферы
-	//			     get_SpriteRenderer(gameObject).color, //получаем цвет части
-	//				 coll.gameObject, //получаем объект сферы
-	//			     get_OrbObject(coll.gameObject).type, //получаем тип сферы
-	//			     get_SpriteRenderer(gameObject) //получаем компонент SpriteRenderer части
-	//		        );
+	/// <summary>
+	/// Gets the color of the part.
+	/// </summary>
+	/// <value>The color of the part.</value>
+	public Color partColor { get; private set;} = Color.white;
 
-	//		GameManager.instance._orbSpawner.pulledOrb = null;
-	//		}
-	//	}
+	/// <summary>
+	/// Sets the color of the part.
+	/// </summary>
+	/// <param name="partColor">Part color.</param>
+	public void setPartColor(Color partColor)
+	{
+		this.partColor = partColor;
+		spriteRenderer.color = partColor;
+	}
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		Debug.Log($"Столкновение {name} с объектом {coll.name}.");
+
+		////отправляем событие столкновения на обработку
+		//if (coll.gameObject.tag != "part")
+		//{
+		//	Form_Processing_Orbs.instance.DoubleTouch
+		//	(
+		//	     get_SpriteRenderer(coll.gameObject).color, //получаем цвет сферы
+		//	     get_SpriteRenderer(gameObject).color, //получаем цвет части
+		//		 coll.gameObject, //получаем объект сферы
+		//	     get_OrbObject(coll.gameObject).type, //получаем тип сферы
+		//	     get_SpriteRenderer(gameObject) //получаем компонент SpriteRenderer части
+		//        );
+
+		//	GameManager.instance._orbSpawner.pulledOrb = null;
+		//}
+	}
 
 	void OnMouseDown()
 	{
