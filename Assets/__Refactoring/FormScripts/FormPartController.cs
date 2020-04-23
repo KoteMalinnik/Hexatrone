@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-/*
-
-	ОТВЕЧАЕТ ЗА ПОВЕДЕНИЕ ЧАСТИ PART
-	ЛОВИТ СТОЛКНОВЕНИЕ СО СФЕРОЙ ORB
-	ОТПРАВЛЯЕТ ДАННЫЕ О КОЛИЗЗИИ В FORM_PROCESSING_ORBS
-
- */
-
-public class Part_Script : MonoBehaviour
+/// <summary>
+/// Form part controller.
+/// </summary>
+public class FormPartController : MonoBehaviour
 {
+	void OnTriggerEnter2D(Collider2D coll) //coll - коллайдер сферы
+	{
+		Debug.Log($"Столкновение {name} с объектом {coll.name}.");
+	}
+
 	//void OnTriggerEnter2D(Collider2D coll) //coll - коллайдер сферы
 	//	{
 	//		//отправляем событие столкновения на обработку
@@ -28,12 +28,14 @@ public class Part_Script : MonoBehaviour
 	//		}
 	//	}
 
-	//void OnMouseDown()
-	//{
-	//	//если анимация поворота PART_SELECTION формы не работает и не пауза, то можно ее включить
-	//	if (GameManager.instance.controller == GameManager.Controll.Part_Selection
-	//		&& Form_Parametrs.instance.rotate_SelectedPart == null
-	//		&& !PauseMenuManager.isPause)
-	//		StartCoroutine(Form_Controller.instance.rotate_SelectedPart(transform.rotation.eulerAngles.z)); //поворот формы
-	//}
+	void OnMouseDown()
+	{
+		Debug.Log($"Нажатие на часть формы {name}.");
+
+		//если анимация поворота PART_SELECTION формы не работает и не пауза, то можно ее включить
+		//if (GameManager.instance.controller == GameManager.Controll.Part_Selection
+		//	&& Form_Parametrs.instance.rotate_SelectedPart == null
+		//	&& !PauseMenuManager.isPause)
+		//	StartCoroutine(Form_Controller.instance.rotate_SelectedPart(transform.rotation.eulerAngles.z)); //поворот формы
+	}
 }
