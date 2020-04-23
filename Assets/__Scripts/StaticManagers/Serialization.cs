@@ -39,9 +39,7 @@ public static class Serialization
 	static int loadValue(string key, int defaultValue)
 	{
 		var parametrValue = PlayerPrefs.GetInt(key, defaultValue);
-
 		Debug.Log($"Параметр {key} загружен. Значение: {parametrValue}");
-
 		return parametrValue;
 	}
 
@@ -54,7 +52,6 @@ public static class Serialization
 	{
 		var parametrValue = loadValue(key, defaultValue ? 1 : 0);
 		bool statementValue = parametrValue == 1;
-
 		return statementValue;
 	}
 
@@ -64,7 +61,6 @@ public static class Serialization
 	static void saveValue(string key, int parametrValue)
 	{
 		PlayerPrefs.SetInt(key, parametrValue);
-
 		Debug.Log($"Параметр {key} сохранен. Значение: {parametrValue}");
 	}
 

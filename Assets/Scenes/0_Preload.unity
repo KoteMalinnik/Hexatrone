@@ -279,7 +279,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.8396226, g: 0.7749398, b: 0.6376379, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -300,7 +300,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -353,10 +353,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1952457018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523c75db8c87b6640bcfc167ce6da1bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f5a683fe07c62488a24c0aa0ab447b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaAngle: 4
 --- !u!212 &1952457020
 SpriteRenderer:
   m_ObjectHideFlags: 0
