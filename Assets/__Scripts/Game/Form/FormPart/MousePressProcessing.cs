@@ -3,11 +3,12 @@
 /// <summary>
 /// Mouse button press processing.
 /// </summary>
-public class MouseButtonPressProcessing : MonoBehaviour
+public class MousePressProcessing : MonoBehaviour
 {
 	void OnMouseDown()
 	{
 		Debug.Log($"Нажатие на часть формы {name}.");
+		PartSelection.calculate();
 
 		//если анимация поворота PART_SELECTION формы не работает и не пауза, то можно ее включить
 		//if (GameManager.instance.controller == GameManager.Controll.Part_Selection

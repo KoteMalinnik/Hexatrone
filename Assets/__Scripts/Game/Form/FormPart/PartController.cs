@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(CollisionProcessing))]
-[RequireComponent(typeof(MouseButtonPressProcessing))]
+[RequireComponent(typeof(MousePressProcessing))]
 /// <summary>
 /// Form part controller.
 /// </summary>
