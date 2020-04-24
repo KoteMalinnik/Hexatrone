@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
+/// <summary>
+/// Flashing animation.
+/// </summary>
 public class FlashingAnimation : MonoBehaviour
 {
 	[SerializeField, Range(0.01f, 10f)]
