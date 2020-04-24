@@ -20,20 +20,20 @@ public class FormRotation : MonoBehaviour
 	/// </summary>
 	/// <param name="angleY">Angle y.</param>
 	/// <param name="angleZ">Angle z.</param>
-	public void rotateForm(float angleY, float angleZ = 0)
+	public void rotate(float angleY, float angleZ = 0)
 	{
 		Debug.Log($"[RotationAnimaton] Вращение {name}");
-		StartCoroutine(rotate(angleY, angleZ));
+		StartCoroutine(rotation(angleY, angleZ));
 	}
 
-	IEnumerator rotate(float angleY, float angleZ)
+	IEnumerator rotation(float angleY, float angleZ)
 	{
-		var rotation = cachedTransform.localRotation;
+		var startRotation = cachedTransform.localRotation;
 		var targetRotation = Quaternion.Euler(0.0f, angleY, angleZ);
 
 		for (float T = 0.00f; cachedTransform.localRotation != targetRotation; T += animationSpeed * Time.deltaTime)
 		{
-			cachedTransform.localRotation = Quaternion.Lerp(rotation, targetRotation, T);
+			cachedTransform.localRotation = Quaternion.Lerp(startRotation, targetRotation, T);
 			yield return new WaitForEndOfFrame();
 		}
 	}
