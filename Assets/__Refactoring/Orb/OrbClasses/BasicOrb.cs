@@ -7,16 +7,17 @@
 /// </summary>
 public class BasicOrb : MonoBehaviour
 {
+	SpriteRenderer spriteRenerer = null;
+
+	void Awake()
+	{
+		spriteRenerer = GetComponent<SpriteRenderer>();
+	}
+
 	/// <summary>
 	/// Gets or sets the delta. Delta is a value which define deifference of the score on collecting orb
 	/// </summary>
 	public int delta { get; protected set; } = 1;
-
-	/// <summary>
-	/// Gets the color of the orb.
-	/// </summary>
-	public Color orbColor { get; private set; } = Color.white;
-
 
 	/// <summary>
 	/// Sets the delta.
@@ -25,22 +26,33 @@ public class BasicOrb : MonoBehaviour
 	public void setDelta(int delta) { this.delta = delta; }
 
 	/// <summary>
-	/// Sets the color of the orb.
+	/// Sets the orb color.
 	/// </summary>
-	/// <param name="orbColor">Orb color.</param>
-	public void setOrbColor(Color orbColor) { this.orbColor = orbColor; }
+	/// <param name="color">Orb color.</param>
+	public void setColor(Color color)
+	{
+		if(spriteRenerer == null) Awake();
+
+		spriteRenerer.color = color;
+	}
+
+	/// <summary>
+	/// Gets the orb color.
+	/// </summary>
+	/// <returns>Orb color.</returns>
+	public Color getColor()
+	{
+		return spriteRenerer.color;
+	}
 
 	/// <summary>
 	/// Sets the sprite.
 	/// </summary>
 	/// <param name="sprite">Sprite.</param>
-	public void setSprite(Sprite sprite) { spriteRenerer.sprite = sprite; }
+	public void setSprite(Sprite sprite)
+	{ 
+		if (spriteRenerer == null) Awake();
 
-
-	SpriteRenderer spriteRenerer = null;
-
-	void Awake()
-	{
-		spriteRenerer = GetComponent<SpriteRenderer>();
+		spriteRenerer.sprite = sprite;
 	}
 }
