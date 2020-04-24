@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - gm
-  - form_manager
-  - orb_spawner
-  - part
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - player
-  - 
-  - 
+  - Player
+  - FormPart
+  - Orb
   - 
   - 
   - 
