@@ -7,7 +7,7 @@ using UnityEngine;
 /// ОПРЕДЕЛЯЕТ НАЧАЛЬНЫЕ ЗНАЧЕНИЯ ПРИ НОВОМ УРОВНЕ
 /// </summary>
 
-public class Form_Controller : MonoBehaviour
+public class InputController : MonoBehaviour
 {
 	//void Start()
 	//{
