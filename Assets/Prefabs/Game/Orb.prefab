@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 6138454344384792221}
   - component: {fileID: 631530327204703319}
   - component: {fileID: 8597572198325755756}
+  - component: {fileID: 6962019923825533183}
   m_Layer: 10
   m_Name: Orb
   m_TagString: Untagged
@@ -202,3 +203,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6962019923825533183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009518388849945476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae79758a13472b4aa3f8993d0d2f372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reuseObjectOnInvisible: 1
+  layer: 10
