@@ -1,13 +1,22 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(FlashingAnimation))]
 /// <summary>
 /// Collision processing.
 /// </summary>
 public class CollisionProcessing : MonoBehaviour
 {
+	FlashingAnimation flashingAnimation = null;
+	void Awake()
+	{
+		flashingAnimation = GetComponent<FlashingAnimation>();
+	}
+
 	void OnTriggerEnter2D(Collider2D coll)
 	{
 		Debug.Log($"Столкновение {name} с объектом {coll.name}.");
+
+		flashingAnimation.animate();
 
 		////отправляем событие столкновения на обработку
 		//if (coll.gameObject.tag != "part")

@@ -6,7 +6,7 @@
 /// <summary>
 /// Form part controller.
 /// </summary>
-public class FormPart : MonoBehaviour
+public class PartController : MonoBehaviour
 {
 	SpriteRenderer spriteRenderer = null;
 	void Awake()
