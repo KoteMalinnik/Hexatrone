@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(FormRotation))]
 [RequireComponent(typeof(PartSelection))]
+[RequireComponent(typeof(CollisionProcessing))]
 public class Controller : MonoBehaviour
 {
     //void Start()

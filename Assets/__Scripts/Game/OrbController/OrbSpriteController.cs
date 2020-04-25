@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpriteController : MonoBehaviour
+public class OrbSpriteController : MonoBehaviour
 {
 	[Header("Базовая")]
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class SpawnController
+public static class OrbSpawnController
 {
 	static Vector2 spawnPosition = Vector2.zero;
 

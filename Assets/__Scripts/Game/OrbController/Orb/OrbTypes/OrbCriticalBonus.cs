@@ -3,7 +3,7 @@
 /// <summary>
 /// Critical bonus.
 /// </summary>
-public class CriticalBonus : BasicOrb
+public class OrbCriticalBonus : OrbBasic
 {
 	//[SerializeField]
 	///// <summary>

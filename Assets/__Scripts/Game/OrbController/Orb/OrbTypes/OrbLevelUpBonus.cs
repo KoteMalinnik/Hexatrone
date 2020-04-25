@@ -3,7 +3,7 @@
 /// <summary>
 /// Level up bonus.
 /// </summary>
-public class LevelUpBonus : BasicOrb
+public class OrbLevelUpBonus : OrbBasic
 {
 	//[SerializeField]
 	///// <summary>

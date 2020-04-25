@@ -16,19 +16,19 @@ public class FlashingAnimation : MonoBehaviour
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	public void animate()
+	public void animate(Color flashColor)
 	{
 		Debug.Log($"[FlashingAnimation] Анимация части {name}");
 
-		StartCoroutine(doubleFlashing());
+		StartCoroutine(doubleFlashing(flashColor));
 	}
 
 	Coroutine coroutine = null;
-	IEnumerator doubleFlashing()
+	IEnumerator doubleFlashing(Color flashColor)
 	{
 		var sourceColor = spriteRenderer.color;
 
-		coroutine = StartCoroutine(flashing(spriteRenderer.color, Color.white));
+		coroutine = StartCoroutine(flashing(spriteRenderer.color, flashColor));
 		yield return new WaitWhile(() => coroutine != null);
 		coroutine = StartCoroutine(flashing(spriteRenderer.color, sourceColor));
 	}

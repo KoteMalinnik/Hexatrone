@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteController))]
+[RequireComponent(typeof(OrbSpriteController))]
+[RequireComponent(typeof(OrbTypeDefiner))]
 /// <summary>
 /// Orb controller.
 /// </summary>
@@ -10,7 +11,7 @@ public sealed class OrbController : MonoBehaviour
 	{
 		OrbTypeDefiner.orbType orbType = OrbTypeDefiner.getNewOrbType(ref orb);
 
-		SpriteController.setupSprite(ref orb, orbType);
-		SpawnController.setupPosition(orb.transform);
+		OrbSpriteController.setupSprite(ref orb, orbType);
+		OrbSpawnController.setupPosition(orb.transform);
 	}
 }

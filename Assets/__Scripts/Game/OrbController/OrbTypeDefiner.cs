@@ -10,16 +10,24 @@ public class OrbTypeDefiner : MonoBehaviour
 		LevelUpBonus
 	}
 
+	[SerializeField, Range(0.1f, 1.0f)]
+	float _bonusThreshold = 0.9f;
 	static float bonusThreshold = 0.9f;
+
+	void Awake()
+	{
+		bonusThreshold = _bonusThreshold;
+	}
+
 	public static orbType getNewOrbType(ref GameObject orb)
 	{
-		BasicOrb orbClass = orb.GetComponent<BasicOrb>();
+		OrbBasic orbClass = orb.GetComponent<OrbBasic>();
 		Destroy(orbClass);
 
 		float probability = Random.Range(0.0f, 1.0f);
 		if(probability < bonusThreshold) 
 		{
-			orb.AddComponent<BasicOrb>();
+			orb.AddComponent<OrbBasic>();
 			return orbType.Basic;
 		}
 			
@@ -28,17 +36,17 @@ public class OrbTypeDefiner : MonoBehaviour
 
 		if (probability < 0.5f)
 		{
-			orb.AddComponent<DeltaBonus>();
+			orb.AddComponent<OrbDeltaBonus>();
 			return orbType.DeltaBonus;
 		}
 			
 		if (probability < 0.8f)
 		{
-			orb.AddComponent<CriticalBonus>();
+			orb.AddComponent<OrbCriticalBonus>();
 			return orbType.CriticalBonus;
 		}
 			
-		orb.AddComponent<LevelUpBonus>();
+		orb.AddComponent<OrbLevelUpBonus>();
 		return orbType.LevelUpBonus;
 	}
 }

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(OrbMovement))]
+[RequireComponent(typeof(OrbCollision))]
 [RequireComponent(typeof(SpriteRenderer))]
 /// <summary>
 /// Basic orb.
 /// </summary>
-public class BasicOrb : MonoBehaviour
+public class OrbBasic : MonoBehaviour
 {
 	SpriteRenderer spriteRenerer = null;
 

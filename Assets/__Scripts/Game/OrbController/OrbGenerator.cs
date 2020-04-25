@@ -4,7 +4,7 @@
 /// <summary>
 /// Objects Generator.
 /// </summary>
-public class Generator : MonoBehaviour
+public class OrbGenerator : MonoBehaviour
 {
 	/// <summary>
 	/// The prefab oject.
@@ -20,11 +20,14 @@ public class Generator : MonoBehaviour
 	void Awake()
 	{
 		loadPrefab();
+	}
 
+	void Start()
+	{
 		GameObject obj = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
 		obj.transform.parent = transform;
-		SpawnController.setupPosition(obj.transform);
 
+		OrbController.setupObject(ref obj);
 		Destroy(this);
 	}
 

@@ -3,7 +3,7 @@
 /// <summary>
 /// Delta Bonus Orb.
 /// </summary>
-public class DeltaBonus : BasicOrb
+public class OrbDeltaBonus : OrbBasic
 {
 	[SerializeField]
 	/// <summary>

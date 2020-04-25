@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 7020684275658485192}
   - component: {fileID: 610006608616935902}
   - component: {fileID: 2825114812419913101}
-  - component: {fileID: 4824259314333603047}
-  - component: {fileID: 5628246667434794773}
   - component: {fileID: 7178780918486391242}
   m_Layer: 9
   m_Name: FormPart
@@ -127,30 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 8
---- !u!114 &4824259314333603047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8637975299854216407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7d107956b8c694da3f7ae3b5096e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5628246667434794773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8637975299854216407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249d97498a6710d4ca1f1f1db50d4b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7178780918486391242
 MonoBehaviour:
   m_ObjectHideFlags: 0

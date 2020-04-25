@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(CollisionProcessing))]
 [RequireComponent(typeof(MousePressProcessing))]
 /// <summary>
 /// Form part controller.
