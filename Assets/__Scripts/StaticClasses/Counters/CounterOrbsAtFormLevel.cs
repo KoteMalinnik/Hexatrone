@@ -14,6 +14,14 @@ public static class CounterOrbsAtFormLevel
 	public static void setValue(int newValue)
 	{
 		value = newValue;
-		Debug.Log("[CounterTotalOrbs]");
+		Debug.Log("[CounterOrbsAtFormLevel] Установка значения " + value);
+	}
+
+	public static void incrementValue(int delta = 1) { value += delta; }
+	public static void decrementValue(int delta = 1) { value -= delta; }
+
+	public static void setValueToLevelUp(int formLevel)
+	{
+		// рассчет количества сфер до следующего уровня
 	}
 }
