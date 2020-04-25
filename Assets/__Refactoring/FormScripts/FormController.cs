@@ -51,10 +51,12 @@ public class FormController : MonoBehaviour
 	public static void levelUpEvent()
 	{
 		Debug.Log("[FormController] Уровень повышен!");
+		setFormLevel(formLevel + 1);
 	}
 
 	public static void levelDownEvent()
 	{
 		Debug.Log("[FormController] Уровень понижен!");
+		setFormLevel(formLevel - 1);
 	}
 }
