@@ -9,6 +9,6 @@ public static class CounterTotalOrbs
 		Debug.Log("[CounterTotalOrbs] Установка значения " + value);
 	}
 
-	public static void incrementValue(int delta = 1) { value += delta; }
-	public static void decrementValue(int delta = 1) { value -= delta; }
+	public static void incrementValue(int delta = 1) { setValue(value + delta); }
+	public static void decrementValue(int delta = 1) { setValue(value - delta); }
 }

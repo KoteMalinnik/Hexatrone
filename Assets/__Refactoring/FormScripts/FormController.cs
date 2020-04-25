@@ -40,12 +40,21 @@ public class FormController : MonoBehaviour
 	public static void setFormLevel(int newFormLevel)
 	{
 		formLevel = newFormLevel;
-		Debug.Log($"[FormController] Новый уровень формы: {formLevel}");
+		Debug.Log($"[FormController] Установка уровеня формы: {formLevel}");
 
 		FormInitialiser.initialiseObject(formLevel);
 
 		CounterCriticalOrbs.setValue(5);
-		CounterOrbsAtFormLevel.setValue(0);
 		CounterOrbsAtFormLevel.setValueToLevelUp(formLevel);
+	}
+
+	public static void levelUpEvent()
+	{
+		Debug.Log("[FormController] Уровень повышен!");
+	}
+
+	public static void levelDownEvent()
+	{
+		Debug.Log("[FormController] Уровень понижен!");
 	}
 }

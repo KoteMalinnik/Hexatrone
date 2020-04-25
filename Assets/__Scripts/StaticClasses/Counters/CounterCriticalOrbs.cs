@@ -15,6 +15,5 @@ public static class CounterCriticalOrbs
 		Debug.Log("[CounterCriticalOrbs] Установка значения " + value);
 	}
 
-	public static void incrementValue(int delta = 1) { value += delta; }
-	public static void decrementValue(int delta = 1) { value -= delta; }
+	public static void incrementValue(int delta = 1) { setValue(value + delta); }
 }
