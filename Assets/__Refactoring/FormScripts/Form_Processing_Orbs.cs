@@ -14,22 +14,6 @@ using UnityEngine;
 /// </summary>
 public class Form_Processing_Orbs : MonoBehaviour
 {
-	////Обработка цветных счетчиков
-	////Они только накапливают и ничего не теряют 
-	//void ColorCountersProcessing(Color counterColor, int delta) //counterColor - цвет нужного счетчика
-	//{
-	//	for (int i = 0; i < gm._formParametrs.partColors.Length; i++)
-	//	{
-	//		if (gm._formParametrs.partColors[i] == counterColor)
-	//		{
-	//			gm._formParametrs.colorCounters[i] +=delta;
-	//			break;
-	//		}
-	//	}
-	//	gm._formParametrs.TotalOrbsCounter += delta;
-	//	gm._formParametrs.CurrentOrbCounter += delta;
-	//}
-
 	////обработка счетчика текущего уровня формы
 	////использует CurrentCounter, CriticalOrbsCount и OrbsCountToNextLVL
 	//void levelCounterProcessing()

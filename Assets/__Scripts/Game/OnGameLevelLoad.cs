@@ -10,14 +10,11 @@
 /// </summary>
 public class OnGameLevelLoad : MonoBehaviour
 {
-	[SerializeField, Range(1, 50)]
-	int criticalOrbsCount = 5;
-
 	void Awake()
 	{
 		Debug.Log("[OnGameLevelLoad] Установка значений счетчиков");
 
-		CounterCriticalOrbs.setValue(criticalOrbsCount);
+		CounterCriticalOrbs.setValue(5);
 		CounterOrbsAtFormLevel.setValue(0);
 		CounterTotalOrbs.setValue(0);
 	}

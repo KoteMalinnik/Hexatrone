@@ -43,5 +43,9 @@ public class FormController : MonoBehaviour
 		Debug.Log($"[FormController] Новый уровень формы: {formLevel}");
 
 		FormInitialiser.initialiseObject(formLevel);
+
+		CounterCriticalOrbs.setValue(5);
+		CounterOrbsAtFormLevel.setValue(0);
+		CounterOrbsAtFormLevel.setValueToLevelUp(formLevel);
 	}
 }

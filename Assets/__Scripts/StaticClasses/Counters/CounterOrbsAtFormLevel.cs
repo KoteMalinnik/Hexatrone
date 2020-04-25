@@ -23,5 +23,6 @@ public static class CounterOrbsAtFormLevel
 	public static void setValueToLevelUp(int formLevel)
 	{
 		// рассчет количества сфер до следующего уровня
+		valueToLevelUp = 10 * (formLevel * 2 + 1);
 	}
 }
