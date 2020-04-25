@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 6138454344384792221}
   - component: {fileID: 631530327204703319}
   - component: {fileID: 8597572198325755756}
+  - component: {fileID: 934281055394158412}
+  - component: {fileID: 5557877085251489993}
   m_Layer: 10
   m_Name: Orb
   m_TagString: Untagged
@@ -202,3 +204,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &934281055394158412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009518388849945476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51120505f741d664d9a56956428d2293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+--- !u!114 &5557877085251489993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009518388849945476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9042211c1bc4d4946ac5b5b3e7fa326b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

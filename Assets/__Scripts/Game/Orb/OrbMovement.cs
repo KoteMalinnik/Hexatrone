@@ -21,7 +21,7 @@ public class OrbMovement : MonoBehaviour
 	/// <summary>
 	/// The target position.
 	/// </summary>
-	readonly Vector3 targetPosition = new Vector3(0, -3, 0);
+	readonly Vector3 targetPosition = new Vector3(0, -9, 0);
 
 	void Update()
 	{

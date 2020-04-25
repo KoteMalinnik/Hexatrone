@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(OrbController))]
+/// <summary>
+/// Objects Generator.
+/// </summary>
 public class Generator : MonoBehaviour
 {
 	/// <summary>
@@ -19,6 +23,7 @@ public class Generator : MonoBehaviour
 
 		GameObject obj = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
 		obj.transform.parent = transform;
+		SpawnController.setupPosition(obj.transform);
 
 		Destroy(this);
 	}
