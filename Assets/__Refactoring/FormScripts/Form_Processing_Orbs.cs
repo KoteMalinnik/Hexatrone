@@ -1,6 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 /// <summary>
 /// ОТСЫЛАЕТ НОВЫЕ В FORM_PARAMETRS
 ///	ВЫЗЫВАЕТ ОБНОВЛЕНИЕ СЧЕТЧИКОВ НА КАНВАСЕ
@@ -9,7 +15,7 @@ using UnityEngine;
 public class Form_Processing_Orbs : MonoBehaviour
 {
 	////Обработка цветных счетчиков
-	////Они только накапливают и ничего не теряют
+	////Они только накапливают и ничего не теряют 
 	//void ColorCountersProcessing(Color counterColor, int delta) //counterColor - цвет нужного счетчика
 	//{
 	//	for (int i = 0; i < gm._formParametrs.partColors.Length; i++)

@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 [RequireComponent(typeof(OrbMovement))]
 [RequireComponent(typeof(OrbCollision))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -14,6 +18,9 @@ public class OrbBasic : MonoBehaviour
 	{
 		spriteRenerer = GetComponent<SpriteRenderer>();
 	}
+
+
+	public OrbTypeDefiner.orbType type { get; private set; } // !!!!!!!!!допилить
 
 	/// <summary>
 	/// Gets or sets the delta. Delta is a value which define deifference of the score on collecting orb

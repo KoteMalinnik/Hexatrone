@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 /// <summary>
 /// Содержит в себе конечные результаты игры
 /// </summary>

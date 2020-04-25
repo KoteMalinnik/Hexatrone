@@ -4,6 +4,9 @@ using System.Net;
 using System.Net.Mail;
 using System.IO;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
 
 /// <summary>
 /// ОТВЕЧАЕТ ЗА ВСЕ ЭЛЕМЕНТЫ ГЛАВНОГО МЕНЮ

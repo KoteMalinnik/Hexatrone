@@ -2,6 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 public class PauseMenuManager : MonoBehaviour
 {
 	//public GameObject GameInformationCanvas; //канвас со счетчиками и слайдерами

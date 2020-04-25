@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 public static class CounterOrbsAtFormLevel
 {
 	public static int valueToLevelUp { get; private set; } = 0;

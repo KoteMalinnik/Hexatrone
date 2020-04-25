@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 /// <summary>
 /// Level up bonus.
 /// </summary>

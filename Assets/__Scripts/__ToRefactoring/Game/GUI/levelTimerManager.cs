@@ -2,6 +2,10 @@
 using UnityEngine;
 using System.Xml.Schema;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 /// <summary>
 /// Отвечает за счетчик времени в игре
 /// </summary>

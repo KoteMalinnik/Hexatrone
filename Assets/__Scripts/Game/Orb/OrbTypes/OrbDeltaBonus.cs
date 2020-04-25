@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 /// <summary>
 /// Delta Bonus Orb.
 /// </summary>

@@ -1,21 +1,15 @@
 ﻿using UnityEngine;
 using Assets.SimpleLocalization;
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 /// <summary>
 /// Содержит ссылки на менеджеры и основные переменные
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-	//перечисление управления
-	public enum Controll
-	{
-		Left_Right,
-		Part_Selection,
-		Swipe
-	}
-	public Controll controller;
-	//инверсия управления LEFT-RIGHT и SWIPE. true, ЕСЛИ ИНВЕРСИЯ. false, Если нет инверсии
-	public bool inverse { get; set; }
 
 	//перечисление языков
 	public enum Language 

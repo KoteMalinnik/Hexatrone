@@ -5,6 +5,10 @@ using System.Linq;
 using Assets.SimpleLocalization;
 
 
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 
 public class LevelsGenerator : MonoBehaviour
 {

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * РЕФАКТОРИТЬ
+ */
+
 public class FormInitialiser : MonoBehaviour
 {
     ////Инициализация новой формы с уничтожением старой

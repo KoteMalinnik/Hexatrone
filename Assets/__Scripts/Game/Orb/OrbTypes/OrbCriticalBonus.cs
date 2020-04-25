@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
+
 /// <summary>
 /// Critical bonus.
 /// </summary>

@@ -3,6 +3,11 @@
 [RequireComponent(typeof(FormRotation))]
 [RequireComponent(typeof(FormPartSelection))]
 [RequireComponent(typeof(FormInitialiser))]
+
+/*
+ * РЕФАКТОРИТЬ 
+ */
+
 public class FormController : MonoBehaviour
 {
 	//void Start()
