@@ -13,26 +13,12 @@ public class Generator : MonoBehaviour
 	/// </summary>
 	string prefabName = null;
 
-	/// <summary>
-	/// Количество генерируемых объектов
-	/// </summary>
-	const int objectsCount = 4;
-
 	void Awake()
 	{
 		loadPrefab();
 
-
-		for (int i = 0; i < poolObjectsCount; i++)
-		{
-			newPoolObject = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
-
-			newPoolObject.transform.parent = poolTransform;
-			newPoolObject.name = $"{prefabName} ({i})";
-			newPoolObject.setParentPool(pool);
-
-			pool.addObject(newPoolObject);
-		}
+		GameObject obj = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
+		obj.transform.parent = transform;
 
 		Destroy(this);
 	}
