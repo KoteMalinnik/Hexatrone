@@ -28,18 +28,6 @@ public abstract class ObjectsController : ControllerSetuper
 	}
 
 	/// <summary>
-	/// Взять objectsCount объектов из пула. secondEnumarotor инкрементируется objectsCount раз
-	/// </summary>
-	protected void getObjects(int objectsCount, ref float secondEnumarator)
-	{
-		Debug.Log($"Взять {objectsCount} объектов из пула {pool.name}");
-		for (; objectsCount > 0; objectsCount--, secondEnumarator++)
-		{
-			getObjectFromPool();
-		}
-	}
-
-	/// <summary>
 	/// Взять объект из пула и настроить его с помощью переопределяемого метода setupObject
 	/// </summary>
 	public void getObjectFromPool()
