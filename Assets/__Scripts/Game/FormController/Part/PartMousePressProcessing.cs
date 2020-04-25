@@ -3,7 +3,7 @@
 /// <summary>
 /// Mouse button press processing.
 /// </summary>
-public class MousePressProcessing : MonoBehaviour
+public class PartMousePressProcessing : MonoBehaviour
 {
 	void OnMouseDown()
 	{

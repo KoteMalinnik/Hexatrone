@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 6929850831743086349}
   - component: {fileID: 7020684275658485192}
   - component: {fileID: 610006608616935902}
-  - component: {fileID: 2825114812419913101}
-  - component: {fileID: 7178780918486391242}
+  - component: {fileID: 2691151675440869294}
+  - component: {fileID: 2059892315481351743}
+  - component: {fileID: 5280943427303988297}
   m_Layer: 9
-  m_Name: FormPart
+  m_Name: Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +113,7 @@ PolygonCollider2D:
     - - {x: 0, y: 0}
       - {x: -0.4330127, y: -0.75}
       - {x: 0.43301272, y: -0.74999994}
---- !u!114 &2825114812419913101
+--- !u!114 &2691151675440869294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,11 +122,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8637975299854216407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3364afe57fa850b438a3d03c737ab34e, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e66e33c424ba945bec9ec1214aa748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 8
---- !u!114 &7178780918486391242
+--- !u!114 &2059892315481351743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8637975299854216407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2007451a789d5148b1122ac16574ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSpeed: 5
+--- !u!114 &5280943427303988297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

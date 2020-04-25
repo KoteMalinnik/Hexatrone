@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Flashing animation.
 /// </summary>
-public class FlashingAnimation : MonoBehaviour
+public class PartFlashingAnimation : MonoBehaviour
 {
 	[SerializeField, Range(0.01f, 10f)]
 	float animationSpeed = 1f;

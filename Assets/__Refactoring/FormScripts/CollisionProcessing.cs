@@ -74,7 +74,7 @@ public class CollisionProcessing : MonoBehaviour
 
 		//отсутствие совпадений
 		Debug.Log("[OrbCollisionProcessing] Отсутствие совпадений.");
-		collisions[0].GetComponent<FlashingAnimation>().animate(Color.black);
+		collisions[0].GetComponent<PartFlashingAnimation>().animate(Color.black);
 	}
 
 	static bool checkColor(Collider2D collision)
@@ -85,7 +85,7 @@ public class CollisionProcessing : MonoBehaviour
 		if(orbColor == collisionColor)
 		{
 			Debug.Log($"[OrbCollisionProcessing] Совпадение цветов c ({collision.name}).");
-			collision.GetComponent<FlashingAnimation>().animate(Color.white);
+			collision.GetComponent<PartFlashingAnimation>().animate(Color.white);
 			return true;
 		}
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893019510683210450}
   m_Layer: 0
-  m_Name: Form_0
+  m_Name: Form 0
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 8637975299854216407, guid: 3f202ef32e2c523409dd9f8d70407dc2,
         type: 3}
       propertyPath: m_Name
-      value: FormPart_1
+      value: Part 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f202ef32e2c523409dd9f8d70407dc2, type: 3}
@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 8637975299854216407, guid: 3f202ef32e2c523409dd9f8d70407dc2,
         type: 3}
       propertyPath: m_Name
-      value: FormPart_3
+      value: Part 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f202ef32e2c523409dd9f8d70407dc2, type: 3}
@@ -288,7 +288,7 @@ PrefabInstance:
     - target: {fileID: 8637975299854216407, guid: 3f202ef32e2c523409dd9f8d70407dc2,
         type: 3}
       propertyPath: m_Name
-      value: FormPart_2
+      value: Part 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f202ef32e2c523409dd9f8d70407dc2, type: 3}

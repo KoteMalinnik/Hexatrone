@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(MousePressProcessing))]
+[RequireComponent(typeof(PartMousePressProcessing))]
+[RequireComponent(typeof(PartFlashingAnimation))]
 /// <summary>
 /// Form part controller.
 /// </summary>
