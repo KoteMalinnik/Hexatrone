@@ -14,6 +14,8 @@ public class OnGameLevelLoad : MonoBehaviour
 	{
 		Debug.Log("[OnGameLevelLoad] Установка значений счетчиков");
 
+		FormLevel.setLevel(0);
+
 		CounterCriticalOrbs.setValue(5);
 		CounterOrbsAtFormLevel.setValue(0);
 		CounterTotalOrbs.setValue(0);
