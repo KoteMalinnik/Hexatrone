@@ -13,6 +13,7 @@ public class FormPartSelection : MonoBehaviour
 	/// </summary>
 	public static void calculate(float partLocalRotation)
 	{
+		if (OrbController.orb == null) return;
 		if (FormRotation.rotating) return;
 
 		Debug.Log("[PartSelection] Рассчитать угол поворота.");

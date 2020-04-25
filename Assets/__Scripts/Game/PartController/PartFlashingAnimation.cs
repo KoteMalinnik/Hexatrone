@@ -10,16 +10,23 @@ public class PartFlashingAnimation : MonoBehaviour
 	[SerializeField, Range(0.01f, 10f)]
 	float animationSpeed = 1f;
 
+	[SerializeField]
+	Color wrongColor = Color.black;
+
+	[SerializeField]
+	Color correctColor = Color.white;
+
 	SpriteRenderer spriteRenderer = null;
 	void Awake()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	public void animate(Color flashColor)
+	public void animate(bool collectCorrectOrb)
 	{
 		//Debug.Log($"[PartFlashingAnimation] Анимация части {name}");
 
+		Color flashColor = collectCorrectOrb ? correctColor : wrongColor;
 		StartCoroutine(doubleFlashing(flashColor));
 	}
 

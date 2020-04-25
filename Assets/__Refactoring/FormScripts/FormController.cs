@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(FormRotation))]
+[RequireComponent(typeof(FormPartSelection))]
 public class FormController : MonoBehaviour
 {
 	//void Start()
