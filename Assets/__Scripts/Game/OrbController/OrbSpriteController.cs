@@ -31,7 +31,7 @@ public class OrbSpriteController : MonoBehaviour
 		levelUpBonus = _levelUpBonus;
 	}
 
-	public static void setupSprite(ref GameObject orb, OrbTypeDefiner.orbType orbType)
+	public static void setupSprite(GameObject orb, OrbTypeDefiner.orbType orbType)
 	{
 		SpriteRenderer spriteRenderer = orb.GetComponent<SpriteRenderer>();
 

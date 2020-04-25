@@ -19,7 +19,7 @@ public class OrbTypeDefiner : MonoBehaviour
 		bonusThreshold = _bonusThreshold;
 	}
 
-	public static orbType getNewOrbType(ref GameObject orb)
+	public static orbType getNewOrbType(GameObject orb)
 	{
 		OrbBasic orbClass = orb.GetComponent<OrbBasic>();
 		Destroy(orbClass);

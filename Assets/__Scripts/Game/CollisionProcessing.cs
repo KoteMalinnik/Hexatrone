@@ -29,12 +29,12 @@ public class CollisionProcessing : MonoBehaviour
 	{
 		yield return new WaitForEndOfFrame();
 
-		Debug.Log("[OrbCollisionProcessing] Обработка столкновения");
+		//Debug.Log("[CollisionProcessing] Обработка столкновения");
 
 		checkCollisions();
 		removeCollisions();
 
-		OrbController.setupObject(ref orb);
+		OrbController.setupObject();
 
 		coroutine = null;
 	}
@@ -45,7 +45,7 @@ public class CollisionProcessing : MonoBehaviour
 
 		if (collisions[1] == null)
 		{
-			Debug.Log("[OrbCollisionProcessing] Единственное столкновение");
+			//Debug.Log("[CollisionProcessing] Единственное столкновение");
 
 			if (checkColor(collisions[0]))
 			{
@@ -55,25 +55,25 @@ public class CollisionProcessing : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("[OrbCollisionProcessing] Двойное столкновение.");
+			//Debug.Log("[CollisionProcessing] Двойное столкновение.");
 
 			if (checkColor(collisions[0]))
 			{
 				//совпадение цвета первой коллизии
-				Debug.Log("[OrbCollisionProcessing] Наилучший вариант - ПЕРВОЕ столкновение.");
+				//Debug.Log("[CollisionProcessing] Наилучший вариант - ПЕРВОЕ столкновение.");
 				return;
 			}
 
 			if (checkColor(collisions[1]))
 			{
 				// совпадение цвета второй коллизии
-				Debug.Log("[OrbCollisionProcessing] Наилучший вариант - ВТОРОЕ столкновение.");
+				//Debug.Log("[CollisionProcessing] Наилучший вариант - ВТОРОЕ столкновение.");
 				return;
 			}
 		}
 
 		//отсутствие совпадений
-		Debug.Log("[OrbCollisionProcessing] Отсутствие совпадений.");
+		//Debug.Log("[CollisionProcessing] Отсутствие совпадений.");
 		collisions[0].GetComponent<PartFlashingAnimation>().animate(Color.black);
 	}
 
@@ -84,12 +84,12 @@ public class CollisionProcessing : MonoBehaviour
 
 		if(orbColor == collisionColor)
 		{
-			Debug.Log($"[OrbCollisionProcessing] Совпадение цветов c ({collision.name}).");
+			//Debug.Log($"[CollisionProcessing] Совпадение цветов c ({collision.name}).");
 			collision.GetComponent<PartFlashingAnimation>().animate(Color.white);
 			return true;
 		}
 
-		Debug.Log($"[OrbCollisionProcessing] Цвета не совпали c ({collision.name}).");
+		//Debug.Log($"[CollisionProcessing] Цвета не совпали c ({collision.name}).");
 		return false;
 	}
 

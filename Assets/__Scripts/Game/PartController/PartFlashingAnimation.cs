@@ -18,7 +18,7 @@ public class PartFlashingAnimation : MonoBehaviour
 
 	public void animate(Color flashColor)
 	{
-		Debug.Log($"[FlashingAnimation] Анимация части {name}");
+		//Debug.Log($"[PartFlashingAnimation] Анимация части {name}");
 
 		StartCoroutine(doubleFlashing(flashColor));
 	}
