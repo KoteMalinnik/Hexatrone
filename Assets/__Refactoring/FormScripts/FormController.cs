@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(FormRotation))]
 [RequireComponent(typeof(FormPartSelection))]
+[RequireComponent(typeof(FormInitialiser))]
 public class FormController : MonoBehaviour
 {
 	//void Start()
