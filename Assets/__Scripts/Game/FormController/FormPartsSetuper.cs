@@ -14,6 +14,8 @@ public class FormPartsSetuper : MonoBehaviour
 
 	public static void setupFormParts(GameObject form)
 	{
+		if (colors == null) return;
+
 		Debug.Log($"[FormPartsSetuper] Настройка частей формы {form.name}");
 
 		Transform formTransform = form.transform;

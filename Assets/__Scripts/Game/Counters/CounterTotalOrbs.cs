@@ -6,7 +6,7 @@ public static class CounterTotalOrbs
 	public static void setValue(int newValue)
 	{
 		value = newValue;
-		Debug.Log("[CounterTotalOrbs] Установка значения " + value);
+		Debug.Log("[CounterTotalOrbs] Общее количество сфер: " + value);
 	}
 
 	public static void incrementValue(int delta = 1) { setValue(value + delta); }

@@ -12,12 +12,13 @@ public class OnGameLevelLoad : MonoBehaviour
 {
 	void Awake()
 	{
-		Debug.Log("[OnGameLevelLoad] Установка значений счетчиков");
+		Debug.Log("[OnGameLevelLoad] <color=yellow>Установка стартовых значений.</color>");
 
-		FormLevel.setLevel(0);
-
-		CounterCriticalOrbs.setValue(5);
-		CounterOrbsAtFormLevel.setValue(0);
 		CounterTotalOrbs.setValue(0);
+	}
+
+	void Start()
+	{
+		FormLevel.setLevel(0);
 	}
 }

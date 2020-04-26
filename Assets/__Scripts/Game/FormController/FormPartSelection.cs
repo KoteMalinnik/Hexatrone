@@ -2,8 +2,6 @@
 
 public static class FormPartSelection
 {
-	readonly static Transform objTransform = FormController.cachedTransform;
-
 	/// <summary>
 	/// Calculate angle and rotate form.
 	/// </summary>
@@ -13,6 +11,7 @@ public static class FormPartSelection
 		if (FormRotation.rotating) return;
 
 		Debug.Log("[PartSelection] Рассчитать угол поворота.");
+		Transform objTransform = FormController.cachedTransform;
 
 		//Преобразование локального угла поворота части формы таким образом,
 		//что если это левая часть, то ее локальный угол поворота будет отрицательным в пределах [0; -180]

@@ -25,11 +25,11 @@ public static class FormRotation
 		FormController.instance.StartCoroutine(rotation(angleY, angleZ));
 	}
 
-	readonly static Transform objTransform = FormController.cachedTransform;
 	static IEnumerator rotation(float angleY, float angleZ)
 	{
 		rotating = true;
 
+		Transform objTransform = FormController.cachedTransform;
 		var targetRotation = Quaternion.Euler(0.0f, angleY, angleZ);
 
 		for (float T = 0.00f; Quaternion.Angle(objTransform.rotation, targetRotation) > 0.1f ; T += animationSpeed * Time.deltaTime)

@@ -27,6 +27,8 @@ public class FormController : MonoBehaviour
 
 		form = newForm;
 
+		if(cachedTransform.localRotation.eulerAngles.y < 10) cachedTransform.localRotation = Quaternion.Euler(0, 90, 0);
+
 		FormPartsSetuper.setupFormParts(form);
 
 		form.name = $"Form_{FormLevel.level}";

@@ -7,7 +7,8 @@ public static class FormDestroyer
 	{
 		if(form == null)
 		{
-			Debug.Log($"[FormDestroyer] Форма отсутствует.");
+			//Инициализируем форму, если она null в FormController.form
+			FormInitialiser.initialiseObject(FormLevel.level);
 			return;
 		}
 

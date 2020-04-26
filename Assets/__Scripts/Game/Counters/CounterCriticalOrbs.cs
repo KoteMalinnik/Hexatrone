@@ -12,7 +12,7 @@ public static class CounterCriticalOrbs
 	public static void setValue(int newValue)
 	{
 		value = newValue;
-		Debug.Log("[CounterCriticalOrbs] Установка значения " + value);
+		Debug.Log("[CounterCriticalOrbs] Критическое количество сфер: " + value);
 	}
 
 	public static void incrementValue(int delta = 1) { setValue(value + delta); }
