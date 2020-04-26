@@ -16,4 +16,5 @@ public static class CounterCriticalOrbs
 	}
 
 	public static void incrementValue(int delta = 1) { setValue(value + delta); }
+	public static void decrementValue(int delta = 1) { setValue(value - delta); }
 }
