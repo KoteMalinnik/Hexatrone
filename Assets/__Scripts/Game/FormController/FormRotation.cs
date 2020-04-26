@@ -25,20 +25,20 @@ public static class FormRotation
 		FormController.instance.StartCoroutine(rotation(angleY, angleZ));
 	}
 
+	readonly static Transform objTransform = FormController.cachedTransform;
 	static IEnumerator rotation(float angleY, float angleZ)
 	{
 		rotating = true;
 
-		var cachedTransform = FormController.cachedTransform;
 		var targetRotation = Quaternion.Euler(0.0f, angleY, angleZ);
 
-		for (float T = 0.00f; Quaternion.Angle(cachedTransform.rotation, targetRotation) > 0.1f ; T += animationSpeed * Time.deltaTime)
+		for (float T = 0.00f; Quaternion.Angle(objTransform.rotation, targetRotation) > 0.1f ; T += animationSpeed * Time.deltaTime)
 		{
-			cachedTransform.rotation = Quaternion.Lerp(cachedTransform.rotation, targetRotation, T);
+			objTransform.rotation = Quaternion.Lerp(objTransform.rotation, targetRotation, T);
 			yield return new WaitForEndOfFrame();
 		}
 
-		cachedTransform.rotation = targetRotation;
+		objTransform.rotation = targetRotation;
 		rotating = false;
 		Debug.Log($"[RotationAnimaton] Вращение завершено");
 	}

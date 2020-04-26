@@ -26,6 +26,9 @@ public class FormController : MonoBehaviour
 		}
 
 		form = newForm;
+
+		FormPartsSetuper.setupFormParts(form);
+
 		form.name = $"Form_{FormLevel.level}";
 
 		form.transform.parent = cachedTransform;

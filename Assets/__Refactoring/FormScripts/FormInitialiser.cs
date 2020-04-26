@@ -2,15 +2,13 @@
 
 public static class FormInitialiser
 {
-	public static void initialiseObject(int formLevel)
+	public static void initialiseObject(int formLevel = 0)
 	{
 		Debug.Log($"[FormInitialiser] Инициализация формы уровня {formLevel}.");
 
 		var prefab = loadPrefab(formLevel);
-		
 		GameObject obj = MonoBehaviour.Instantiate(prefab, Vector3.zero, Quaternion.Euler(0,90,0));
 
-		FormPartsSetuper.setupFormParts(obj);
 		FormController.setForm(obj);
 	}
 

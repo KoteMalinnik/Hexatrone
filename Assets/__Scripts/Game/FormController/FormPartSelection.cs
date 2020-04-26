@@ -2,6 +2,8 @@
 
 public static class FormPartSelection
 {
+	readonly static Transform objTransform = FormController.cachedTransform;
+
 	/// <summary>
 	/// Calculate angle and rotate form.
 	/// </summary>
@@ -11,8 +13,6 @@ public static class FormPartSelection
 		if (FormRotation.rotating) return;
 
 		Debug.Log("[PartSelection] Рассчитать угол поворота.");
-
-		var cachedTransform = FormController.cachedTransform;
 
 		//Преобразование локального угла поворота части формы таким образом,
 		//что если это левая часть, то ее локальный угол поворота будет отрицательным в пределах [0; -180]
@@ -24,11 +24,11 @@ public static class FormPartSelection
 
 		//Преобразование глобального угла поворота формы таким образом,
 		//что если условный нос формы лежит левее Vector2.up, то он положительный в пределах [0; 180]
-		float rotation = cachedTransform.localRotation.eulerAngles.z;
+		float rotation = objTransform.localRotation.eulerAngles.z;
 		if (rotation > 180) rotation -= 360;
 
 		//вектор направления от формы к сфере
-		Vector2 directionToOrb = OrbController.orbTransform.position - cachedTransform.position;
+		Vector2 directionToOrb = OrbController.orbTransform.position - objTransform.position;
 		//угло между вектором направления и Vector2.Up. Положительный в левой части
 		float alpha = Vector2.SignedAngle(Vector2.up, directionToOrb);
 
