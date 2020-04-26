@@ -1,13 +1,7 @@
 ﻿using UnityEngine;
 
-public class FormPartSelection : MonoBehaviour
+public static class FormPartSelection
 {
-	static Transform cachedTransform = null;
-	void Awake()
-	{
-		cachedTransform = transform;
-	}
-
 	/// <summary>
 	/// Calculate angle and rotate form.
 	/// </summary>
@@ -17,6 +11,8 @@ public class FormPartSelection : MonoBehaviour
 		if (FormRotation.rotating) return;
 
 		Debug.Log("[PartSelection] Рассчитать угол поворота.");
+
+		var cachedTransform = FormController.cachedTransform;
 
 		//Преобразование локального угла поворота части формы таким образом,
 		//что если это левая часть, то ее локальный угол поворота будет отрицательным в пределах [0; -180]

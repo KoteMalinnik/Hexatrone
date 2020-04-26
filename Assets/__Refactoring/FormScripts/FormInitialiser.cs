@@ -1,31 +1,23 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(FormPartsSetuper))]
-public class FormInitialiser : MonoBehaviour
+public static class FormInitialiser
 {
-	[SerializeField]
+	public static void initialiseObject(int formLevel)
+	{
+		Debug.Log($"[FormInitialiser] Инициализация формы уровня {formLevel}.");
+
+		var prefab = loadPrefab(formLevel);
+		
+		GameObject obj = MonoBehaviour.Instantiate(prefab, Vector3.zero, Quaternion.Euler(0,90,0));
+
+		FormPartsSetuper.setupFormParts(obj);
+		FormController.setForm(obj);
+	}
+
 	/// <summary>
 	/// Имя префаба в папке Resources\Prefabs
 	/// </summary>
-	string _prefabName = "Form";
-	static string prefabName;
-
-	void Awake()
-	{
-		prefabName = _prefabName;
-	}
-
-	public static void initialiseObject(int formLevel)
-	{
-		Debug.LogError($"[FormInitialiser] Инициализация формы уровня {formLevel}.");
-
-		var prefab = loadPrefab(formLevel);
-
-		GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-
-		FormPartsSetuper.setupFormParts(ref obj);
-		FormController.setForm(ref obj);
-	}
+	static string prefabName = "Form";
 
 	/// <summary>
 	/// Загрузить префаб из папки Resources\Prefabs

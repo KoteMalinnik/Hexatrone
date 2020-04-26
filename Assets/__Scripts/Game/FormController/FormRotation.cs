@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Form rotation.
 /// </summary>
-public class FormRotation : MonoBehaviour
+public static class FormRotation
 {
 	/// <summary>
 	/// Показывает, вращается ли форма в данный момент
@@ -12,18 +12,7 @@ public class FormRotation : MonoBehaviour
 	/// <value><c>true</c> if rotation state; otherwise, <c>false</c>.</value>
 	public static bool rotating {get; private set; } = false;
 
-	[SerializeField, Range(0.01f, 10f)]
-	float _animationSpeed = 1f;
-	static float animationSpeed = 1f;
-
-	static FormRotation instance = null;
-	static Transform cachedTransform = null;
-	void Awake()
-	{
-		instance = this;
-		cachedTransform = transform;
-		animationSpeed = _animationSpeed;
-	}
+	static float animationSpeed = 5;
 
 	/// <summary>
 	/// Rotates the form.
@@ -33,13 +22,14 @@ public class FormRotation : MonoBehaviour
 	public static void rotate(float angleY, float angleZ = 0)
 	{
 		Debug.Log($"[RotationAnimaton] Вращение");
-		instance.StartCoroutine(rotation(angleY, angleZ));
+		FormController.instance.StartCoroutine(rotation(angleY, angleZ));
 	}
 
 	static IEnumerator rotation(float angleY, float angleZ)
 	{
 		rotating = true;
 
+		var cachedTransform = FormController.cachedTransform;
 		var targetRotation = Quaternion.Euler(0.0f, angleY, angleZ);
 
 		for (float T = 0.00f; Quaternion.Angle(cachedTransform.rotation, targetRotation) > 0.1f ; T += animationSpeed * Time.deltaTime)

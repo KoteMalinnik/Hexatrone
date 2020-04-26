@@ -6,13 +6,21 @@
 
 public static class FormLevel
 {
-	public static int level { get; private set; } = 0;
+	/// <summary>
+	/// Gets the level. Minimum level is 0, maximum level is 5
+	/// </summary>
+	/// <value>The level.</value>
+	public static int level { get; private set; } = 1;
 	public static void setLevel(int newLevel)
 	{
-		level = newLevel;
-		Debug.Log($"[FormController] Установка уровеня формы: {level}");
+		if (level > 5) return; //Если уровень максимальный, то ничего делать не надо
 
-		FormInitialiser.initialiseObject(level);
+		if (level < 0) level = 0;
+
+		level = newLevel;
+		Debug.Log($"[FormController] Установка уровня формы: {level}");
+
+		FormDestroyer.destroyObject(FormController.form);
 
 		CounterCriticalOrbs.setValue(5);
 		CounterOrbsAtFormLevel.setValueToLevelUp(level);

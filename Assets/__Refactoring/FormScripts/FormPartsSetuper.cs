@@ -9,9 +9,10 @@ public class FormPartsSetuper : MonoBehaviour
 	void Awake()
 	{
 		colors = _colors;
+		Destroy(this);
 	}
 
-	public static void setupFormParts(ref GameObject form)
+	public static void setupFormParts(GameObject form)
 	{
 		Debug.Log($"[FormPartsSetuper] Настройка частей формы {form.name}");
 

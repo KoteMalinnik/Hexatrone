@@ -15,19 +15,26 @@ public class test : MonoBehaviour
 	KeyCode keyDown_4 = KeyCode.None;
 
 
-	void Update()
-	{
-		if (Input.GetKeyDown(keyDown_1)) method();
+	//void Update()
+	//{
+	//	if (Input.GetKeyDown(keyDown_1)) method();
 
-		if (Input.GetKeyDown(keyDown_2)) Debug.Log(keyDown_2);
+	//	if (Input.GetKeyDown(keyDown_2)) Debug.Log(keyDown_2);
 
-		if (Input.GetKeyDown(keyDown_3)) Debug.Log(keyDown_3);
+	//	if (Input.GetKeyDown(keyDown_3)) Debug.Log(keyDown_3);
 
-		if (Input.GetKeyDown(keyDown_4)) Debug.Log(keyDown_4);
-	}
+	//	if (Input.GetKeyDown(keyDown_4)) Debug.Log(keyDown_4);
+	//}
 
 	void method()
 	{
 		Debug.Log("method");
 	}
+
+	void Start()
+	{
+		GameObject obj = GameObject.Find("Form_0").gameObject;
+		FormDestroyer.destroyObject(obj);
+	}
+
 }

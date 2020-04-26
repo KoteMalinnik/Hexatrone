@@ -27,7 +27,7 @@ public class OrbGenerator : MonoBehaviour
 		GameObject obj = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
 		obj.transform.parent = transform;
 
-		OrbController.setOrb(ref obj);
+		OrbController.setOrb(obj);
 		Destroy(this);
 	}
 

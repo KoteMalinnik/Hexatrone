@@ -9,7 +9,7 @@ public sealed class OrbController : MonoBehaviour
 {
 	public static GameObject orb { get; private set; } = null;
 	public static Transform orbTransform { get; private set; } = null;
-	public static void setOrb(ref GameObject newOrb)
+	public static void setOrb(GameObject newOrb)
 	{
 		orb = newOrb;
 		orbTransform = orb.transform;

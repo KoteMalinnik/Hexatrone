@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(FormRotation))]
-[RequireComponent(typeof(FormPartSelection))]
-[RequireComponent(typeof(FormInitialiser))]
 
 /*
  * РЕФАКТОРИТЬ 
@@ -10,15 +7,17 @@
 
 public class FormController : MonoBehaviour
 {
-	static Transform cachedTransform = null;
+	public static FormController instance { get; private set;} = null;
+	public static Transform cachedTransform { get; private set; } = null;
 	void Awake()
 	{
+		instance = this;
 		cachedTransform = transform;
 	}
 
 	//объект формы
 	public static GameObject form { get; private set; } = null;
-	public static void setForm(ref GameObject newForm)
+	public static void setForm(GameObject newForm)
 	{
 		if (newForm == null)
 		{
@@ -31,7 +30,6 @@ public class FormController : MonoBehaviour
 
 		form.transform.parent = cachedTransform;
 		form.transform.localPosition = Vector3.zero;
-		cachedTransform.localRotation = Quaternion.Euler(0, 90, 0); //Поворот перпендикулярно камере
 
 		FormRotation.rotate(0);
 	}
