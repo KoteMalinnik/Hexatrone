@@ -17,6 +17,7 @@ public class OrbTypeDefiner : MonoBehaviour
 	void Awake()
 	{
 		bonusThreshold = _bonusThreshold;
+		Destroy(this);
 	}
 
 	public static orbType getNewOrbType(GameObject orb)

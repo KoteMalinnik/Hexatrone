@@ -13,12 +13,12 @@ public static class FormLevel
 	public static int level { get; private set; } = 0;
 	public static void setLevel(int newLevel)
 	{
-		if (level > 5) return; //Если уровень максимальный, то ничего делать не надо
+		if (newLevel > 5) return; //Если уровень максимальный, то ничего делать не надо
 
-		if (level < 0)
+		if (newLevel < 0)
 		{
 			Debug.Log("[FormLevel] <color=red>Конец игры!</color>");
-			Debug.Break();
+			return;
 		}
 
 		Debug.Log($"[FormLevel] Установка уровня формы: {level}");
@@ -29,7 +29,7 @@ public static class FormLevel
 
 	static void newLevelEvent()
 	{
-		FormDestroyer.destroyObject(FormController.form);
+		if(FormController.instance != null) FormDestroyer.destroyObject(FormController.form);
 
 		CounterCriticalOrbs.setValue(5);
 		CounterOrbsAtFormLevel.setValueToLevelUp(level);
@@ -37,13 +37,13 @@ public static class FormLevel
 
 	public static void levelUpEvent()
 	{
-		Debug.Log("[FormLevel] Уровень повышен!");
+		if(level < 5) Debug.Log("[FormLevel] Уровень повышен!");
 		setLevel(level + 1);
 	}
 
 	public static void levelDownEvent()
 	{
-		Debug.Log("[FormLevel] Уровень понижен!");
+		if (level > 0) Debug.Log("[FormLevel] Уровень понижен!");
 		setLevel(level - 1);
 	}
 }

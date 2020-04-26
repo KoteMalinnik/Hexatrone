@@ -29,6 +29,7 @@ public class OrbSpriteController : MonoBehaviour
 		deltaBonus = _deltaBonus;
 		criticalBonus = _criticalBonus;
 		levelUpBonus = _levelUpBonus;
+		Destroy(this);
 	}
 
 	public static void setupSprite(GameObject orb, OrbTypeDefiner.orbType orbType)

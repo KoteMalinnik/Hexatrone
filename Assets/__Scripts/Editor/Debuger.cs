@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
-using System;
 
 public class Debuger : EditorWindow
 {
@@ -10,25 +7,30 @@ public class Debuger : EditorWindow
 	public static void showDebuger()
 	{
 		Debug.Log("[Debuger] Окно дебагера открыто.");
-		GetWindow<Debuger>(false, "Debuger", true);
+		Debuger window = GetWindow<Debuger>(false, "Debuger", true);
 	}
 
 	void OnGUI()
 	{
-		GUILayout.MinHeight(100);
+		DisplayLevelData();
+		DisplayCountersData();
+	}
 
+	void DisplayLevelData()
+	{
 		GUILayout.Box("Уровень формы");
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("+", GUILayout.Width(20))) FormLevel.levelUpEvent();
 		if (GUILayout.Button("0", GUILayout.Width(20))) FormLevel.setLevel(0);
 		if (GUILayout.Button("-", GUILayout.Width(20))) FormLevel.levelDownEvent();
-		GUILayout.Label(CounterTotalOrbs.value.ToString(), GUILayout.MaxWidth(40));
+		GUILayout.Label(FormLevel.level.ToString(), GUILayout.MaxWidth(40));
 		GUILayout.EndHorizontal();
 
-
 		GUILayout.Space(10);
+	}
 
-
+	void DisplayCountersData()
+	{
 		GUILayout.Box("Счетчики количества сфер");
 		GUILayout.Space(5);
 
@@ -59,5 +61,7 @@ public class Debuger : EditorWindow
 		if (GUILayout.Button("-", GUILayout.Width(20))) CounterCriticalOrbs.decrementValue();
 		GUILayout.Label($"{CounterCriticalOrbs.value}/5", GUILayout.MaxWidth(40));
 		GUILayout.EndHorizontal();
+
+		GUILayout.Space(10);
 	}
 }
