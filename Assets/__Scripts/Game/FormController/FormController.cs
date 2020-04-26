@@ -1,10 +1,5 @@
 ﻿using UnityEngine;
 
-
-/*
- * РЕФАКТОРИТЬ 
- */
-
 public class FormController : MonoBehaviour
 {
 	public static FormController instance { get; private set;} = null;
