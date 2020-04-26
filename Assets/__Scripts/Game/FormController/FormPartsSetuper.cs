@@ -4,7 +4,7 @@ public class FormPartsSetuper : MonoBehaviour
 {
 	[SerializeField]
 	Color[] _colors = new Color[8];
-	static Color[] colors;
+	public static Color[] colors { get; private set; }
 
 	void Awake()
 	{

@@ -20,5 +20,6 @@ public class OnGameLevelLoad : MonoBehaviour
 	void Start()
 	{
 		FormLevel.setLevel(0);
+		Destroy(gameObject);
 	}
 }

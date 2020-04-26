@@ -21,6 +21,6 @@ public sealed class OrbController : MonoBehaviour
 		OrbTypeDefiner.orbType orbType = OrbTypeDefiner.getNewOrbType(orb);
 
 		OrbSpriteController.setupSprite(orb, orbType);
-		OrbSpawnController.setupPosition(orb.transform);
+		OrbSpawnPositionController.setupPosition(orb.transform);
 	}
 }
