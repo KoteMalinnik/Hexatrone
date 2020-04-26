@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionProcessing : MonoBehaviour
+public static class CollisionProcessing
 {
-	static CollisionProcessing instance = null;
 	static GameObject orb = null;
-	void Awake()
-	{
-		instance = this;
-		removeCollisions();
-	}
 
 	static Collider2D[] collisions = new Collider2D[2];
 	public static void addCollision(Collider2D newCollision, GameObject collisedOrb)
@@ -17,7 +11,7 @@ public class CollisionProcessing : MonoBehaviour
 		if (coroutine == null)
 		{
 			orb = collisedOrb;
-			coroutine = instance.StartCoroutine(waitForEndOfFrame());
+			coroutine = FormController.instance.StartCoroutine(waitForEndOfFrame());
 		}
 
 		if (collisions[0] == null) collisions[0] = newCollision;
@@ -29,7 +23,7 @@ public class CollisionProcessing : MonoBehaviour
 	{
 		yield return new WaitForEndOfFrame();
 
-		//Debug.Log("[CollisionProcessing] Обработка столкновения");
+		Debug.Log("[CollisionProcessing] Обработка столкновения");
 
 		checkCollisions();
 		removeCollisions();
@@ -45,7 +39,7 @@ public class CollisionProcessing : MonoBehaviour
 
 		if (collisions[1] == null)
 		{
-			//Debug.Log("[CollisionProcessing] Единственное столкновение");
+			Debug.Log("[CollisionProcessing] Единственное столкновение");
 
 			if (checkColor(collisions[0]))
 			{
@@ -55,25 +49,18 @@ public class CollisionProcessing : MonoBehaviour
 		}
 		else
 		{
-			//Debug.Log("[CollisionProcessing] Двойное столкновение.");
+			Debug.Log("[CollisionProcessing] Двойное столкновение.");
 
-			if (checkColor(collisions[0]))
+			if (checkColor(collisions[0]) || checkColor(collisions[1]))
 			{
-				//совпадение цвета первой коллизии
-				//Debug.Log("[CollisionProcessing] Наилучший вариант - ПЕРВОЕ столкновение.");
-				return;
-			}
-
-			if (checkColor(collisions[1]))
-			{
-				// совпадение цвета второй коллизии
-				//Debug.Log("[CollisionProcessing] Наилучший вариант - ВТОРОЕ столкновение.");
+				//совпадение цвета
+				Debug.Log("[CollisionProcessing] Наилучший вариант найден.");
 				return;
 			}
 		}
 
 		//отсутствие совпадений
-		//Debug.Log("[CollisionProcessing] Отсутствие совпадений.");
+		Debug.Log("[CollisionProcessing] Отсутствие совпадений.");
 		collisions[0].GetComponent<PartFlashingAnimation>().animate(false);
 	}
 
