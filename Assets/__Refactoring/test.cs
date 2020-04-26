@@ -14,5 +14,4 @@ public class test : MonoBehaviour
 	//	Debug.Log("method");
 	//	FormDestroyer.destroyObject(FormController.form);
 	//}
-
 }
