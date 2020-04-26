@@ -22,5 +22,6 @@ public sealed class OrbController : MonoBehaviour
 
 		OrbSpriteController.setupSprite(orb, orbType);
 		OrbSpawnPositionController.setupPosition(orb.transform);
+		OrbColorSetuper.setupColor(orb);
 	}
 }
