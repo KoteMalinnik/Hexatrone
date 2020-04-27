@@ -2,10 +2,12 @@
 
 public class SoundManager : AudioManager
 {
-	/// <summary>
-	/// The sound audio source.
-	/// </summary>
-	static AudioSource audioSource = null;
+	public static SoundManager instance { get; private set; } = null;
+	void Awake()
+	{
+		instance = this;
+		audioSource = setupAudioSource(volume: 0.3f, loop: false, playOnAwake: false);
+	}
 
 	[SerializeField]
 	AudioClip CollectCorrectOrb = null;
@@ -30,11 +32,6 @@ public class SoundManager : AudioManager
 
 	[SerializeField]
 	AudioClip clickGUI = null;
-
-	void Awake()
-	{
-		setupAudioSource(audioSource: ref audioSource, volume: 1, loop: false, playOnAwake: false);
-	}
 
 	/// <summary>
 	/// Plays the sound by the key.
@@ -84,20 +81,5 @@ public class SoundManager : AudioManager
 	void playOneShot(AudioClip audioClip)
 	{
 		audioSource.PlayOneShot(audioClip);
-	}
-
-	/// <summary>
-	/// Gets a value indicating whether this <see cref="T:SoundManager"/> allow audio.
-	/// </summary>
-	/// <value><c>true</c> if allow audio; otherwise, <c>false</c>.</value>
-	public static bool allowAudio { get; private set; } = true;
-
-	/// <summary>
-	/// Sets the state of the audio.
-	/// </summary>
-	/// <param name="allowAudio">If set to <c>true</c> allow audio.</param>
-	public static void setAudioState(bool allowAudio)
-	{
-		SoundManager.allowAudio = allowAudio;
 	}
 }

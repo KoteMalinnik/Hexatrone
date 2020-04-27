@@ -17,18 +17,18 @@ public static class Serialization
 		Debug.Log("Загрузка параметров из PlayerPrefs");
 
 		var musicState = loadValue(key_musicStatement, true);
-		MusicManager.setAudioState(musicState);
+		MusicManager.instance.setAudioState(musicState);
 
 		var soundState = loadValue(key_soundStatement, true);
-		MusicManager.setAudioState(soundState);
+		SoundManager.instance.setAudioState(soundState);
 	}
 
 	public static void saveAllParametrs()
 	{
 		Debug.Log("Сохранение параметров в PlayerPrefs");
 
-		saveValue(key_soundStatement, SoundManager.allowAudio);
-		saveValue(key_musicStatement, MusicManager.allowAudio);
+		if (SoundManager.instance != null) saveValue(key_soundStatement, SoundManager.instance.allowAudio);
+		if (MusicManager.instance != null) saveValue(key_musicStatement, MusicManager.instance.allowAudio);
 	}
 
 	/// <summary>
