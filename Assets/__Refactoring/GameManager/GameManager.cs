@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
 	}
 	public GameMode gamemode { get; set;}
 
-	public bool QuitMessageToggle { get; set; } //галочка для скрытия сообщения о выходе
-
 	public int level { get; set; }
 
 	void Start()
