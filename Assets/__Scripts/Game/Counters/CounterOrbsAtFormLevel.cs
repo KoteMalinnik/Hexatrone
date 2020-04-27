@@ -13,14 +13,15 @@ public static class CounterOrbsAtFormLevel
 	{
 		if (newValue < 0) return;
 
+		if(newValue >= valueToLevelUp)
+		{
+			setValue(newValue-valueToLevelUp);
+			FormLevel.levelUpEvent();
+			return;
+		}
+
 		value = newValue;
 		Debug.Log("[CounterOrbsAtFormLevel] Сфер на уровне формы: " + value);
-
-		if(value >= valueToLevelUp)
-		{
-			setValue(value-valueToLevelUp);
-			FormLevel.levelUpEvent();
-		}
 	}
 
 	public static void incrementValue(int delta = 1) { setValue(value + delta); }

@@ -53,8 +53,8 @@ public static class CollisionProcessing
 
 			if (checkColor(collisions[0]) || checkColor(collisions[1]))
 			{
-				OnColorMatch();
 				Debug.Log("[CollisionProcessing] Наилучший вариант найден.");
+				OnColorMatch();
 				return;
 			}
 		}
@@ -85,13 +85,13 @@ public static class CollisionProcessing
 
 	static void OnColorMatch()
 	{
-		Debug.Log("Совпадение цветов!");
+		Debug.Log("[CollisionProcessing] Совпадение цветов!");
 		CountersProcessing.OnColorMatch();
 	}
 
 	static void OnColorMismatch()
 	{
-		Debug.Log("Несовпадение цветов!");
+		Debug.Log("[CollisionProcessing] Несовпадение цветов!");
 		CountersProcessing.OnColorMismatch();
 	}
 }

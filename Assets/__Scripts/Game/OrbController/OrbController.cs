@@ -5,6 +5,7 @@
 /// </summary>
 public sealed class OrbController : MonoBehaviour
 {
+	public static OrbTypeDefiner.orbType orbType { get; private set; } = OrbTypeDefiner.orbType.Basic;
 	public static GameObject orb { get; private set; } = null;
 	public static Transform orbTransform { get; private set; } = null;
 	public static void setOrb(GameObject newOrb)
@@ -16,7 +17,7 @@ public sealed class OrbController : MonoBehaviour
 
 	public static void setupObject()
 	{
-		OrbTypeDefiner.orbType orbType = OrbTypeDefiner.getNewOrbType(orb);
+		orbType = OrbTypeDefiner.getNewOrbType(orb);
 
 		OrbSpriteController.setupSprite(orb, orbType);
 		OrbSpawnPositionController.setupPosition(orb.transform);
