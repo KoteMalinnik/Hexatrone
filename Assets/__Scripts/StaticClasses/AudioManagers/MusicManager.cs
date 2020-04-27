@@ -15,7 +15,7 @@ public class MusicManager : AudioManager
 
 		if (musicClip == null) musicClip = (AudioClip)Resources.Load("Audio/Music/mainTheme");
 
-		audioSource = setupAudioSource(volume: 0.5f, loop: true, playOnAwake: false, clip: musicClip);
+		audioSource = setupAudioSource(volume: 0.3f, loop: true, playOnAwake: false, clip: musicClip);
 	}
 
 	void Start()

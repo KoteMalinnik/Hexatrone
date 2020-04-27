@@ -6,7 +6,7 @@ public class SoundManager : AudioManager
 	void Awake()
 	{
 		instance = this;
-		audioSource = setupAudioSource(volume: 0.3f, loop: false, playOnAwake: false);
+		audioSource = setupAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
 	}
 
 	[SerializeField]
