@@ -1,11 +1,5 @@
 ﻿using UnityEngine;
 
-
-/*
- * РЕФАКТОРИТЬ 
- */
-
-
 public static class CounterOrbsAtFormLevel
 {
 	public static int value { get; private set; } = 0;
