@@ -43,7 +43,7 @@ public static class CollisionProcessing
 
 			if (checkColor(collisions[0]))
 			{
-				//совпадение цвета
+				OnColorMatch();
 				return;
 			}
 		}
@@ -53,13 +53,13 @@ public static class CollisionProcessing
 
 			if (checkColor(collisions[0]) || checkColor(collisions[1]))
 			{
-				//совпадение цвета
+				OnColorMatch();
 				Debug.Log("[CollisionProcessing] Наилучший вариант найден.");
 				return;
 			}
 		}
 
-		//отсутствие совпадений
+		OnColorMismatch();
 		Debug.Log("[CollisionProcessing] Отсутствие совпадений.");
 		collisions[0].GetComponent<PartFlashingAnimation>().animate(false);
 	}
@@ -71,12 +71,9 @@ public static class CollisionProcessing
 
 		if(orbColor == collisionColor)
 		{
-			//Debug.Log($"[CollisionProcessing] Совпадение цветов c ({collision.name}).");
 			collision.GetComponent<PartFlashingAnimation>().animate(true);
 			return true;
 		}
-
-		//Debug.Log($"[CollisionProcessing] Цвета не совпали c ({collision.name}).");
 		return false;
 	}
 
@@ -84,5 +81,17 @@ public static class CollisionProcessing
 	{
 		collisions[0] = null;
 		collisions[1] = null;
+	}
+
+	static void OnColorMatch()
+	{
+		Debug.Log("Совпадение цветов!");
+		CountersProcessing.OnColorMatch();
+	}
+
+	static void OnColorMismatch()
+	{
+		Debug.Log("Несовпадение цветов!");
+		CountersProcessing.OnColorMismatch();
 	}
 }

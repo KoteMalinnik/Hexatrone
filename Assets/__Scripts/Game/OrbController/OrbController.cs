@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(OrbSpriteController))]
-[RequireComponent(typeof(OrbTypeDefiner))]
 /// <summary>
 /// Orb controller.
 /// </summary>

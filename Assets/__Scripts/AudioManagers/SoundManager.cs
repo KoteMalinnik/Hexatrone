@@ -36,36 +36,38 @@ public class SoundManager : AudioManager
 	/// <summary>
 	/// Plays the sound by the key.
 	/// </summary>
-	/// <param name="key">0-CollectCorrectOrb. 1-CollectWrongOrb. 2-CollectBaff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved. 7-clickGUI.</param>
-	public void playSound(int key)
+	/// <param name="key">0-CorrectOrb. 1-WrongOrb. 2-Baff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved. 7-clickGUI.</param>
+	public static void playSound(int key)
 	{
-		if (allowAudio)
+		if (instance == null) return;
+
+		if (instance.allowAudio)
 		{
 			switch (key)
 			{
 				case 0:
-					playOneShot(CollectCorrectOrb);
+					playOneShot(instance.CollectCorrectOrb);
 					break;
 				case 1:
-					playOneShot(CollectCorrectOrb);
+					playOneShot(instance.CollectWrongOrb);
 					break;
 				case 2:
-					playOneShot(CollectCorrectOrb);
+					playOneShot(instance.CollectBaff);
 					break;
 				case 3:
-					playOneShot(CollectCorrectOrb);
+					playOneShot(instance.levelUp);
 					break;
 				case 4:
-					playOneShot(CollectCorrectOrb);
+					playOneShot(instance.levelDown);
 					break;
 				case 5:
-					playOneShot(gameOver);
+					playOneShot(instance.gameOver);
 					break;
 				case 6:
-					playOneShot(goalAchieved);
+					playOneShot(instance.goalAchieved);
 					break;
 				case 7:
-					playOneShot(clickGUI);
+					playOneShot(instance.clickGUI);
 					break;
 				default:
 					Debug.Log("[SoundManager] Неверный ключ аудио дорожки");
@@ -78,8 +80,8 @@ public class SoundManager : AudioManager
 	/// Plays the audio clip one time.
 	/// </summary>
 	/// <param name="audioClip">Audio clip.</param>
-	void playOneShot(AudioClip audioClip)
+	static void playOneShot(AudioClip audioClip)
 	{
-		audioSource.PlayOneShot(audioClip);
+		instance.audioSource.PlayOneShot(audioClip);
 	}
 }
