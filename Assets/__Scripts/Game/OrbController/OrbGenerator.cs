@@ -2,16 +2,11 @@
 
 [RequireComponent(typeof(OrbController))]
 /// <summary>
-/// Objects Generator.
+/// Генератор сферы.
 /// </summary>
 public class OrbGenerator : MonoBehaviour
 {
-	/// <summary>
-	/// The prefab oject.
-	/// </summary>
-	GameObject prefabOject = null;
-
-	[SerializeField]
+	[SerializeField, Tooltip("Имя префаба в папке Resources/Prefabs/")]
 	/// <summary>
 	/// Имя префаба в папке Resources\Prefabs
 	/// </summary>
@@ -24,7 +19,8 @@ public class OrbGenerator : MonoBehaviour
 
 	void Start()
 	{
-		GameObject obj = Instantiate(prefabOject, Vector3.zero, Quaternion.identity);
+		var prefab = loadPrefab();
+		GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
 		obj.transform.parent = transform;
 
 		OrbController.setOrb(obj);
@@ -32,13 +28,14 @@ public class OrbGenerator : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Загрузить префаб из папки Resources\Prefabs
+	/// Загрузить префаб из ресурсов
 	/// </summary>
-	void loadPrefab()
+	GameObject loadPrefab()
 	{
 		var path = @"Prefabs\" + prefabName;
 		Debug.Log($"<color=yellow>Загрузка префаба {prefabName} по пути {path}</color>");
-		prefabOject = Resources.Load<GameObject>(path);
+		GameObject prefabOject = Resources.Load<GameObject>(path);
+		return prefabOject;
 	}
 
 	void OnDestroy()

@@ -8,10 +8,13 @@
 [RequireComponent(typeof(OrbCollision))]
 [RequireComponent(typeof(SpriteRenderer))]
 /// <summary>
-/// Basic orb.
+/// Базовая сфера.
 /// </summary>
 public class OrbBasic : MonoBehaviour
 {
+	/// <summary>
+	/// Кешированый SpriteRenerer.
+	/// </summary>
 	SpriteRenderer spriteRenerer = null;
 
 	void Awake()
@@ -19,24 +22,32 @@ public class OrbBasic : MonoBehaviour
 		spriteRenerer = GetComponent<SpriteRenderer>();
 	}
 
-
-	public OrbTypeDefiner.orbType type { get; private set; } // !!!!!!!!!допилить
+	/// <summary>
+	/// Тип сферы.
+	/// </summary>
+	public OrbTypeDefiner.orbType type { get; private set; }
 
 	/// <summary>
-	/// Gets or sets the delta. Delta is a value which define deifference of the score on collecting orb
+	/// Установить тип сферы.
+	/// </summary>
+	/// <param name="newType">Тип сферы.</param>
+	public void setType(OrbTypeDefiner.orbType newType) { type = newType; }
+
+	/// <summary>
+	/// Значение дельты. Дельта - это количество очков, которое прибавится или отнимется от счетчиков сфер при столкновении с формой.
 	/// </summary>
 	public int delta { get; protected set; } = 1;
 
 	/// <summary>
-	/// Sets the delta.
+	/// Установить дельту.
 	/// </summary>
-	/// <param name="delta"> delta.</param>
+	/// <param name="delta">Дельта.</param>
 	public void setDelta(int delta) { this.delta = delta; }
 
 	/// <summary>
-	/// Sets the orb color.
+	/// Установить цвет.
 	/// </summary>
-	/// <param name="color">Orb color.</param>
+	/// <param name="color">Цвет.</param>
 	public void setColor(Color color)
 	{
 		if(spriteRenerer == null) Awake();
@@ -45,18 +56,17 @@ public class OrbBasic : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Gets the orb color.
+	/// Получить цвет.
 	/// </summary>
-	/// <returns>Orb color.</returns>
 	public Color getColor()
 	{
 		return spriteRenerer.color;
 	}
 
 	/// <summary>
-	/// Sets the sprite.
+	/// Установить спрайт.
 	/// </summary>
-	/// <param name="sprite">Sprite.</param>
+	/// <param name="sprite">Спрайт.</param>
 	public void setSprite(Sprite sprite)
 	{ 
 		if (spriteRenerer == null) Awake();

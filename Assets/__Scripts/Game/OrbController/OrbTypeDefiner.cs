@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Определитель типа сферы.
+/// </summary>
 public class OrbTypeDefiner : MonoBehaviour
 {
+	/// <summary>
+	/// Типы сфер.
+	/// </summary>
     public enum orbType
 	{
 		Basic,
@@ -12,6 +18,9 @@ public class OrbTypeDefiner : MonoBehaviour
 
 	[SerializeField, Range(0.1f, 1.0f)]
 	float _bonusThreshold = 0.9f;
+	/// <summary>
+	/// Коэффициент появления бонусной сферы. Чем больше значение, тем меньше вероятность появления бонусной сферы.
+	/// </summary>
 	static float bonusThreshold = 0.9f;
 
 	void Awake()
@@ -20,6 +29,10 @@ public class OrbTypeDefiner : MonoBehaviour
 		Destroy(this);
 	}
 
+	/// <summary>
+	/// Сгенерировать тип сферы.
+	/// </summary>
+	/// <param name="orb">Сфера.</param>
 	public static orbType getNewOrbType(GameObject orb)
 	{
 		OrbBasic orbClass = orb.GetComponent<OrbBasic>();

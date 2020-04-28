@@ -4,10 +4,13 @@
 [RequireComponent(typeof(PartMousePressProcessing))]
 [RequireComponent(typeof(PartFlashingAnimation))]
 /// <summary>
-/// Form part controller.
+/// Установщик цвета объекта Part
 /// </summary>
-public class PartController : MonoBehaviour
+public class PartColorSetuper : MonoBehaviour
 {
+	/// <summary>
+	/// Кешированный SpriteRenerer.
+	/// </summary>
 	SpriteRenderer spriteRenderer = null;
 	void Awake()
 	{
@@ -15,9 +18,9 @@ public class PartController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Sets the part color.
+	/// Установить цвет.
 	/// </summary>
-	/// <param name="partColor">Part color.</param>
+	/// <param name="partColor">Новый цвет.</param>
 	public void setPartColor(Color partColor)
 	{
 		if (spriteRenderer == null) Awake();
@@ -25,8 +28,7 @@ public class PartController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Gets the part color.
+	/// Получить цвет.
 	/// </summary>
-	/// <returns>The color.</returns>
 	public Color getColor() { return spriteRenderer.color; }
 }

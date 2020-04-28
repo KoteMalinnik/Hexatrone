@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Установка части формы.
+/// </summary>
 public class FormPartsSetuper : MonoBehaviour
 {
 	[SerializeField]
 	Color[] _colors = new Color[8];
+	/// <summary>
+	/// Цвета частей формы.
+	/// </summary>
 	public static Color[] colors { get; private set; }
 
 	void Awake()
@@ -12,6 +18,10 @@ public class FormPartsSetuper : MonoBehaviour
 		Destroy(this);
 	}
 
+	/// <summary>
+	/// Установить части формы.
+	/// </summary>
+	/// <param name="form">Объект формы.</param>
 	public static void setupFormParts(GameObject form)
 	{
 		if (colors == null) return;
@@ -22,7 +32,7 @@ public class FormPartsSetuper : MonoBehaviour
 
 		for (int i = formTransform.childCount - 1; i >= 0; i--)
 		{
-			var part = formTransform.GetChild(i).GetComponent<PartController>();
+			var part = formTransform.GetChild(i).GetComponent<PartColorSetuper>();
 			part.setPartColor(colors[i]);
 
 			Debug.Log($"[FormPartsSetuper] Часть {part.name} окрашена в цвет.");

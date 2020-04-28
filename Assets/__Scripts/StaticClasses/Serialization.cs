@@ -23,6 +23,9 @@ public static class Serialization
 		SoundManager.instance.setAudioState(soundState);
 	}
 
+	/// <summary>
+	/// Сохранить все параметры
+	/// </summary>
 	public static void saveAllParametrs()
 	{
 		Debug.Log("Сохранение параметров в PlayerPrefs");

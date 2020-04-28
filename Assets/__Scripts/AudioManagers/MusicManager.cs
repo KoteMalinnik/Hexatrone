@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Music manager.
+/// Менеджер музыки.
 /// </summary>
 public class MusicManager : AudioManager
 {
 	[SerializeField]
+	/// <summary>
+	/// Музыка.
+	/// </summary>
 	AudioClip musicClip = null;
 
+	/// <summary>
+	/// Экземпляр.
+	/// </summary>
 	public static MusicManager instance { get; private set; } = null;
+
 	void Awake()
 	{
 		instance = this;
@@ -26,9 +33,9 @@ public class MusicManager : AudioManager
 	}
 
 	/// <summary>
-	/// Sets the state of the audio.
+	/// Установить разрешение проигрывания аудио.
 	/// </summary>
-	/// <param name="allowAudio">If set to <c>true</c> allow audio.</param>
+	/// <param name="allowAudio">Если установить <c>true</c>, то проигрывание аудио будет разрешено.</param>
 	public override void setAudioState(bool allowAudio)
 	{
 		this.allowAudio = allowAudio;
@@ -36,7 +43,7 @@ public class MusicManager : AudioManager
 	}
 
 	/// <summary>
-	/// Switches playing the audio.
+	/// Переключить разрешение проигрывания музыки.
 	/// </summary>
 	void switchAudio()
 	{

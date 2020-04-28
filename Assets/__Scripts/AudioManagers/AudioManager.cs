@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Менеджер аудио.
+/// </summary>
 public abstract class AudioManager : MonoBehaviour
 {
 	/// <summary>
-	/// The audio source.
+	/// Источник аудио.
 	/// </summary>
 	protected AudioSource audioSource = null;
 
     /// <summary>
-    /// Setups the audio source.
+    /// Настроить источник аудио
     /// </summary>
-    /// <param name="volume">Volume.</param>
-    /// <param name="loop">If set to <c>true</c> loop.</param>
-    /// <param name="playOnAwake">If set to <c>true</c> play on awake.</param>
+    /// <param name="volume">Громкость.</param>
+    /// <param name="loop">Если установить <c>true</c>, то проигрывание зациклится.</param>
+    /// <param name="playOnAwake">Если установить <c>true</c>, то начинать проигрывание при пробуждении объекта.</param>
 	protected AudioSource setupAudioSource(float volume, bool loop, bool playOnAwake, AudioClip clip = null)
 	{
 		if (volume < 0) volume = 0;
@@ -28,15 +31,14 @@ public abstract class AudioManager : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Gets a value indicating whether this <see cref="T:AudioManager"/> allow audio.
+	/// Разрешение проигрывания аудио на этом <see cref="T:AudioManager"/>.
 	/// </summary>
-	/// <value><c>true</c> if allow audio; otherwise, <c>false</c>.</value>
 	public bool allowAudio { get; protected set; } = true;
 
 	/// <summary>
-	/// Sets the state of the audio.
+	/// Установить разрешение проигрывания аудио
 	/// </summary>
-	/// <param name="allowAudio">If set to <c>true</c> allow audio.</param>
+	/// <param name="allowAudio">Если установить <c>true</c>, то проигрывание аудио будет разрешено.</param>
 	public virtual void setAudioState(bool allowAudio)
 	{
 		this.allowAudio = allowAudio;

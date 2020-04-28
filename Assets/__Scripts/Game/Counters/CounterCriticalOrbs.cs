@@ -1,8 +1,19 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Счетчик количества критических сфер. Пока количество критических сфер неотрицательно, уровень не будет понижен.
+/// </summary>
 public static class CounterCriticalOrbs
 {
+	/// <summary>
+	/// Значение.
+	/// </summary>
 	public static int value { get; private set; } = 5;
+
+	/// <summary>
+	/// Установить значение.
+	/// </summary>
+	/// <param name="newValue">Новое значение.</param>
 	public static void setValue(int newValue)
 	{
 		if (newValue > 5) return;
@@ -17,6 +28,15 @@ public static class CounterCriticalOrbs
 		Debug.Log("[CounterCriticalOrbs] Критическое количество сфер: " + value);
 	}
 
+	/// <summary>
+	/// Инкрементировать значение.
+	/// </summary>
+	/// <param name="delta">Сколько прибавить.</param>
 	public static void incrementValue(int delta = 1) { setValue(value + delta); }
+
+	/// <summary>
+	/// Декрементировать значение.
+	/// </summary>
+	/// <param name="delta">Сколько отнять.</param>
 	public static void decrementValue(int delta = 1) { setValue(value - delta); }
 }

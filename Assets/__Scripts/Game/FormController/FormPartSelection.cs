@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Управление PartSelection.
+/// </summary>
 public static class FormPartSelection
 {
 	/// <summary>
-	/// Calculate angle and rotate form.
+	/// Рассчитать вращение и повернуть объект.
 	/// </summary>
+	/// <param name="partLocalRotation">Локальное вращение части.</param>
 	public static void calculate(float partLocalRotation)
 	{
 		if (OrbController.orb == null) return;

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Loading indicator rotation.
+/// Вращение объекта с постоянной скоростью.
 /// </summary>
-public class LoadingIndicatorRotation : MonoBehaviour
+public class ObjectRotation : MonoBehaviour
 {
+	/// <summary>
+	/// Кешированный Transform.
+	/// </summary>
 	Transform cachedTransform = null;
 
 	void Awake()
@@ -13,10 +16,13 @@ public class LoadingIndicatorRotation : MonoBehaviour
 	}
 
 	/// <summary>
-	/// The delta angle of rotation Z axies.
+	/// Коэффициент скорости вращения.
 	/// </summary>
 	const float deltaAngle = 150;
 
+	/// <summary>
+	/// Хранит вращение объекта.
+	/// </summary>
 	Vector3 rotation = Vector3.zero;
 
 	void Update()

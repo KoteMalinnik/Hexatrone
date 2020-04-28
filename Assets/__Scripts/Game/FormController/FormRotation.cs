@@ -2,29 +2,36 @@
 using UnityEngine;
 
 /// <summary>
-/// Form rotation.
+/// Вращение формы.
 /// </summary>
 public static class FormRotation
 {
 	/// <summary>
-	/// Показывает, вращается ли форма в данный момент
+	/// Показывает, вращается ли форма в данный момент. True, если корутина вращения запущена.
 	/// </summary>
-	/// <value><c>true</c> if rotation state; otherwise, <c>false</c>.</value>
 	public static bool rotating {get; private set; } = false;
 
+	/// <summary>
+	/// Скорость вращения.
+	/// </summary>
 	static float animationSpeed = 5;
 
 	/// <summary>
-	/// Rotates the form.
+	/// Запустить вращение к требуемому углу.
 	/// </summary>
-	/// <param name="angleY">Angle y.</param>
-	/// <param name="angleZ">Angle z.</param>
+	/// <param name="angleY">Целевой угол по оси Y.</param>
+	/// <param name="angleZ">Целевой угол по оси Z.</param>
 	public static void rotate(float angleY, float angleZ = 0)
 	{
 		Debug.Log($"[RotationAnimaton] Вращение");
 		FormController.instance.StartCoroutine(rotation(angleY, angleZ));
 	}
 
+	/// <summary>
+	/// Корутина вращения формы.
+	/// </summary>
+	/// <param name="angleY">Целевой угол по оси Y.</param>
+	/// <param name="angleZ">Целевой угол по оси Z.</param>
 	static IEnumerator rotation(float angleY, float angleZ)
 	{
 		rotating = true;

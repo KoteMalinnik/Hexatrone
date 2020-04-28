@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Инициализатор объекта формы.
+/// </summary>
 public static class FormInitialiser
 {
+	/// <summary>
+	/// Инициализировать объект формы.
+	/// </summary>
+	/// <param name="formLevel">Уровень формы.</param>
 	public static void initialiseObject(int formLevel = 0)
 	{
 		Debug.Log($"[FormInitialiser] Инициализация формы уровня {formLevel}.");
@@ -13,12 +20,12 @@ public static class FormInitialiser
 	}
 
 	/// <summary>
-	/// Имя префаба в папке Resources\Prefabs
+	/// Имя префаба в папке Resources\Prefabs.
 	/// </summary>
 	static string prefabName = "Form";
 
 	/// <summary>
-	/// Загрузить префаб из папки Resources\Prefabs
+	/// Загрузить префаб из папки ресурсов.
 	/// </summary>
 	static GameObject loadPrefab(int formLevel)
 	{

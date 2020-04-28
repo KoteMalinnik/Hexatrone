@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Orb movement.
+/// Движение сферы.
 /// </summary>
 public class OrbMovement : MonoBehaviour
 {
+	/// <summary>
+	/// Кешированный Transform.
+	/// </summary>
 	Transform cachedTransform = null;
 
 	void Awake()
@@ -14,12 +17,12 @@ public class OrbMovement : MonoBehaviour
 
 	[SerializeField, Range(0.01f, 10f)]
 	/// <summary>
-	/// The movement speed of gameObject.
+	/// Скорость движения.
 	/// </summary>
 	float movementSpeed = 2f;
 
 	/// <summary>
-	/// The target position.
+	/// Целевая позиция движения.
 	/// </summary>
 	readonly Vector3 targetPosition = new Vector3(0, -9, 0);
 

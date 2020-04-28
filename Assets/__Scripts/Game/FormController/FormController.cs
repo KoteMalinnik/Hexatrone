@@ -1,8 +1,18 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Контролер формы.
+/// </summary>
 public class FormController : MonoBehaviour
 {
+	/// <summary>
+	/// Экземпляр.
+	/// </summary>
 	public static FormController instance { get; private set;} = null;
+
+	/// <summary>
+	/// Кешированный Transform.
+	/// </summary>
 	public static Transform cachedTransform { get; private set; } = null;
 	void Awake()
 	{
@@ -10,8 +20,15 @@ public class FormController : MonoBehaviour
 		cachedTransform = transform;
 	}
 
-	//объект формы
+	/// <summary>
+	/// Объект формы.
+	/// </summary>
 	public static GameObject form { get; private set; } = null;
+
+	/// <summary>
+	/// Установить объект формы.
+	/// </summary>
+	/// <param name="newForm">Объект формы.</param>
 	public static void setForm(GameObject newForm)
 	{
 		if (newForm == null)

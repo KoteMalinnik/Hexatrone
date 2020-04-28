@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Mouse button press processing.
+/// Обработчик нажатия на объект Part левой кнопки мыши на ПК или тапа на мобильном устройстве.
 /// </summary>
 public class PartMousePressProcessing : MonoBehaviour
 {
+	/// <summary>
+	/// Кешированный Transform.
+	/// </summary>
 	Transform cachedTransform = null;
 	void Awake()
 	{

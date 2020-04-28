@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Уничтожение существующей формы.
+/// </summary>
 public static class FormDestroyer 
 {
+	/// <summary>
+	/// Уничтожить существующую форму, после чего создать новую. Если форма не существует, то создать ее.
+	/// </summary>
+	/// <param name="form">Объект формы.</param>
 	public static void destroyObject(GameObject form)
 	{
 		if(form == null)
@@ -16,6 +23,10 @@ public static class FormDestroyer
 		FormController.instance.StartCoroutine(destroyAfterRotation(form));
 	}
 
+	/// <summary>
+	/// Корутина уничтожения формы после воспроизведения анимации вращения.
+	/// </summary>
+	/// <param name="form">Объект формы.</param>
 	static IEnumerator destroyAfterRotation(GameObject form)
 	{
 		//Продумать передачу ссылки на объект или затестить, будет ли корутина без ref уничтожать объект
