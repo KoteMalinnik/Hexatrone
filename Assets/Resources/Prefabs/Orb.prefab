@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8597572198325755756}
   - component: {fileID: 2898658339819384213}
   - component: {fileID: 7867184707805853662}
+  - component: {fileID: -171208568964549736}
   m_Layer: 10
   m_Name: Orb
   m_TagString: Orb
@@ -227,5 +228,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbcae82e35a74144b8ebd503f6ca0629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-171208568964549736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009518388849945476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b212df76046d14ab05a2da87d0c666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

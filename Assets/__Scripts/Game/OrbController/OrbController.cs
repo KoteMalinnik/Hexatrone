@@ -6,14 +6,14 @@
 public sealed class OrbController : MonoBehaviour
 {
 	/// <summary>
-	/// Тип сферы.
-	/// </summary>
-	public static OrbTypeDefiner.orbType orbType { get; private set; } = OrbTypeDefiner.orbType.Basic;
-
-	/// <summary>
 	/// Объект сферы.
 	/// </summary>
 	public static GameObject orb { get; private set; } = null;
+
+	/// <summary>
+	/// Тип сферы.
+	/// </summary>
+	public static OrbTypeDefiner.orbType orbType { get; private set; } = OrbTypeDefiner.orbType.Basic;
 
 	/// <summary>
 	/// SpriteRenerer объекта сферы.
@@ -53,7 +53,7 @@ public sealed class OrbController : MonoBehaviour
 	{
 		OrbSpawnPositionController.setupPosition(orbTransform);
 
-		orbType = OrbTypeDefiner.getNewOrbType(orb);
+		orbType = OrbTypeDefiner.getNewOrbType();
 		OrbSpriteController.setupSprite(orbSpriteRenderer, orbType);
 		OrbColorSetuper.setupColor(orbColorSetuper);
 	}

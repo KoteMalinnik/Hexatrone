@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 610006608616935902}
   - component: {fileID: 2691151675440869294}
   - component: {fileID: 2059892315481351743}
-  - component: {fileID: 3721581636255481014}
+  - component: {fileID: 2379842823714554301}
   m_Layer: 9
   m_Name: Part
   m_TagString: Untagged
@@ -140,7 +140,7 @@ MonoBehaviour:
   animationSpeed: 5
   wrongColor: {r: 0, g: 0, b: 0, a: 1}
   correctColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &3721581636255481014
+--- !u!114 &2379842823714554301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,6 +149,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8637975299854216407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f8da8f94004334bb92ce89158e7894, type: 3}
+  m_Script: {fileID: 11500000, guid: d3b212df76046d14ab05a2da87d0c666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

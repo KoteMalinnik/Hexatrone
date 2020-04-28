@@ -32,35 +32,16 @@ public class OrbTypeDefiner : MonoBehaviour
 	/// <summary>
 	/// Сгенерировать тип сферы.
 	/// </summary>
-	/// <param name="orb">Сфера.</param>
-	public static orbType getNewOrbType(GameObject orb)
+	public static orbType getNewOrbType()
 	{
-		OrbBasic orbClass = orb.GetComponent<OrbBasic>();
-		Destroy(orbClass);
-
 		float probability = Random.Range(0.0f, 1.0f);
-		if(probability < bonusThreshold) 
-		{
-			orb.AddComponent<OrbBasic>();
-			return orbType.Basic;
-		}
-			
+
+		if(probability < bonusThreshold) return orbType.Basic;
 
 		probability = Random.Range(0.0f, 1.0f);
 
-		if (probability < 0.5f)
-		{
-			orb.AddComponent<OrbDeltaBonus>();
-			return orbType.DeltaBonus;
-		}
-			
-		if (probability < 0.8f)
-		{
-			orb.AddComponent<OrbCriticalBonus>();
-			return orbType.CriticalBonus;
-		}
-			
-		orb.AddComponent<OrbLevelUpBonus>();
+		if (probability < 0.5f) return orbType.DeltaBonus;
+		if (probability < 0.8f) return orbType.CriticalBonus;
 		return orbType.LevelUpBonus;
 	}
 }
