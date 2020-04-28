@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(PartMousePressProcessing))]
-[RequireComponent(typeof(PartFlashingAnimation))]
 /// <summary>
-/// Установщик цвета объекта Part
+/// Установщик цвета объекта
 /// </summary>
-public class PartColorSetuper : MonoBehaviour
+public class ColorSetuper : MonoBehaviour
 {
 	/// <summary>
 	/// Кешированный SpriteRenerer.
@@ -20,11 +18,11 @@ public class PartColorSetuper : MonoBehaviour
 	/// <summary>
 	/// Установить цвет.
 	/// </summary>
-	/// <param name="partColor">Новый цвет.</param>
-	public void setPartColor(Color partColor)
+	/// <param name="newColor">Новый цвет.</param>
+	public void setColor(Color newColor)
 	{
 		if (spriteRenderer == null) Awake();
-		spriteRenderer.color = partColor;
+		spriteRenderer.color = newColor;
 	}
 
 	/// <summary>

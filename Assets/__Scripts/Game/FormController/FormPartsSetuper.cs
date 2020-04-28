@@ -32,10 +32,10 @@ public class FormPartsSetuper : MonoBehaviour
 
 		for (int i = formTransform.childCount - 1; i >= 0; i--)
 		{
-			var part = formTransform.GetChild(i).GetComponent<PartColorSetuper>();
-			part.setPartColor(colors[i]);
+			var partColorSetuper = formTransform.GetChild(i).GetComponent<ColorSetuper>();
+			partColorSetuper.setColor(colors[i]);
 
-			Debug.Log($"[FormPartsSetuper] Часть {part.name} окрашена в цвет.");
+			Debug.Log($"[FormPartsSetuper] Часть {partColorSetuper.name} окрашена в цвет.");
 		}
 	}
 }

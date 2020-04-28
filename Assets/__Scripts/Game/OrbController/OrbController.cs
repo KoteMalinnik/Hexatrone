@@ -16,6 +16,16 @@ public sealed class OrbController : MonoBehaviour
 	public static GameObject orb { get; private set; } = null;
 
 	/// <summary>
+	/// SpriteRenerer объекта сферы.
+	/// </summary>
+	public static SpriteRenderer orbSpriteRenderer { get; private set; } = null;
+
+	/// <summary>
+	/// ColorSetuper объекта сферы.
+	/// </summary>
+	public static ColorSetuper orbColorSetuper { get; private set; } = null;
+
+	/// <summary>
 	/// Transform объекта сферы.
 	/// </summary>
 	/// <value>The orb transform.</value>
@@ -28,7 +38,11 @@ public sealed class OrbController : MonoBehaviour
 	public static void setOrb(GameObject newOrb)
 	{
 		orb = newOrb;
+
 		orbTransform = orb.transform;
+		orbSpriteRenderer = orb.GetComponent<SpriteRenderer>();
+		orbColorSetuper = orb.GetComponent<ColorSetuper>();
+
 		setupObject();
 	}
 
@@ -37,10 +51,10 @@ public sealed class OrbController : MonoBehaviour
 	/// </summary>
 	public static void setupObject()
 	{
-		orbType = OrbTypeDefiner.getNewOrbType(orb);
+		OrbSpawnPositionController.setupPosition(orbTransform);
 
-		OrbSpriteController.setupSprite(orb, orbType);
-		OrbSpawnPositionController.setupPosition(orb.transform);
-		OrbColorSetuper.setupColor(orb);
+		orbType = OrbTypeDefiner.getNewOrbType(orb);
+		OrbSpriteController.setupSprite(orbSpriteRenderer, orbType);
+		OrbColorSetuper.setupColor(orbColorSetuper);
 	}
 }

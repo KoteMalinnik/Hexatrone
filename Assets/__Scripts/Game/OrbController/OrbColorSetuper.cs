@@ -8,8 +8,8 @@ public static class OrbColorSetuper
 	/// <summary>
 	/// Установить цвет.
 	/// </summary>
-	/// <param name="orb">Сфера.</param>
-	public static void setupColor(GameObject orb)
+	/// <param name="orbColorSetuper">ColorSetuper сферы.</param>
+	public static void setupColor(ColorSetuper orbColorSetuper)
 	{
 		if(FormPartsSetuper.colors == null)
 		{
@@ -17,9 +17,7 @@ public static class OrbColorSetuper
 			return;
 		}
 
-		SpriteRenderer spriteRenderer = orb.GetComponent<SpriteRenderer>();
-		spriteRenderer.color = getRandomColor();
-
+		orbColorSetuper.setColor(getRandomColor());
 	}
 
 	/// <summary>

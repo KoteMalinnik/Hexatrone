@@ -6,22 +6,12 @@
 
 [RequireComponent(typeof(OrbMovement))]
 [RequireComponent(typeof(OrbCollision))]
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(ColorSetuper))]
 /// <summary>
 /// Базовая сфера.
 /// </summary>
 public class OrbBasic : MonoBehaviour
 {
-	/// <summary>
-	/// Кешированый SpriteRenerer.
-	/// </summary>
-	SpriteRenderer spriteRenerer = null;
-
-	void Awake()
-	{
-		spriteRenerer = GetComponent<SpriteRenderer>();
-	}
-
 	/// <summary>
 	/// Тип сферы.
 	/// </summary>
@@ -43,34 +33,4 @@ public class OrbBasic : MonoBehaviour
 	/// </summary>
 	/// <param name="delta">Дельта.</param>
 	public void setDelta(int delta) { this.delta = delta; }
-
-	/// <summary>
-	/// Установить цвет.
-	/// </summary>
-	/// <param name="color">Цвет.</param>
-	public void setColor(Color color)
-	{
-		if(spriteRenerer == null) Awake();
-
-		spriteRenerer.color = color;
-	}
-
-	/// <summary>
-	/// Получить цвет.
-	/// </summary>
-	public Color getColor()
-	{
-		return spriteRenerer.color;
-	}
-
-	/// <summary>
-	/// Установить спрайт.
-	/// </summary>
-	/// <param name="sprite">Спрайт.</param>
-	public void setSprite(Sprite sprite)
-	{ 
-		if (spriteRenerer == null) Awake();
-
-		spriteRenerer.sprite = sprite;
-	}
 }

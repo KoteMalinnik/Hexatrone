@@ -95,8 +95,8 @@ public static class CollisionProcessing
 	/// <param name="collision">Коллизия объекта Part.</param>
 	static bool checkColor(Collider2D collision)
 	{
-		var orbColor = orb.GetComponent<OrbBasic>().getColor();
-		var collisionColor = collision.GetComponent<PartColorSetuper>().getColor();
+		var orbColor = orb.GetComponent<ColorSetuper>().getColor();
+		var collisionColor = collision.GetComponent<ColorSetuper>().getColor();
 
 		if(orbColor == collisionColor)
 		{
