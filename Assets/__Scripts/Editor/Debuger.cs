@@ -10,14 +10,24 @@ public class Debuger : EditorWindow
 		Debuger window = GetWindow<Debuger>(false, "Debuger", true);
 	}
 
+	Vector2 scrollViewPosition = Vector2.zero;
+	bool needSimulation = false;
+	bool needAudioManagers = false;
+
 	void OnGUI()
 	{
-		GUILayout.Box("Игровые настройки");
-		GUILayout.Space(10);
+		scrollViewPosition = GUILayout.BeginScrollView(scrollViewPosition);
 
-		DisplayAudioManagersData();
+		needAudioManagers = GUILayout.Toggle(needAudioManagers, "Отображать аудио менеджеры");
+		if(needAudioManagers) DisplayAudioManagersData();
+
+		needSimulation = GUILayout.Toggle(needSimulation, "Необходима симуляция обработки сферы");
+		if (needSimulation) DisplayCounterProcessing();
+
 		DisplayLevelData();
 		DisplayCountersData();
+
+		GUILayout.EndScrollView();
 	}
 
 	void DisplayLevelData()
@@ -94,5 +104,43 @@ public class Debuger : EditorWindow
 			GUILayout.EndHorizontal();
 		}
 		else GUILayout.Label($"Менеджер {managerName} отсутствует!");
+	}
+
+	void DisplayCounterProcessing()
+	{
+		GUILayout.Box("Симуляция обработки при совпадении");
+		GUILayout.Space(5);
+
+		GUILayout.BeginHorizontal();
+		if(GUILayout.Button("Basic")) _onColorMatch(1, OrbTypeDefiner.orbType.Basic);
+		if (GUILayout.Button("Critical")) _onColorMatch(1, OrbTypeDefiner.orbType.CriticalBonus);
+		if (GUILayout.Button("Delta")) _onColorMatch(Random.Range(0,5), OrbTypeDefiner.orbType.DeltaBonus);
+		if (GUILayout.Button("LevelUp")) _onColorMatch(1, OrbTypeDefiner.orbType.LevelUpBonus);
+		GUILayout.EndHorizontal();
+
+
+		GUILayout.Box("Симуляция обработки при несовпадении");
+		GUILayout.Space(5);
+
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button("Basic")) _onColorMismatch(1, OrbTypeDefiner.orbType.Basic);
+		if (GUILayout.Button("Critical")) _onColorMismatch(1, OrbTypeDefiner.orbType.CriticalBonus);
+		if (GUILayout.Button("Delta")) _onColorMismatch(Random.Range(0, 5), OrbTypeDefiner.orbType.DeltaBonus);
+		if (GUILayout.Button("LevelUp")) _onColorMismatch(1, OrbTypeDefiner.orbType.LevelUpBonus);
+		GUILayout.EndHorizontal();
+
+		GUILayout.Space(10);
+	}
+
+	void _onColorMatch(int delta, OrbTypeDefiner.orbType type)
+	{
+		var orb = new OrbObject(delta, type);
+		CountersProcessing.OnColorMatch(orb);
+	}
+
+	void _onColorMismatch(int delta, OrbTypeDefiner.orbType type)
+	{
+		var orb = new OrbObject(delta, type);
+		CountersProcessing.OnColorMismatch(orb);
 	}
 }

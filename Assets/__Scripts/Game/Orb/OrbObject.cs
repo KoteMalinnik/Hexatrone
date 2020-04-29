@@ -8,6 +8,12 @@
 /// </summary>
 public class OrbObject : MonoBehaviour
 {
+	public OrbObject(int delta, OrbTypeDefiner.orbType type)
+	{
+		setDelta(delta);
+		setType(type);
+	}
+
 	/// <summary>
 	/// Тип сферы.
 	/// </summary>

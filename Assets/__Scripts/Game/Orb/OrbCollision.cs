@@ -9,6 +9,6 @@ public class OrbCollision : MonoBehaviour
 	{
 		//Debug.Log($"[OrbCollision] Столкновение с {coll.name}");
 
-		CollisionProcessing.addCollision(coll, gameObject);
+		CollisionProcessing.addCollision(coll);
 	}
 }

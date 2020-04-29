@@ -8,11 +8,11 @@ public static class CountersProcessing
 	/// <summary>
 	/// Обработать счетчики при несовпадении цветов.
 	/// </summary>
-	public static void OnColorMismatch()
+	public static void OnColorMismatch(OrbObject orbObject)
 	{
 		Debug.Log("[CountersProcessing] Обработка счетчиков при несовпадении цветов!");
 
-		var delta = OrbController.orbObject.delta;
+		var delta = orbObject.delta;
 		CounterCriticalOrbs.decrementValue(delta);
 
 		SoundManager.playSound(1); //collect wrong orb sound
@@ -21,12 +21,12 @@ public static class CountersProcessing
 	/// <summary>
 	/// Обработать счетчики при совпадении цветов
 	/// </summary>
-	public static void OnColorMatch()
+	public static void OnColorMatch(OrbObject orbObject)
 	{
 		Debug.Log("[CountersProcessing] Обработка счетчиков при совпадении цветов!");
-		var delta = OrbController.orbObject.delta;
+		var delta = orbObject.delta;
 
-		switch (OrbController.orbObject.type)
+		switch (orbObject.type)
 		{
 			case OrbTypeDefiner.orbType.Basic:
 				onBasicOrb(delta);

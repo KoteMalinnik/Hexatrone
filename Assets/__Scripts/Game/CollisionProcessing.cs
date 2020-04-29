@@ -7,11 +7,6 @@ using System.Collections;
 public static class CollisionProcessing
 {
 	/// <summary>
-	/// Объект Orb
-	/// </summary>
-	static GameObject orb = null;
-
-	/// <summary>
 	/// Коллизии
 	/// </summary>
 	static Collider2D[] collisions = new Collider2D[2];
@@ -20,14 +15,9 @@ public static class CollisionProcessing
 	/// Добавить коллизию объекта Part
 	/// </summary>
 	/// <param name="newCollision">Новая коллизия объекта Part.</param>
-	/// <param name="collisedOrb">Сфера.</param>
-	public static void addCollision(Collider2D newCollision, GameObject collisedOrb)
+	public static void addCollision(Collider2D newCollision)
 	{
-		if (coroutine == null)
-		{
-			orb = collisedOrb;
-			coroutine = FormController.instance.StartCoroutine(waitForEndOfFrame());
-		}
+		if (coroutine == null) coroutine = FormController.instance.StartCoroutine(waitForEndOfFrame());
 
 		if (collisions[0] == null) collisions[0] = newCollision;
 		else collisions[1] = newCollision;
@@ -95,7 +85,7 @@ public static class CollisionProcessing
 	/// <param name="collision">Коллизия объекта Part.</param>
 	static bool checkColor(Collider2D collision)
 	{
-		var orbColor = orb.GetComponent<ColorSetuper>().getColor();
+		var orbColor = OrbController.orbColorSetuper.getColor();
 		var collisionColor = collision.GetComponent<ColorSetuper>().getColor();
 
 		if(orbColor == collisionColor)
@@ -121,7 +111,7 @@ public static class CollisionProcessing
 	static void OnColorMatch()
 	{
 		Debug.Log("[CollisionProcessing] Совпадение цветов!");
-		CountersProcessing.OnColorMatch();
+		CountersProcessing.OnColorMatch(OrbController.orbObject);
 	}
 
 	/// <summary>
@@ -130,6 +120,6 @@ public static class CollisionProcessing
 	static void OnColorMismatch()
 	{
 		Debug.Log("[CollisionProcessing] Несовпадение цветов!");
-		CountersProcessing.OnColorMismatch();
+		CountersProcessing.OnColorMismatch(OrbController.orbObject);
 	}
 }
