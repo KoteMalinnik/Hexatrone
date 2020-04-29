@@ -42,6 +42,7 @@ public static class FormLevel
 		if(FormController.instance != null) FormDestroyer.destroyObject(FormController.form);
 
 		CounterCriticalOrbs.setValue(5);
+		CounterOrbsAtFormLevel.setValueToLevelUp(level);
 	}
 
 	/// <summary>

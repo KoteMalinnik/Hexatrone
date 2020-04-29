@@ -12,11 +12,6 @@ public class OrbInitialiser : MonoBehaviour
 	/// </summary>
 	string prefabName = null;
 
-	void Awake()
-	{
-		loadPrefab();
-	}
-
 	void Start()
 	{
 		var prefab = loadPrefab();

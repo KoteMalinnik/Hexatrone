@@ -32,7 +32,7 @@ public sealed class OrbController : MonoBehaviour
 	/// <param name="orbInstance">Сфера.</param>
 	public static void setOrb(GameObject orbInstance)
 	{
-		orbObject = orbInstance.GetComponent<OrbObject>();
+		orbObject = orbInstance.AddComponent<OrbObject>();
 
 		orbSpriteRenderer = orbObject.GetComponent<SpriteRenderer>();
 		orbColorSetuper = orbObject.GetComponent<ColorSetuper>();

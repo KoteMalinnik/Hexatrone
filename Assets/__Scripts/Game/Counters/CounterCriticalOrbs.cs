@@ -32,7 +32,11 @@ public static class CounterCriticalOrbs
 	/// Инкрементировать значение.
 	/// </summary>
 	/// <param name="delta">Сколько прибавить.</param>
-	public static void incrementValue(int delta = 1) { setValue(value + delta); }
+	public static void incrementValue(int delta = 1)
+	{
+		setValue(value + delta);
+		CounterTotalOrbs.incrementValue(delta);
+	}
 
 	/// <summary>
 	/// Декрементировать значение.
