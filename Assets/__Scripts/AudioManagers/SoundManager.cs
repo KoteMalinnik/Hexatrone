@@ -57,16 +57,10 @@ public class SoundManager : AudioManager
 	/// </summary>
 	AudioClip goalAchieved = null;
 
-	[SerializeField]
-	/// <summary>
-	/// Звук при нажатии на элемент GUI
-	/// </summary>
-	AudioClip clickGUI = null;
-
 	/// <summary>
 	/// Проиграть звук под номером key
 	/// </summary>
-	/// <param name="key">0-CorrectOrb. 1-WrongOrb. 2-Baff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved. 7-clickGUI.</param>
+	/// <param name="key">0-CorrectOrb. 1-WrongOrb. 2-Baff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved.</param>
 	public static void playSound(int key)
 	{
 		if (instance == null) return;
@@ -95,9 +89,6 @@ public class SoundManager : AudioManager
 					break;
 				case 6:
 					playOneShot(instance.goalAchieved);
-					break;
-				case 7:
-					playOneShot(instance.clickGUI);
 					break;
 				default:
 					Debug.Log("[SoundManager] Неверный ключ аудио дорожки");
