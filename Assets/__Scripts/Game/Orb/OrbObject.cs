@@ -22,11 +22,14 @@ public class OrbObject : MonoBehaviour
 	/// <summary>
 	/// Установить тип сферы.
 	/// </summary>
-	/// <param name="newType">Тип сферы.</param>
-	public void setType(OrbTypeDefiner.orbType newType)
+	/// <param name="type">Тип сферы.</param>
+	public void setType(OrbTypeDefiner.orbType type)
 	{
-		type = newType;
 		Debug.Log($"[OrbObject] Установка типа сферы: {type}.");
+		this.type = type;
+
+		if (type != OrbTypeDefiner.orbType.DeltaBonus) setDelta(1);
+		else setDelta(Random.Range(2, 5));
 	}
 
 	/// <summary>
@@ -37,10 +40,10 @@ public class OrbObject : MonoBehaviour
 	/// <summary>
 	/// Установить дельту.
 	/// </summary>
-	/// <param name="delta">Дельта.</param>
-	public void setDelta(int delta)
+	/// <param name="newDelta">Дельта.</param>
+	void setDelta(int newDelta)
 	{
-		this.delta = delta;
-		Debug.Log($"[OrbObject] Установка дельты сферы: {this.delta}.");
+		Debug.Log($"[OrbObject] Установка дельты сферы: {newDelta}.");
+		delta = newDelta;
 	}
 }

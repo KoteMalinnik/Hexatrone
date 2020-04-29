@@ -25,6 +25,9 @@ public static class FormLevel
 		if (newLevel < 0)
 		{
 			Debug.Log("[FormLevel] <color=red>Конец игры!</color>");
+
+			//!!!тут надо добавить
+
 			return;
 		}
 
