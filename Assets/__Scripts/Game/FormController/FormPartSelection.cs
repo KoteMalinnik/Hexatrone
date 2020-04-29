@@ -11,7 +11,7 @@ public static class FormPartSelection
 	/// <param name="partLocalRotation">Локальное вращение части.</param>
 	public static void calculate(float partLocalRotation)
 	{
-		if (OrbController.orb == null) return;
+		if (OrbController.orbTransform == null) return;
 		if (FormRotation.rotating) return;
 
 		Debug.Log("[PartSelection] Рассчитать угол поворота.");

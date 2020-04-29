@@ -10,9 +10,7 @@ public static class CountersProcessing
 	{
 		Debug.Log("[CountersProcessing] Обработка счетчиков при совпадении цветов!");
 
-		var orbType = OrbController.orbType;
-
-		switch (orbType)
+		switch (OrbController.orbObject.type)
 		{
 			case OrbTypeDefiner.orbType.Basic:
 				Debug.Log("[CountersProcessing] Базовая");
@@ -32,5 +30,8 @@ public static class CountersProcessing
 	public static void OnColorMismatch()
 	{
 		Debug.Log("[CountersProcessing] Обработка счетчиков при несовпадении цветов!");
+
+		var delta = OrbController.orbObject.delta;
+		CounterCriticalOrbs.decrementValue(delta);
 	}
 }

@@ -4,7 +4,7 @@
 [RequireComponent(typeof(OrbCollision))]
 [RequireComponent(typeof(ColorSetuper))]
 /// <summary>
-/// Базовая сфера.
+/// Объект сферы.
 /// </summary>
 public class OrbObject : MonoBehaviour
 {
