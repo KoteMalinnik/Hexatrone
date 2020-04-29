@@ -10,6 +10,9 @@
 /// </summary>
 public class OnGameLevelLoad : MonoBehaviour
 {
+	[SerializeField, Tooltip("Начальный уровень формы при старте игры.")]
+	int startLevel = 0;
+
 	void Awake()
 	{
 		Debug.Log("[OnGameLevelLoad] <color=yellow>Установка стартовых значений.</color>");
@@ -19,7 +22,7 @@ public class OnGameLevelLoad : MonoBehaviour
 
 	void Start()
 	{
-		FormLevel.setLevel(0);
+		FormLevel.setLevel(startLevel);
 		Destroy(gameObject);
 	}
 }
