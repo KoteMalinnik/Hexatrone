@@ -2,9 +2,9 @@
 
 [RequireComponent(typeof(OrbController))]
 /// <summary>
-/// Генератор сферы.
+/// Инициализатор объекта сферы.
 /// </summary>
-public class OrbGenerator : MonoBehaviour
+public class OrbInitialiser : MonoBehaviour
 {
 	[SerializeField, Tooltip("Имя префаба в папке Resources/Prefabs/")]
 	/// <summary>

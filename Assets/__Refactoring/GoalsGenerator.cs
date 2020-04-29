@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
-using Assets.SimpleLocalization;
 
 /*
  * РЕФАКТОРИТЬ 
