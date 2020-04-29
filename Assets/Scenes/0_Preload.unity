@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03df827e1cf89848a6ec41442c1680e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadMainMenuScene: 0
+  loadMainMenuScene: 1
 --- !u!4 &970064036
 Transform:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1952457018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f5a683fe07c62488a24c0aa0ab447b, type: 3}
+  m_Script: {fileID: 11500000, guid: d30c32408a37ad745ab96e227913e339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1952457020
