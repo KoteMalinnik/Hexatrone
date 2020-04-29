@@ -1,10 +1,5 @@
 ﻿using UnityEngine;
 
-
-/*
- * РЕФАКТОРИТЬ 
- */
-
 /// <summary>
 /// Настройка классов при загрузке сцены GameLevel
 /// </summary>

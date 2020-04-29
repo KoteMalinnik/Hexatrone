@@ -15,8 +15,8 @@ public static class Statements
 	/// </summary>
 	public static void setPause(bool state)
 	{
+		Debug.Log($"<color=yellow>Пауза: {state}</color>");
 		pause = state;
-		Debug.Log($"<color=yellow>Пауза: {pause}</color>");
 	}
 
 
@@ -30,7 +30,10 @@ public static class Statements
 	/// </summary>
 	public static void setGameOver(bool state)
 	{
+		Debug.Log($"<color=yellow>Конец игры: {state}</color>");
 		gameOver = state;
-		Debug.Log($"<color=yellow>Конец игры: {gameOver}</color>");
+
+		if (pause) return;
+		setPause(state);
 	}
 }

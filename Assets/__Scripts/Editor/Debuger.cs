@@ -18,11 +18,15 @@ public class Debuger : EditorWindow
 	{
 		scrollViewPosition = GUILayout.BeginScrollView(scrollViewPosition);
 
+		DisplayStatements();
+
 		needAudioManagers = GUILayout.Toggle(needAudioManagers, "Отображать аудио менеджеры");
 		if(needAudioManagers) DisplayAudioManagersData();
 
 		needSimulation = GUILayout.Toggle(needSimulation, "Необходима симуляция обработки сферы");
 		if (needSimulation) DisplayCounterProcessing();
+
+		GUILayout.Space(10);
 
 		DisplayLevelData();
 		DisplayCountersData();
@@ -142,5 +146,22 @@ public class Debuger : EditorWindow
 	{
 		var orb = new OrbObject(delta, type);
 		CountersProcessing.OnColorMismatch(orb);
+	}
+
+	void DisplayStatements()
+	{
+		GUILayout.Box("Состояния");
+
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button(Statements.pause ? "False" : "True", GUILayout.Width(40))) Statements.setPause(!Statements.pause);
+		GUILayout.Label($"Пауза: {Statements.pause}");
+		GUILayout.EndHorizontal();
+
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button(Statements.gameOver ? "False" : "True", GUILayout.Width(40))) Statements.setGameOver(!Statements.gameOver);
+		GUILayout.Label($"Конец игры: {Statements.gameOver}");
+		GUILayout.EndHorizontal();
+
+		GUILayout.Space(10);
 	}
 }

@@ -16,6 +16,8 @@ public class PartMousePressProcessing : MonoBehaviour
 
 	void OnMouseDown()
 	{
+		if (Statements.pause) return;
+
 		Debug.Log($"Нажатие на часть формы {name}.");
 		FormPartSelection.calculate(cachedTransform.localRotation.eulerAngles.z);
 	}
