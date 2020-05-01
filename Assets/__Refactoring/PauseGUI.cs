@@ -7,7 +7,7 @@ using System.Collections;
  */
 
 
-public class PauseMenuManager : MonoBehaviour
+public class PauseGUI : MonoBehaviour
 {
 	//public GameObject GameInformationCanvas; //канвас со счетчиками и слайдерами
 	//public GameObject PausePanel; //Панель паузы

@@ -1,39 +1,29 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Net;
-using System.Net.Mail;
-using System.IO;
 
-/*
- * РЕФАКТОРИТЬ 
- */
 
 /// <summary>
 /// ОТВЕЧАЕТ ЗА ВСЕ ЭЛЕМЕНТЫ ГЛАВНОГО МЕНЮ
 /// </summary>
-public class MainMenuGUI : MonoBehaviour
+public class MainMenuGUI : baseGUI
 {
 	[Header("GUI Panels")]
 
 	[SerializeField]
+	/// <summary>
+	/// Панель благодарностей.
+	/// </summary>
 	GameObject panelGraditudes = null;
 
 	[SerializeField]
+	/// <summary>
+	/// Панель обучения.
+	/// </summary>
 	GameObject panelTutorial = null;
-
-
-	[Header("GUI Toggles")]
-
-	[SerializeField]
-	Toggle toggleMusic = null;
-	[SerializeField]
-	Toggle toggleSound = null;
 
 
 	void Start()
 	{
-		if (MusicManager.instance != null) toggleMusic.isOn = MusicManager.instance.allowAudio;
-		if (SoundManager.instance != null) toggleSound.isOn = SoundManager.instance.allowAudio;
+		presetAudioButtons();
 
 		__HidePanel(panelTutorial);
 		__HidePanel(panelGraditudes);
@@ -57,29 +47,6 @@ public class MainMenuGUI : MonoBehaviour
 		Debug.Log("[MainMenuGUI] Выход из игры.");
 		Application.Quit();
 	}
-
-	/// <summary>
-	/// Переключить звук в соответствии с Toggle.
-	/// </summary>
-	public void __SoundToggle()
-	{
-		if (SoundManager.instance == null) return;
-			
-		Debug.Log("[MainMenuGUI] Переключение звука.");
-		SoundManager.instance.setAudioState(toggleSound.isOn);
-	}
-
-	/// <summary>
-	/// Переключить музыку в соответствии с Toggle.
-	/// </summary>
-	public void __MusicToggle()
-	{
-		if (MusicManager.instance == null) return;
-
-		Debug.Log("[MainMenuGUI] Переключение музыки.");
-		MusicManager.instance.setAudioState(toggleMusic.isOn);
-	}
-
 
 	/// <summary>
 	/// Открыть панель.
