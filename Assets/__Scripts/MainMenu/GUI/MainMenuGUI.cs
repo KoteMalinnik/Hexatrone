@@ -2,9 +2,9 @@
 
 
 /// <summary>
-/// ОТВЕЧАЕТ ЗА ВСЕ ЭЛЕМЕНТЫ ГЛАВНОГО МЕНЮ
+/// Управление GUI главного меню.
 /// </summary>
-public class MainMenuGUI : baseGUI
+public class MainMenuGUI : MonoBehaviour
 {
 	[Header("GUI Panels")]
 
@@ -21,12 +21,11 @@ public class MainMenuGUI : baseGUI
 	GameObject panelTutorial = null;
 
 
-	void Start()
+	void Awake()
 	{
-		presetAudioButtons();
-
-		__HidePanel(panelTutorial);
-		__HidePanel(panelGraditudes);
+		var panelsSwitcher = new PanelsActivitySwitcher();
+		panelsSwitcher.__HidePanel(panelTutorial);
+		panelsSwitcher.__HidePanel(panelGraditudes);
 	}
 
 

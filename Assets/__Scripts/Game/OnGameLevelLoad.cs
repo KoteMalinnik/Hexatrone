@@ -13,7 +13,7 @@ public class OnGameLevelLoad : MonoBehaviour
 		Debug.Log("[OnGameLevelLoad] <color=yellow>Установка стартовых значений.</color>");
 
 		Statements.setGameOver(false);
-		Statements.setPause(false);
+		Statements.setPause(true);
 
 		CounterTotalOrbs.setValue(0);
 	}

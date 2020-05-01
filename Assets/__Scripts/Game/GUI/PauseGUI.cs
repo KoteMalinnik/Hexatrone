@@ -3,7 +3,7 @@
 /// <summary>
 /// Управление GUI панели паузы.
 /// </summary>
-public class PauseGUI : baseGUI
+public class PauseGUI : MonoBehaviour
 {
 	[Header("GUI Panels")]
 
@@ -21,10 +21,9 @@ public class PauseGUI : baseGUI
 
 	void Awake()
 	{
-		presetAudioButtons();
-
-		panelPause.SetActive(false);
-		panelGoals.SetActive(false);
+		var panelsSwitcher = new PanelsActivitySwitcher();
+		panelsSwitcher.__HidePanel(panelPause);
+		panelsSwitcher.__HidePanel(panelGoals);
 	}
 
 	/// <summary>

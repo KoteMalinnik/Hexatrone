@@ -2,9 +2,9 @@
 using UnityEngine.UI;
 
 /// <summary>
-/// Общая логика всех GUI.
+/// Управление аудиокнопками GUI.
 /// </summary>
-public class baseGUI : MonoBehaviour
+public sealed class AudioButtonsControll : MonoBehaviour
 {
     [Header("GUI Audiobutton's images")]
 
@@ -12,13 +12,13 @@ public class baseGUI : MonoBehaviour
 	/// <summary>
 	/// Image кнопки музыки.
 	/// </summary>
-	protected Image imageMusicButton = null;
+	Image imageMusicButton = null;
 
 	[SerializeField]
 	/// <summary>
 	/// Image кнопки звука.
 	/// </summary>
-	protected Image imageSoundButton = null;
+	Image imageSoundButton = null;
 
 	[Header("GUI Audiobutton's colors")]
 
@@ -26,18 +26,16 @@ public class baseGUI : MonoBehaviour
 	/// <summary>
 	/// Цвет при разрешенном воспроизведении аудио.
 	/// </summary>
-	protected Color allowAudioColor = Color.blue;
+	Color allowAudioColor = Color.blue;
 
 	[SerializeField]
 	/// <summary>
 	/// Цвет при запрещенном воспроизведении аудио.
 	/// </summary>
-	protected Color disallowAudioColor = Color.red;
+	Color disallowAudioColor = Color.red;
 
-	/// <summary>
-	/// Установить начальные цвета кнопок.
-	/// </summary>
-	protected void presetAudioButtons()
+	// Установить начальные цвета кнопок.
+	void Start()
 	{
 		if (MusicManager.instance != null) imageMusicButton.color = MusicManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
 		if (SoundManager.instance != null) imageSoundButton.color = SoundManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
@@ -73,23 +71,5 @@ public class baseGUI : MonoBehaviour
 		MusicManager.instance.setAudioState(state);
 
 		imageMusicButton.color = state ? allowAudioColor : disallowAudioColor;
-	}
-
-	/// <summary>
-	/// Открыть панель.
-	/// </summary>
-	public void __ShowPanel(GameObject panel)
-	{
-		Debug.Log("[MainMenuGUI] Показать панель " + panel.name);
-		panel.SetActive(true);
-	}
-
-	/// <summary>
-	/// Скрыть панель.
-	/// </summary>
-	public void __HidePanel(GameObject panel)
-	{
-		Debug.Log("[MainMenuGUI] Скрыть панель " + panel.name);
-		panel.SetActive(false);
 	}
 }
