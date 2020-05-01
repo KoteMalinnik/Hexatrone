@@ -15,6 +15,7 @@ public static class CountersProcessing
 		var delta = orbObject.delta;
 		CounterCriticalOrbs.decrementValue(delta);
 
+		GameInfoViewer.updateMismatchGUI();
 		SoundManager.playSound(1); //collect wrong orb sound
 	}
 
@@ -42,6 +43,7 @@ public static class CountersProcessing
 				break;
 		}
 
+		GameInfoViewer.updateMatchGUI();
 		SoundManager.playSound(0); //collect correct orb sound
 	}
 

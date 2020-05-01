@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-
+[RequireComponent(typeof(PanelsActivitySwitcher))]
+[RequireComponent(typeof(AudioButtonsControll))]
 /// <summary>
 /// Управление GUI главного меню.
 /// </summary>
@@ -23,7 +24,7 @@ public class MainMenuGUI : MonoBehaviour
 
 	void Awake()
 	{
-		var panelsSwitcher = new PanelsActivitySwitcher();
+		var panelsSwitcher = GetComponent<PanelsActivitySwitcher>();
 		panelsSwitcher.__HidePanel(panelTutorial);
 		panelsSwitcher.__HidePanel(panelGraditudes);
 	}

@@ -46,6 +46,8 @@ public static class FormLevel
 
 		CounterCriticalOrbs.setValue(5);
 		CounterOrbsAtFormLevel.setValueToLevelUp(level);
+
+		GameInfoViewer.updateLevelGUI(level);
 	}
 
 	/// <summary>
