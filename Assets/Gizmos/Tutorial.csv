@@ -1,0 +1,28 @@
+Key,English,Russian
+Tutorial.text1_1,welcome to hexatrone!,добро пожаловать в hexatrone!
+Tutorial.text1_2,the meaning of the game is simple,смысл игры прост
+Tutorial.text1_3,catch the right color!,лови правильным цветом!
+Tutorial.text2_1,game modes,режимы игры
+Tutorial.text2_2,"levels: in this mode you must achieve goals. With each new level to achieve the goal will be more difficult, and maybe not, who knows.","уровни: в этом режиме ты будешь достигать поставленных целей. С каждым новым уровнем добиться цели будет сложнее, а может и нет, кто знает."
+Tutorial.text2_3,INFINITY: when there is nothing to do at all. how long can you hold out?,бесконечный: когда нечего совсем делать. как долго ты сможешь продержаться?
+Tutorial.text2_4,hardcore: no favors. no bonuses. there is no margin for error. a real test for real adventurer.,хардкор: никаких поблажек. никаких бонусов. здесь нет права на ошибку. настоящее испытание для настоящий испытуемых.
+Tutorial.text3_1,game interface,интерфейс игры
+Tutorial.text3_2,1. Pause button. It's very simple.,1. Кнопка паузы. Тут все предельно понятно.
+Tutorial.text3_3,2. Game form. There are 6 levels of form. The initial level of form 0 is tricolor.,2. Игровая форма. Существует 6 уровней формы. Начальный уровень формы 0 - трехцветный.
+Tutorial.text3_4,3. Game orb. There are two types of orbs: usual and bonuses.,3. Игровая сфера. Существует два типа сфер: обычные и бонусы.
+Tutorial.text3_5,"4. Information. Shows the current form level, the number of orbs collected and the number of bonuses collected.","4. Сведения. Показывает текущий уровень, количество собранных сфер и количество собранных бонусов."
+Tutorial.text3_6,"5. Game time. Is it clear? yeah, dude.","5. Время игры. Что логично, то логично."
+Tutorial.text3_7,6. The scale of the level. This scale is filled with the color that will be added at the next level of the form.,"6. Шкала уровня. Эта шкала заполняется цветом, который добавится на следующем уровне формы."
+Tutorial.text3_8,"7. Critical scale. If this scale is empty, the form level will drop and if level is under 0 - game over. Initially filled with color, which will be lost when the level will dropped.","7. Критическая шкала. Если эта шкала опустеет, то уровень формы понизится. А если ниже некуда, то это проигрыш. Изначально заполнена цветом, который потеряется при понижении уровня."
+Tutorial.text4_1,orbs,сферы
+Tutorial.text4_2,"Delta - number of points, which gives the orb. Delta is positive if you catch the orb by the right color and negative otherwise.","дельта - количество очков, которое дает сфера. Дельта положительна, если словить сферу правильным цветом, и отрицательна в противном случае. "
+Tutorial.text4_3,an ordinary orb. Delta 1.,обычная сфера. дельта 1.
+Tutorial.text4_4,Delta bonus. Delta is indicated on the orb. From 2 to 5.,бонус дельты. дельта указана на сфере. От 2 до 5.
+Tutorial.text4_5,level bonus. transforms the form into the one shown on the bonus. Delta 1.,бонус уровня. трансформирует форму в изображенную на сфере. дельта 1.
+Tutorial.text4_6,critical bonus. fills the critical scale. Delta 1.,критический бонус. наполняет критическую шкалу. дельта 1.
+Tutorial.text5_1,form levels,уровни формы
+Tutorial.text5_2,There are 6 levels of forms. With each new level will be added a new color.,Существует 6 уровней форм. С каждым новым уровнем будет добавляться новый цвет.
+Tutorial.text6_1,control,управление
+Tutorial.text6_2,Part selection. Clicking on the form sector rotates this sector to the flying orb.,Выбор сектора. Нажатие на сектор формы поворачивает форму этим сектором к летящей сфере.
+Tutorial.text6_3,"Swipe. If you drag your finger across the screen to the left or right, the form will rotate to the left or right, it is logical. Can be inverted.","Свайп. Если протянуть пальцем по экрану влево или вправо, то форма будет вращаться влево или вправо, логично же. Можно инвертировать."
+Tutorial.text6_4,"Halfs of the screen. By clicking on the left or right side of the screen, you can make the form rotate in the right direction. Can be inverted.",Половинки экрана. Нажимая на левую или правую часть экрана можно заставить форму вращаться в нужную сторону. Можно инвертировать.

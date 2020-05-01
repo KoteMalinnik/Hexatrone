@@ -50,6 +50,7 @@ public class GameInfoViewer : MonoBehaviour
 
 		instance.sliderOrbsAtFormLevel.value = CounterOrbsAtFormLevel.value;
 		instance.textTotalOrbs.text = CounterTotalOrbs.value.ToString();
+		instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
 	}
 
 	/// <summary>

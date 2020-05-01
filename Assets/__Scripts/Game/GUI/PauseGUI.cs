@@ -15,17 +15,10 @@ public class PauseGUI : MonoBehaviour
 	/// </summary>
 	GameObject panelPause = null;
 
-	[SerializeField]
-	/// <summary>
-	/// Панель целей уровня.
-	/// </summary>
-	GameObject panelGoals = null;
-
 	void Awake()
 	{
 		var panelsSwitcher = GetComponent<PanelsActivitySwitcher>();
 		panelsSwitcher.__HidePanel(panelPause);
-		panelsSwitcher.__HidePanel(panelGoals);
 	}
 
 	/// <summary>

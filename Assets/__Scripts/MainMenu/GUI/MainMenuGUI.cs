@@ -15,17 +15,10 @@ public class MainMenuGUI : MonoBehaviour
 	/// </summary>
 	GameObject panelGraditudes = null;
 
-	[SerializeField]
-	/// <summary>
-	/// Панель обучения.
-	/// </summary>
-	GameObject panelTutorial = null;
-
 
 	void Awake()
 	{
 		var panelsSwitcher = GetComponent<PanelsActivitySwitcher>();
-		panelsSwitcher.__HidePanel(panelTutorial);
 		panelsSwitcher.__HidePanel(panelGraditudes);
 	}
 
