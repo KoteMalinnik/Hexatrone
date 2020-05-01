@@ -89,8 +89,8 @@ public class Debuger : EditorWindow
 	{
 		GUILayout.Box("Менеджеры аудио");
 
-		_diplayAudioManager(MusicManager.instance, "музыки");
-		_diplayAudioManager(SoundManager.instance, "звука");
+		_diplayAudioManager(MusicManager.instance, nameof(MusicManager));
+		_diplayAudioManager(SoundManager.instance, nameof(SoundManager));
 
 		GUILayout.Space(10);
 	}
@@ -104,7 +104,7 @@ public class Debuger : EditorWindow
 			GUILayout.BeginHorizontal();
 			if (GUILayout.Button("On", GUILayout.Width(30))) manager.setAudioState(true);
 			if (GUILayout.Button("Off", GUILayout.Width(30))) manager.setAudioState(false);
-			GUILayout.Label("Состояние: " + (manager.allowAudio ? "On" : "Off"));
+			GUILayout.Label(managerName +". Состояние: " + (manager.allowAudio ? "On" : "Off"));
 			GUILayout.EndHorizontal();
 		}
 		else GUILayout.Label($"Менеджер {managerName} отсутствует!");
