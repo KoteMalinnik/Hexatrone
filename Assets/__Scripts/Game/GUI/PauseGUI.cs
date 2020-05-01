@@ -38,6 +38,14 @@ public class PauseGUI : MonoBehaviour
 	}
 
 	/// <summary>
+	/// Перезагрузить уровень
+	/// </summary>
+	public void __Restart()
+	{
+		RegularMethods.LoadScene("2_GameLevel");
+	}
+
+	/// <summary>
 	/// Выйти в главное меню.
 	/// </summary>
 	public void __MainMenu()

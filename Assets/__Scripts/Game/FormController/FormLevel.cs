@@ -1,9 +1,5 @@
 ﻿using UnityEngine;
 
-/*
- * РЕФАКТОРИТЬ 
- */
-
 /// <summary>
 /// Управление уровнем формы.
 /// </summary>
@@ -26,7 +22,7 @@ public static class FormLevel
 		{
 			Debug.Log("[FormLevel] <color=red>Конец игры!</color>");
 
-			//!!!тут надо добавить
+			GameOverGUI.gameOver();
 
 			return;
 		}

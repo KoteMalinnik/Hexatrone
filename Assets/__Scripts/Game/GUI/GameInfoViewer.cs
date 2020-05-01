@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-/*
- * РЕФАКТОРИТЬ 
- */
-
 /// <summary>
 /// Управление GUI игровой информации.
 /// </summary>
@@ -74,6 +70,9 @@ public class GameInfoViewer : MonoBehaviour
 		if (instance == null) return;
 
 		instance.textLevel.text = formLevel.ToString();
+		//Обновление счетчиков
+		updateMatchGUI();
+		updateMismatchGUI();
 
 		//если уровень формы равен 5, то надо скрыть слайдер прогресса
 		if (formLevel >= 5)
@@ -90,15 +89,13 @@ public class GameInfoViewer : MonoBehaviour
 		//обновляем максимальные значения слайдеров, чтобы не рассчитывать лишний раз какую часть добавить
 		instance.sliderOrbsAtFormLevel.maxValue = CounterOrbsAtFormLevel.valueToLevelUp;
 
+		if (FormPartsSetuper.colors == null) return;
+
 		//изменяем цвета слайдеров
 		//sliderOrbsAtFormLevel - цвет следующей части
 		imageFillRect_sliderOrbsAtFormLevel.color = FormPartsSetuper.colors[formLevel + 3];
 
 		//sliderCriticalOrbs - цвет текущего последнего элемента
 		imageFillRect_sliderCriticalOrbs.color = formLevel > 0 ? FormPartsSetuper.colors[formLevel + 2] : Color.gray;
-
-		//Обновление счетчиков
-		updateMatchGUI();
-		updateMismatchGUI();
 	}
 }

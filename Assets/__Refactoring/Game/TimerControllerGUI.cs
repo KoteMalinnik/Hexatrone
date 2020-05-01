@@ -9,7 +9,7 @@ using System.Text;
 /// <summary>
 /// Управление счетчиком времени.
 /// </summary>
-public class TimerController : MonoBehaviour
+public class TimerControllerGUI : MonoBehaviour
 {
 	//время игры на уровне
 	public static short sec { get; private set; }

@@ -29,12 +29,6 @@ public class SoundManager : AudioManager
 
 	[SerializeField]
 	/// <summary>
-	/// Звук при совпадении цветов BonusOrb и Part
-	/// </summary>
-	AudioClip CollectBaff = null;
-
-	[SerializeField]
-	/// <summary>
 	/// Звук при повышении уровня
 	/// </summary>
 	AudioClip levelUp = null;
@@ -60,7 +54,7 @@ public class SoundManager : AudioManager
 	/// <summary>
 	/// Проиграть звук под номером key
 	/// </summary>
-	/// <param name="key">0-CorrectOrb. 1-WrongOrb. 2-Baff. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved.</param>
+	/// <param name="key">0-CorrectOrb. 1-WrongOrb. 3-levelUp. 4-levelDown. 5-gameOver. 6-goalAchieved.</param>
 	public static void playSound(int key)
 	{
 		if (instance == null) return;
@@ -74,9 +68,6 @@ public class SoundManager : AudioManager
 					break;
 				case 1:
 					playOneShot(instance.CollectWrongOrb);
-					break;
-				case 2:
-					playOneShot(instance.CollectBaff);
 					break;
 				case 3:
 					playOneShot(instance.levelUp);
