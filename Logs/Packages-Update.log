@@ -36,3 +36,11 @@ The following packages were added:
   com.unity.modules.androidjni@1.0.0
 The following packages were removed:
   com.unity.package-manager-ui@2.1.2
+
+=== Fri Aug 28 03:57:48 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ide.visualstudio@2.0.2

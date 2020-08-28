@@ -10,9 +10,9 @@ Library/
 ExportedObj/
 obj/
 *.svd
-*.meta
 *.userprefs
 /*.csproj
+*.meta
 *.pidb
 *.suo
 /*.sln
@@ -30,3 +30,6 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+/Assets/Scripts/__Debug/Test.cs
+/Assets/*.txt
