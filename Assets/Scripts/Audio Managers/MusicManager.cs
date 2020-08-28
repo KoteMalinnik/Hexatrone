@@ -26,6 +26,7 @@ public class MusicManager : AudioManager
 	private void Play()
     {
 		Source.UnPause();
+		if (!Source.isPlaying) Source.Play();
     }
 
 	private void Stop()

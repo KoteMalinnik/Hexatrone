@@ -3,6 +3,13 @@
 public class SoundManager : AudioManager
 {
 	#region Fields
+	[SerializeField] AudioClip CorrectCollorCollected = null;
+	[SerializeField] AudioClip IncorrectColorCollected = null;
+	[SerializeField] AudioClip LevelUp = null;
+	[SerializeField] AudioClip LevelDown = null;
+	[SerializeField] AudioClip GameOver = null;
+	[SerializeField] AudioClip GoalAchived = null;
+
 	bool audioIsAllowed = true;
 	#endregion
 
@@ -10,6 +17,8 @@ public class SoundManager : AudioManager
 	private void Start()
 	{
 		SetupAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
+
+		PlaySound(CorrectCollorCollected);
 	}
 
 	private void OnEnable()
@@ -33,17 +42,9 @@ public class SoundManager : AudioManager
 		audioIsAllowed = false;
 	}
 
-	private void PlaySound(Sounds sound)
+	private void PlaySound(AudioClip audioClip)
 	{
 		if (!audioIsAllowed) return;
-		
-		AudioClip audioClip = Resources.Load<AudioClip>(@"Audio\Sounds\" + sound.ToString() + ".asset");
-		if (audioClip == null)
-        {
-			Log.Error($"Звук {sound} отсутствует по пути <Audio\\Sounds\\>.");
-			return;
-        }
-
 		Source.PlayOneShot(audioClip);
 	}
 }
