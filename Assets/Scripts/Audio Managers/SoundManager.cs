@@ -17,8 +17,6 @@ public class SoundManager : AudioManager
 	private void Start()
 	{
 		SetupAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
-
-		PlaySound(CorrectCollorCollected);
 	}
 
 	private void OnEnable()
