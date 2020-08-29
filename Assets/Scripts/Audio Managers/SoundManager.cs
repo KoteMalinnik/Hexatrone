@@ -14,7 +14,7 @@ public class SoundManager : AudioManager
 	#endregion
 
 	#region MonoBehaviour Callbacks
-	private void Start()
+	private void Awake()
 	{
 		SetupAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
 	}
@@ -30,12 +30,12 @@ public class SoundManager : AudioManager
 	}
 	#endregion
 
-	private void AllowAudio()
+	public void AllowAudio()
 	{
 		audioIsAllowed = true;
 	}
 
-	private void DisallowAudio()
+	public void DisallowAudio()
 	{
 		audioIsAllowed = false;
 	}
