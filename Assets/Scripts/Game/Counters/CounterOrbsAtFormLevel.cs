@@ -20,10 +20,10 @@ public static class CounterOrbsAtFormLevel
 
 		if(newValue >= valueToLevelUp)
 		{
-			FormLevelController.levelUpEvent();
+			//FormLevelController.levelUpEvent();
 
 			setValue(newValue - valueToLevelUp);
-			setValueToLevelUp(FormLevelController.level);
+			//setValueToLevelUp(FormLevelController.level);
 			return;
 		}
 

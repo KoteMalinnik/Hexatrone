@@ -12,7 +12,7 @@ public static class FormDestroyer
 		if(existingForm == null)
 		{
 			//Инициализируем форму, если она null в FormController.form
-			FormInitialiser.initialiseObject(FormLevelController.level);
+			//FormInitialiser.initialiseObject(FormLevelController.level);
 			return;
 		}
 
@@ -34,6 +34,6 @@ public static class FormDestroyer
 		MonoBehaviour.Destroy(form);
 		Debug.Log($"[FormDestroyer] Форма уничтожена.");
 
-		FormInitialiser.initialiseObject(FormLevelController.level);
+		//FormInitialiser.initialiseObject(FormLevelController.level);
 	}
 }

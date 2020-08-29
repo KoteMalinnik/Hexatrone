@@ -25,7 +25,8 @@ public static class OrbColorSetuper
 	/// </summary>
 	static Color getRandomColor()
 	{
-		var randomColor = FormPartsSetuper.colors[Random.Range(0, FormLevelController.level+3)];
+		var randomColor = FormPartsSetuper.colors[Random.Range(0, 0)];
+		//var randomColor = FormPartsSetuper.colors[Random.Range(0, FormLevelController.level + 3)];
 		return randomColor;
 	}
 }

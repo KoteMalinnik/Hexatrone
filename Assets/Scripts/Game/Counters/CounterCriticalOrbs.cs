@@ -20,7 +20,7 @@ public static class CounterCriticalOrbs
 		if (newValue < 0)
 		{
 			Debug.Log("[CounterCriticalOrbs] <color=red>Достигнут минимальный порог!</color>");
-			FormLevelController.levelDownEvent();
+			//FormLevelController.levelDownEvent();
 			return;
 		}
 

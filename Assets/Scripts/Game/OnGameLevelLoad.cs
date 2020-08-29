@@ -5,22 +5,21 @@
 /// </summary>
 public class OnGameLevelLoad : MonoBehaviour
 {
-	[SerializeField, Tooltip("Начальный уровень формы при старте игры.")]
-	int startLevel = 0;
+	[SerializeField] int startingLevel = 0;
 
 	void Awake()
 	{
-		Debug.Log("[OnGameLevelLoad] <color=yellow>Установка стартовых значений.</color>");
+		Log.Message("Установка значений.");
 
 		Statements.setGameOver(false);
 		Statements.setPause(true);
 
 		CounterTotalOrbs.setValue(0);
-	}
 
-	void Start()
-	{
-		FormLevelController.setLevel(startLevel);
+		FormLevelController.SetupLevel(startingLevel);
+
+		Log.Message("Установка значений завершена.");
+
 		Destroy(gameObject);
 	}
 }

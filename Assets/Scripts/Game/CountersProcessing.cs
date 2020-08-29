@@ -87,6 +87,6 @@ public static class CountersProcessing
 	{
 		Debug.Log("[CountersProcessing] ЛевелАп бонус");
 
-		FormLevelController.levelUpEvent();
+		//FormLevelController.levelUpEvent();
 	}
 }
