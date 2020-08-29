@@ -1,52 +1,55 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// Вращение формы.
-/// </summary>
-public static class FormRotation
+public class FormRotation : MonoBehaviour
 {
-	/// <summary>
-	/// Показывает, вращается ли форма в данный момент. True, если корутина вращения запущена.
-	/// </summary>
-	public static bool rotating {get; private set; } = false;
+	#region Fields
+	[Range(0, 10)]
+	[SerializeField] float animationSpeed = 5;
 
-	/// <summary>
-	/// Скорость вращения.
-	/// </summary>
-	static float animationSpeed = 5;
+	CommonCoroutine rotationRoutine = null;
+	#endregion
 
-	/// <summary>
-	/// Запустить вращение к требуемому углу.
-	/// </summary>
-	/// <param name="angleY">Целевой угол по оси Y.</param>
-	/// <param name="angleZ">Целевой угол по оси Z.</param>
-	public static void rotate(float angleY, float angleZ = 0)
+    /// <summary>
+    /// Вращение объекта. Положительный угол оси Z соответствует вращению по часовой стрелке.
+    /// </summary>
+    public void RotateByAngle(GameObject form, float angleY = 0, float angleZ = 0, Action OnFinish = null)
 	{
-		Debug.Log($"[RotationAnimaton] Вращение");
-		FormController.instance.StartCoroutine(rotation(angleY, angleZ));
+		if (rotationRoutine != null)
+        {
+			Log.Message("Невозможно вращать, т.к. вращение уже происходит.");
+			return;
+        }
+
+		Log.Message($"Вращение формы на углы: Y = {angleY}, Z = {angleZ}");
+
+		//var rotation = Quaternion.Euler(0.0f, angleY, angleZ);
+		//form.transform.rotation = form.transform.rotation * rotation;
+
+		//-angleZ, чтобы вращался по часовой. Привычно для понимания
+		rotationRoutine = new CommonCoroutine(this, () => Rotate(form.transform, angleY, -angleZ));
+		rotationRoutine.OnFinish += OnFinish;
+		rotationRoutine.OnFinish += () => rotationRoutine = null;
+		rotationRoutine.Start();
 	}
 
-	/// <summary>
-	/// Корутина вращения формы.
-	/// </summary>
-	/// <param name="angleY">Целевой угол по оси Y.</param>
-	/// <param name="angleZ">Целевой угол по оси Z.</param>
-	static IEnumerator rotation(float angleY, float angleZ)
+	IEnumerator Rotate(Transform formTransform, float angleY, float angleZ)
 	{
-		rotating = true;
+		Log.Message("Начало вращения.");
 
-		Transform objTransform = FormController.cachedTransform;
-		var targetRotation = Quaternion.Euler(0.0f, angleY, angleZ);
+		var targetRotation = formTransform.rotation * Quaternion.Euler(0.0f, angleY, angleZ);
 
-		for (float T = 0.00f; Quaternion.Angle(objTransform.rotation, targetRotation) > 0.1f ; T += animationSpeed * Time.deltaTime)
+		for (float T = 0.00f;
+			Quaternion.Angle(formTransform.rotation, targetRotation) > 0.1f;
+			T += animationSpeed * Time.deltaTime)
 		{
-			objTransform.rotation = Quaternion.Lerp(objTransform.rotation, targetRotation, T);
+			formTransform.rotation = Quaternion.Lerp(formTransform.rotation, targetRotation, T);
 			yield return new WaitForEndOfFrame();
 		}
 
-		objTransform.rotation = targetRotation;
-		rotating = false;
-		Debug.Log($"[RotationAnimaton] Вращение завершено");
+		formTransform.rotation = targetRotation;
+
+		Log.Message("Конец вращения.");
 	}
 }
