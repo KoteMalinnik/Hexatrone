@@ -52,7 +52,7 @@ public static class FormLevel
 	public static void levelUpEvent()
 	{
 		if(level < 5) Debug.Log("[FormLevel] Уровень повышен!");
-		SoundManager.playSound(3);
+		//SoundManager.playSound(3);
 		setLevel(level + 1);
 	}
 
@@ -62,7 +62,7 @@ public static class FormLevel
 	public static void levelDownEvent()
 	{
 		if (level > 0) Debug.Log("[FormLevel] Уровень понижен!");
-		SoundManager.playSound(4);
+		//SoundManager.playSound(4);
 		setLevel(level - 1);
 	}
 }
