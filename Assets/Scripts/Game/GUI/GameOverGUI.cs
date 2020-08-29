@@ -27,6 +27,6 @@ public class GameOverGUI : MonoBehaviour
 		var panelsSwitcher = new PanelsActivitySwitcher();
 		panelsSwitcher.__ShowPanel(panelGameOver);
 
-		SoundManager.playSound(5);
+		//SoundManager.playSound(5);
 	}
 }

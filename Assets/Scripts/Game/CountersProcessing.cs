@@ -16,7 +16,7 @@ public static class CountersProcessing
 		CounterCriticalOrbs.decrementValue(delta);
 
 		GameInfoViewer.updateMismatchGUI();
-		SoundManager.playSound(1); //collect wrong orb sound
+		//SoundManager.playSound(1); //collect wrong orb sound
 	}
 
 	/// <summary>
@@ -44,7 +44,7 @@ public static class CountersProcessing
 		}
 
 		GameInfoViewer.updateMatchGUI();
-		SoundManager.playSound(0); //collect correct orb sound
+		//SoundManager.playSound(0); //collect correct orb sound
 	}
 
 	/// <summary>

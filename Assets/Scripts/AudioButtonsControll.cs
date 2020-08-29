@@ -37,8 +37,8 @@ public sealed class AudioButtonsControll : MonoBehaviour
 	// Установить начальные цвета кнопок.
 	void Start()
 	{
-		if (MusicManager.instance != null) imageMusicButton.color = MusicManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
-		if (SoundManager.instance != null) imageSoundButton.color = SoundManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
+		//if (MusicManager.instance != null) imageMusicButton.color = MusicManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
+		//if (SoundManager.instance != null) imageSoundButton.color = SoundManager.instance.allowAudio ? allowAudioColor : disallowAudioColor;
 	}
 
 	/// <summary>
@@ -46,13 +46,13 @@ public sealed class AudioButtonsControll : MonoBehaviour
 	/// </summary>
 	public void __Sound()
 	{
-		if (SoundManager.instance == null) return;
+		//if (SoundManager.instance == null) return;
 
 		Debug.Log("[MainMenuGUI] Переключение звука.");
 
 		var state = imageSoundButton.color == allowAudioColor;
 		state = !state;
-		SoundManager.instance.setAudioState(state);
+		//SoundManager.instance.setAudioState(state);
 
 		imageSoundButton.color = state ? allowAudioColor : disallowAudioColor;
 	}
@@ -62,13 +62,13 @@ public sealed class AudioButtonsControll : MonoBehaviour
 	/// </summary>
 	public void __Music()
 	{
-		if (MusicManager.instance == null) return;
+		//if (MusicManager.instance == null) return;
 
 		Debug.Log("[MainMenuGUI] Переключение музыки.");
 
 		var state = imageMusicButton.color == allowAudioColor;
 		state = !state;
-		MusicManager.instance.setAudioState(state);
+		//MusicManager.instance.setAudioState(state);
 
 		imageMusicButton.color = state ? allowAudioColor : disallowAudioColor;
 	}

@@ -12,16 +12,12 @@ public class Debuger : EditorWindow
 
 	Vector2 scrollViewPosition = Vector2.zero;
 	bool needSimulation = false;
-	bool needAudioManagers = false;
 
 	void OnGUI()
 	{
 		scrollViewPosition = GUILayout.BeginScrollView(scrollViewPosition);
 
 		DisplayStatements();
-
-		needAudioManagers = GUILayout.Toggle(needAudioManagers, "Отображать аудио менеджеры");
-		if(needAudioManagers) DisplayAudioManagersData();
 
 		needSimulation = GUILayout.Toggle(needSimulation, "Необходима симуляция обработки сферы");
 		if (needSimulation) DisplayCounterProcessing();
@@ -83,31 +79,6 @@ public class Debuger : EditorWindow
 		GUILayout.EndHorizontal();
 
 		GUILayout.Space(10);
-	}
-
-	void DisplayAudioManagersData()
-	{
-		GUILayout.Box("Менеджеры аудио");
-
-		_diplayAudioManager(MusicManager.instance, nameof(MusicManager));
-		_diplayAudioManager(SoundManager.instance, nameof(SoundManager));
-
-		GUILayout.Space(10);
-	}
-
-	void _diplayAudioManager(AudioManager manager, string managerName)
-	{
-		GUILayout.Space(5);
-
-		if (manager != null)
-		{
-			GUILayout.BeginHorizontal();
-			if (GUILayout.Button("On", GUILayout.Width(30))) manager.setAudioState(true);
-			if (GUILayout.Button("Off", GUILayout.Width(30))) manager.setAudioState(false);
-			GUILayout.Label(managerName +". Состояние: " + (manager.allowAudio ? "On" : "Off"));
-			GUILayout.EndHorizontal();
-		}
-		else GUILayout.Label($"Менеджер {managerName} отсутствует!");
 	}
 
 	void DisplayCounterProcessing()

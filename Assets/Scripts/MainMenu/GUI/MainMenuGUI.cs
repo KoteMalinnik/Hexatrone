@@ -29,7 +29,7 @@ public class MainMenuGUI : MonoBehaviour
 	public void __Play()
 	{
 		Debug.Log("[MainMenuGUI] Загрузка сцены GameLevel.");
-		RegularMethods.LoadScene("2_GameLevel");
+		//RegularMethods.LoadScene("2_GameLevel");
 	}
 
 	/// <summary>

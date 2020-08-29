@@ -35,7 +35,7 @@ public class PauseGUI : MonoBehaviour
 	/// </summary>
 	public void __Restart()
 	{
-		RegularMethods.LoadScene("2_GameLevel");
+		//RegularMethods.LoadScene("2_GameLevel");
 	}
 
 	/// <summary>
@@ -43,6 +43,6 @@ public class PauseGUI : MonoBehaviour
 	/// </summary>
 	public void __MainMenu()
 	{
-		RegularMethods.LoadScene("1_MainMenu");
+		//RegularMethods.LoadScene("1_MainMenu");
 	}
 }
