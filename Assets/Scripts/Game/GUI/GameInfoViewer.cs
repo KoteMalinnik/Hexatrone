@@ -38,7 +38,7 @@ public class GameInfoViewer : MonoBehaviour
 
 		sliderCriticalOrbs.maxValue = 5;
 
-		updateLevelGUI(FormLevel.level);
+		updateLevelGUI(FormLevelController.level);
 	}
 
 	/// <summary>

@@ -36,10 +36,10 @@ public class Debuger : EditorWindow
 		GUILayout.Space(5);
 
 		GUILayout.BeginHorizontal();
-		if (GUILayout.Button("+", GUILayout.Width(20))) FormLevel.levelUpEvent();
-		if (GUILayout.Button("0", GUILayout.Width(20))) FormLevel.setLevel(0);
-		if (GUILayout.Button("-", GUILayout.Width(20))) FormLevel.levelDownEvent();
-		GUILayout.Label(FormLevel.level.ToString(), GUILayout.MaxWidth(40));
+		if (GUILayout.Button("+", GUILayout.Width(20))) FormLevelController.levelUpEvent();
+		if (GUILayout.Button("0", GUILayout.Width(20))) FormLevelController.setLevel(0);
+		if (GUILayout.Button("-", GUILayout.Width(20))) FormLevelController.levelDownEvent();
+		GUILayout.Label(FormLevelController.level.ToString(), GUILayout.MaxWidth(40));
 		GUILayout.EndHorizontal();
 
 		GUILayout.Space(10);

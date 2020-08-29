@@ -43,7 +43,7 @@ public class FormController : MonoBehaviour
 
 		FormPartsSetuper.setupFormParts(form);
 
-		form.name = $"Form_{FormLevel.level}";
+		form.name = $"Form_{FormLevelController.level}";
 
 		form.transform.parent = cachedTransform;
 		form.transform.localPosition = Vector3.zero;

@@ -1,26 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// Уничтожение существующей формы.
-/// </summary>
 public static class FormDestroyer 
 {
 	/// <summary>
 	/// Уничтожить существующую форму, после чего создать новую. Если форма не существует, то создать ее.
 	/// </summary>
-	/// <param name="form">Объект формы.</param>
-	public static void destroyObject(GameObject form)
+	/// <param name="existingForm">Объект формы.</param>
+	public static void destroyObject(GameObject existingForm)
 	{
-		if(form == null)
+		if(existingForm == null)
 		{
 			//Инициализируем форму, если она null в FormController.form
-			FormInitialiser.initialiseObject(FormLevel.level);
+			FormInitialiser.initialiseObject(FormLevelController.level);
 			return;
 		}
 
-		Debug.Log($"[FormDestroyer] Уничтожение формы {form.name}.");
-		FormController.instance.StartCoroutine(destroyAfterRotation(form));
+		Debug.Log($"[FormDestroyer] Уничтожение формы {existingForm.name}.");
+		FormController.instance.StartCoroutine(destroyAfterRotation(existingForm));
 	}
 
 	/// <summary>
@@ -37,6 +34,6 @@ public static class FormDestroyer
 		MonoBehaviour.Destroy(form);
 		Debug.Log($"[FormDestroyer] Форма уничтожена.");
 
-		FormInitialiser.initialiseObject(FormLevel.level);
+		FormInitialiser.initialiseObject(FormLevelController.level);
 	}
 }

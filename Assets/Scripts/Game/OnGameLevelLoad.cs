@@ -20,7 +20,7 @@ public class OnGameLevelLoad : MonoBehaviour
 
 	void Start()
 	{
-		FormLevel.setLevel(startLevel);
+		FormLevelController.setLevel(startLevel);
 		Destroy(gameObject);
 	}
 }
