@@ -12,12 +12,12 @@ namespace Form
 		#region MonoBehaviour Callbacks
 		private void OnEnable()
         {
-			PartMousePressProcessing.OnPartClick += CalculateRotation;
+			Part.MouseKeyDownHandler.OnPartClick += CalculateRotation;
         }
 
         private void OnDisable()
         {
-			PartMousePressProcessing.OnPartClick -= CalculateRotation;
+			Part.MouseKeyDownHandler.OnPartClick -= CalculateRotation;
 		}
         #endregion
 

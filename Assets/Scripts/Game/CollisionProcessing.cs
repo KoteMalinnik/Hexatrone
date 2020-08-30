@@ -76,7 +76,7 @@ public static class CollisionProcessing
 
 		Debug.Log("[CollisionProcessing] Отсутствие совпадений.");
 		OnColorMismatch();
-		collisions[0].GetComponent<PartFlashingAnimation>().animate(false);
+		//collisions[0].GetComponent<PartFlashingAnimation>().animate(false);
 	}
 
 	/// <summary>
