@@ -4,6 +4,7 @@ namespace Form
 {
 	[RequireComponent(typeof(Controll))]
 	[RequireComponent(typeof(Rotation))]
+	[RequireComponent(typeof(Colorizer))]
 	public class FormController : MonoBehaviour
 	{
 		#region Fields
@@ -27,13 +28,11 @@ namespace Form
         private void OnEnable()
         {
 			LevelController.OnFormLevelChange += DestroyOldForm;
-
 		}
 
         private void OnDisable()
         {
 			LevelController.OnFormLevelChange -= DestroyOldForm;
-
 		}
         #endregion
 
@@ -45,7 +44,10 @@ namespace Form
 			var prefab = PrefabLoader.Load(LevelController.Level, path, nameTemplate);
 			
 			var instantiatedForm = Instantiator.InstantiateForm(prefab, transform, Vector2.zero, GetComponent<Rotation>());
-			currentForm = instantiatedForm ?? currentForm;
+			if (instantiatedForm == null) return;
+
+			currentForm = instantiatedForm;
+			GetComponent<Colorizer>().ColorizeForm(currentForm);
 		}
 
 		void DestroyOldForm(int e)

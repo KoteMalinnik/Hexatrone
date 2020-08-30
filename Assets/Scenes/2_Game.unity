@@ -3009,6 +3009,7 @@ GameObject:
   - component: {fileID: 2221289175379858554}
   - component: {fileID: 2221289175379858557}
   - component: {fileID: 2221289175379858556}
+  - component: {fileID: 2221289175379858558}
   - component: {fileID: 2221289175379858555}
   m_Layer: 0
   m_Name: FormController
@@ -3072,6 +3073,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3197350a2a86dc548b4a0ba12699f284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2221289175379858558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221289175379858553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df56f77b9dcf9e40b0a077b0e0c57f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5019608, b: 0.23921569, a: 1}
+  - {r: 0.31764707, g: 0.12156863, b: 0.34117648, a: 1}
 --- !u!114 &2666386763190995261
 MonoBehaviour:
   m_ObjectHideFlags: 0
