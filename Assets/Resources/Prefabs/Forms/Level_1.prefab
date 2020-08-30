@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893019510683210450}
   m_Layer: 0
-  m_Name: Form_0
+  m_Name: Level_1
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -40,6 +40,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893019510683210450}
     m_Modifications:
+    - target: {fileID: 610006608616935902, guid: 3f202ef32e2c523409dd9f8d70407dc2,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6929850831743086349, guid: 3f202ef32e2c523409dd9f8d70407dc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,6 +119,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020684275658485192, guid: 3f202ef32e2c523409dd9f8d70407dc2,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020684275658485192, guid: 3f202ef32e2c523409dd9f8d70407dc2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8637975299854216407, guid: 3f202ef32e2c523409dd9f8d70407dc2,
         type: 3}

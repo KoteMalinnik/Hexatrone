@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -149,6 +150,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8637975299854216407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b212df76046d14ab05a2da87d0c666, type: 3}
+  m_Script: {fileID: 11500000, guid: b02d1497c8ed5a8428342d54975fe5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
