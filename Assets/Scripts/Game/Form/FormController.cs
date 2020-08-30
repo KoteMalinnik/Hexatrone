@@ -1,55 +1,66 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Контролер формы.
-/// </summary>
-public class FormController : MonoBehaviour
+namespace Form
 {
-	/// <summary>
-	/// Экземпляр.
-	/// </summary>
-	public static FormController instance { get; private set;} = null;
-
-	/// <summary>
-	/// Кешированный Transform.
-	/// </summary>
-	public static Transform cachedTransform { get; private set; } = null;
-	void Awake()
+	[RequireComponent(typeof(Controll))]
+	[RequireComponent(typeof(Rotation))]
+	public class FormController : MonoBehaviour
 	{
-		instance = this;
-		cachedTransform = transform;
+		#region Fields
+		[Header("Загрузка префабов")]
+		[SerializeField] string path = "Prefabs\\Forms\\";
+		[SerializeField] string nameTemplate = "Level_";
 
-		
-	}
+		[Header("Ограничения уровня")]
+		[SerializeField] int minLevel = 1;
+		[SerializeField] int maxLevel = 6;
 
-	/// <summary>
-	/// Объект формы.
-	/// </summary>
-	public static GameObject form { get; private set; } = null;
+		GameObject currentForm = null;
+        #endregion
 
-	/// <summary>
-	/// Установить объект формы.
-	/// </summary>
-	/// <param name="newForm">Объект формы.</param>
-	public static void setForm(GameObject newForm)
-	{
-		if (newForm == null)
-		{
-			Debug.LogError($"[FormController] Новая форма пуста");
-			return;
+        #region MonoBehaviour Callbacks
+        private void Awake()
+        {
+			LevelController.SetupLevelThresholds(minLevel, maxLevel);
+        }
+
+        private void OnEnable()
+        {
+			LevelController.OnFormLevelChange += DestroyOldForm;
+
 		}
 
-		form = newForm;
+        private void OnDisable()
+        {
+			LevelController.OnFormLevelChange -= DestroyOldForm;
 
-		if(cachedTransform.localRotation.eulerAngles.y < 10) cachedTransform.localRotation = Quaternion.Euler(0, 90, 0);
+		}
+        #endregion
 
-		FormPartsSetuper.setupFormParts(form);
+		void CreateNewForm()
+        {
+			Log.Message("Создание новой формы.");
+			Destroyer.OnFormDestroyed -= CreateNewForm;
 
-		//form.name = $"Form_{FormLevelController.level}";
+			var prefab = PrefabLoader.Load(LevelController.Level, path, nameTemplate);
+			
+			var instantiatedForm = Instantiator.InstantiateForm(prefab, transform, Vector2.zero, GetComponent<Rotation>());
+			currentForm = instantiatedForm ?? currentForm;
+		}
 
-		form.transform.parent = cachedTransform;
-		form.transform.localPosition = Vector3.zero;
+		void DestroyOldForm(int e)
+        {
+			Log.Message("Уничтожение старой формы.");
 
-		FormRotation.rotate(0);
+			if (currentForm == null)
+            {
+				Log.Message("Старая форма отсутствует.");
+				CreateNewForm();
+				return;
+			}
+
+			Destroyer.OnFormDestroyed += CreateNewForm;
+			Destroyer.DestroyForm(currentForm, GetComponent<Rotation>());
+        }
 	}
 }

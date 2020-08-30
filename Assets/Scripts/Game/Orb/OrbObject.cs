@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(OrbMovement))]
 [RequireComponent(typeof(OrbCollision))]
-[RequireComponent(typeof(ColorSetuper))]
+[RequireComponent(typeof(ColorController))]
 /// <summary>
 /// Объект сферы.
 /// </summary>

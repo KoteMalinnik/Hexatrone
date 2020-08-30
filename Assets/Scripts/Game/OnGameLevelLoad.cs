@@ -14,9 +14,9 @@ public class OnGameLevelLoad : MonoBehaviour
 		Statements.setGameOver(false);
 		Statements.setPause(true);
 
-		CounterTotalOrbs.setValue(0);
+		//CounterTotalOrbs.setValue(0);
 
-		FormLevelController.SetupLevel(startingLevel);
+		//FormLevelController.SetupLevel(startingLevel);
 
 		Log.Message("Установка значений завершена.");
 

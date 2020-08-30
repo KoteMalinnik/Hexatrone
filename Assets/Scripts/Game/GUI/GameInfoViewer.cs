@@ -90,13 +90,13 @@ public class GameInfoViewer : MonoBehaviour
 		//обновляем максимальные значения слайдеров, чтобы не рассчитывать лишний раз какую часть добавить
 		instance.sliderOrbsAtFormLevel.maxValue = CounterOrbsAtFormLevel.valueToLevelUp;
 
-		if (FormPartsSetuper.colors == null) return;
+		//if (FormPartColorazing.colors == null) return;
 
 		//изменяем цвета слайдеров
 		//sliderOrbsAtFormLevel - цвет следующей части
-		imageFillRect_sliderOrbsAtFormLevel.color = FormPartsSetuper.colors[formLevel + 3];
+		//imageFillRect_sliderOrbsAtFormLevel.color = FormPartColorazing.colors[formLevel + 3];
 
 		//sliderCriticalOrbs - цвет текущего последнего элемента
-		imageFillRect_sliderCriticalOrbs.color = formLevel > 0 ? FormPartsSetuper.colors[formLevel + 2] : Color.gray;
+		//imageFillRect_sliderCriticalOrbs.color = formLevel > 0 ? FormPartColorazing.colors[formLevel + 2] : Color.gray;
 	}
 }

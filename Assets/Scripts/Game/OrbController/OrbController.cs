@@ -18,7 +18,7 @@ public sealed class OrbController : MonoBehaviour
 	/// <summary>
 	/// ColorSetuper объекта сферы.
 	/// </summary>
-	public static ColorSetuper orbColorSetuper { get; private set; } = null;
+	public static ColorController orbColorSetuper { get; private set; } = null;
 
 	/// <summary>
 	/// Transform объекта сферы.
@@ -35,7 +35,7 @@ public sealed class OrbController : MonoBehaviour
 		orbObject = orbInstance.AddComponent<OrbObject>();
 
 		orbSpriteRenderer = orbObject.GetComponent<SpriteRenderer>();
-		orbColorSetuper = orbObject.GetComponent<ColorSetuper>();
+		orbColorSetuper = orbObject.GetComponent<ColorController>();
 		orbTransform = orbObject.transform;
 
 		setupObject();

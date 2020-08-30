@@ -9,24 +9,23 @@ public static class OrbColorSetuper
 	/// Установить цвет.
 	/// </summary>
 	/// <param name="orbColorSetuper">ColorSetuper сферы.</param>
-	public static void setupColor(ColorSetuper orbColorSetuper)
+	public static void setupColor(ColorController orbColorSetuper)
 	{
-		if(FormPartsSetuper.colors == null)
-		{
-			Debug.Log("[OrbColorSetuper] <color=red>Цвета отсутствуют.</color>");
-			return;
-		}
+		//if(FormPartColorazing.colors == null)
+		//{
+		//	Debug.Log("[OrbColorSetuper] <color=red>Цвета отсутствуют.</color>");
+		//	return;
+		//}
 
-		orbColorSetuper.setColor(getRandomColor());
+		//orbColorSetuper.SetColor(getRandomColor());
 	}
 
 	/// <summary>
 	/// Получить случайный цвет, который присутствует у существующей формы.
 	/// </summary>
-	static Color getRandomColor()
-	{
-		var randomColor = FormPartsSetuper.colors[Random.Range(0, 0)];
+	//static Color getRandomColor()
+	//{
 		//var randomColor = FormPartsSetuper.colors[Random.Range(0, FormLevelController.level + 3)];
-		return randomColor;
-	}
+	//	return randomColor;
+	//}
 }

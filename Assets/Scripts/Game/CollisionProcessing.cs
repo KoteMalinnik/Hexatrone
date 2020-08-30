@@ -17,7 +17,7 @@ public static class CollisionProcessing
 	/// <param name="newCollision">Новая коллизия объекта Part.</param>
 	public static void addCollision(Collider2D newCollision)
 	{
-		if (coroutine == null) coroutine = FormController.instance.StartCoroutine(waitForEndOfFrame());
+		//if (coroutine == null) coroutine = FormController.instance.StartCoroutine(waitForEndOfFrame());
 
 		if (collisions[0] == null) collisions[0] = newCollision;
 		else collisions[1] = newCollision;
@@ -85,14 +85,14 @@ public static class CollisionProcessing
 	/// <param name="collision">Коллизия объекта Part.</param>
 	static bool checkColor(Collider2D collision)
 	{
-		var orbColor = OrbController.orbColorSetuper.getColor();
-		var collisionColor = collision.GetComponent<ColorSetuper>().getColor();
+		//var orbColor = OrbController.orbColorSetuper.GetColor();
+		//var collisionColor = collision.GetComponent<ColorController>().GetColor();
 
-		if(orbColor == collisionColor)
-		{
-			collision.GetComponent<PartFlashingAnimation>().animate(true);
-			return true;
-		}
+		//if(orbColor == collisionColor)
+		//{
+		//	collision.GetComponent<PartFlashingAnimation>().animate(true);
+		//	return true;
+		//}
 		return false;
 	}
 
