@@ -6,12 +6,12 @@ namespace Orb
     {
         [SerializeField] ColorSet partColors = null;
 
-        public void Colorize(GameObject orb, int maxColorLevel)
+        public Color Colorize(GameObject orb, int maxColorLevel)
         {
-            Log.Message("Установка цвета сферы.");
-
             var spriteRenderer = orb.GetComponent<SpriteRenderer>();
             spriteRenderer.color = GetRandomColor(maxColorLevel);
+            Log.Message("Установка цвета сферы: " + spriteRenderer.color);
+            return spriteRenderer.color;
 
         }
 
