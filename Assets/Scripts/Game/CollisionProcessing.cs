@@ -40,7 +40,7 @@ public static class CollisionProcessing
 		checkCollisions();
 		removeCollisions();
 
-		OrbController.setupObject();
+		//OrbController.setupObject();
 
 		coroutine = null;
 	}
@@ -111,7 +111,7 @@ public static class CollisionProcessing
 	static void OnColorMatch()
 	{
 		Debug.Log("[CollisionProcessing] Совпадение цветов!");
-		CountersProcessing.OnColorMatch(OrbController.orbObject);
+		//CountersProcessing.OnColorMatch(OrbController.orbObject);
 	}
 
 	/// <summary>
@@ -120,6 +120,6 @@ public static class CollisionProcessing
 	static void OnColorMismatch()
 	{
 		Debug.Log("[CollisionProcessing] Несовпадение цветов!");
-		CountersProcessing.OnColorMismatch(OrbController.orbObject);
+		//CountersProcessing.OnColorMismatch(OrbController.orbObject);
 	}
 }

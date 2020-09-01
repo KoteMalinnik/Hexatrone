@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Orb
 {
-	public class CollisionListener : MonoBehaviour
+	public class OrbCollisionListener : MonoBehaviour
 	{
 		public static event Action<Color> OnOrbCollisionWithPart = null;
 
@@ -11,8 +11,8 @@ namespace Orb
 		{
 			Log.Message("Столкновение с " + collision.name);
 
-			Color collisedPartColor = collision.GetComponent<ColorController>().Color;
-			OnOrbCollisionWithPart?.Invoke(collisedPartColor);
+			Color partColor = collision.GetComponent<SpriteRenderer>().color;
+			OnOrbCollisionWithPart?.Invoke(partColor);
 		}
 	}
 }

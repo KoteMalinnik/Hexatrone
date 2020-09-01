@@ -10,14 +10,13 @@ public static class ObjectInstantiator
 		Quaternion rotation
 		)
 	{
-		Log.Message("Создание формы: " + prefab?.name);
-
 		if (prefab == null)
 		{
 			Log.Warning("Префаб пуст.");
 			return null;
 		}
 
+		Log.Message("Создание объекта: " + prefab?.name);
 		GameObject form = MonoBehaviour.Instantiate(prefab, position, rotation, parent);
 		return form;
 	}

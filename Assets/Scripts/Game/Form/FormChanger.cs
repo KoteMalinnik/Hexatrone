@@ -39,7 +39,7 @@ namespace Form
 			if (instantiatedForm == null) return;
 			currentForm = instantiatedForm;
 
-			GetComponent<FormColorizer>().ColorizeForm(currentForm);
+			GetComponent<FormColorizer>().Colorize(currentForm);
 			formRotation.RotateByAngle(currentForm.transform, angleY: -90, rotationSpeed: animationSpeed);
 		}
 

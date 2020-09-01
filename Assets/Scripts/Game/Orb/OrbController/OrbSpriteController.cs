@@ -53,22 +53,22 @@ public class OrbSpriteController : MonoBehaviour
 	/// </summary>
 	/// <param name="orbSpriteRenderer">SpriteRenderer сферы.</param>
 	/// <param name="orbType">Тип сферы.</param>
-	public static void setupSprite(SpriteRenderer orbSpriteRenderer, OrbTypeDefiner.orbType orbType)
-	{
-		switch (orbType)
-		{
-			case OrbTypeDefiner.orbType.Basic:
-				orbSpriteRenderer.sprite = basic;
-				break;
-			case OrbTypeDefiner.orbType.DeltaBonus:
-				orbSpriteRenderer.sprite = deltaBonus;
-				break;
-			case OrbTypeDefiner.orbType.CriticalBonus:
-				orbSpriteRenderer.sprite = criticalBonus;
-				break;
-			case OrbTypeDefiner.orbType.LevelUpBonus:
-				orbSpriteRenderer.sprite = levelUpBonus;
-				break;
-		}
-	}
+	//public static void setupSprite(SpriteRenderer orbSpriteRenderer, OrbTypeDefiner.orbType orbType)
+	//{
+	//	switch (orbType)
+	//	{
+	//		case OrbTypeDefiner.orbType.Basic:
+	//			orbSpriteRenderer.sprite = basic;
+	//			break;
+	//		case OrbTypeDefiner.orbType.DeltaBonus:
+	//			orbSpriteRenderer.sprite = deltaBonus;
+	//			break;
+	//		case OrbTypeDefiner.orbType.CriticalBonus:
+	//			orbSpriteRenderer.sprite = criticalBonus;
+	//			break;
+	//		case OrbTypeDefiner.orbType.LevelUpBonus:
+	//			orbSpriteRenderer.sprite = levelUpBonus;
+	//			break;
+	//	}
+	//}
 }

@@ -4,24 +4,24 @@ namespace Form
 {
     public class FormColorizer : MonoBehaviour
     {
-        //TODO: использовать SerializedObject
-        [SerializeField] Color[] partColors = new Color[6];
-        
-        public void ColorizeForm(GameObject form)
+        [SerializeField] ColorSet partColors = null;
+
+        public void Colorize(GameObject form)
         {
             Log.Message("Установка цветов частей формы.");
 
             Transform formTransform = form.transform;
-            for (int i = 0; i < formTransform.childCount; i++)
+            if (partColors.Lenght != formTransform.childCount)
             {
-                ColorizePart(formTransform.GetChild(i), partColors[i]);
+                Log.Error("Количество частей и цветов не совпадает.");
+                return;
             }
-        }
 
-        void ColorizePart(Transform partTransform, Color color)
-        {
-            var partColorController = partTransform.GetComponent<ColorController>();
-            partColorController.SetColor(color);
+            for (int i = 0; i < partColors.Lenght; i++)
+            {
+                var spriteRenderer = formTransform.GetChild(i).GetComponent<SpriteRenderer>();
+                spriteRenderer.color = partColors.GetColor(i);
+            }
         }
     }
 }

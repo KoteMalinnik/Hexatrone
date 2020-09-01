@@ -42,15 +42,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: part
-    uniqueID: 1392891931
-    locked: 0
-  - name: frame
-    uniqueID: 1448778657
-    locked: 0
-  - name: orb
-    uniqueID: 3021080055
-    locked: 0
-  - name: GUI
-    uniqueID: 2777743809
-    locked: 0
