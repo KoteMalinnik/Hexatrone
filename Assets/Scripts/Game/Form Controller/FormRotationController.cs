@@ -7,6 +7,7 @@ namespace Form
 	{
 		#region Fields
 		[SerializeField] float rotationSpeed = 1;
+		[SerializeField] Transform orbGeneratorTransform = null;
 		#endregion
 
 		#region MonoBehaviour Callbacks
@@ -38,7 +39,19 @@ namespace Form
 			formRotation *= partRotation;
 			formRotation *= Quaternion.Euler(0, 0, 180);
 
-			//TODO: добавить учет направления к сфере
+			//коррекция поворота на сферу
+			if (orbGeneratorTransform.childCount > 0)
+            {
+				var orbTransform = orbGeneratorTransform.GetChild(0);
+				Vector2 directionToOrb = orbTransform.position - partTransform.parent.position;
+
+				Debug.DrawLine(partTransform.parent.position, (Vector2)partTransform.parent.position + directionToOrb, Color.red, 5);
+
+				float deltaAngle = -Vector2.SignedAngle(Vector2.up, directionToOrb);
+				formRotation *= Quaternion.Euler(0, 0, deltaAngle);
+
+				Log.Message("Коррекция поворота в направлении сферы на угол: " + deltaAngle);
+			}
 
 			Rotate(partTransform.parent, formRotation.eulerAngles.z);
 		}

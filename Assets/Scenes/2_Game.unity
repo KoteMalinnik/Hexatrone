@@ -3233,6 +3233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
+  orbGeneratorTransform: {fileID: 0}
 --- !u!114 &2221289175379858558
 MonoBehaviour:
   m_ObjectHideFlags: 0

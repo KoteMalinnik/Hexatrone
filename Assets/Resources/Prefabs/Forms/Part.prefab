@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 610006608616935902}
   - component: {fileID: 2691151675440869294}
   - component: {fileID: 2059892315481351743}
-  - component: {fileID: 2379842823714554301}
   m_Layer: 9
   m_Name: Part
   m_TagString: Untagged
@@ -141,15 +140,3 @@ MonoBehaviour:
   animationSpeed: 5
   incorrectColor: {r: 0, g: 0, b: 0, a: 1}
   correctColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &2379842823714554301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8637975299854216407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02d1497c8ed5a8428342d54975fe5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
