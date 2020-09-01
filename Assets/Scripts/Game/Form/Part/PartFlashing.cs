@@ -4,24 +4,24 @@ using UnityEngine;
 namespace Part
 {
 	[RequireComponent(typeof(SpriteRenderer))]
-	public class Flashing : MonoBehaviour
+	public class PartFlashing : MonoBehaviour
 	{
 		#region Fields
 		[Range(0.01f, 10f)]
 		[SerializeField] float animationSpeed = 1f;
 
-		[SerializeField] Color c_incorrectColorCollected = Color.black;
-		[SerializeField] Color c_correctColorCollected = Color.white;
+		[SerializeField] Color incorrectColor = Color.black;
+		[SerializeField] Color correctColor = Color.white;
 
 		CommonCoroutine flashingOneShotRoutine = null;
 		CommonCoroutine flashingDoubleShotRoutine = null;
-        #endregion
+		#endregion
 
-        void Flash(bool correctColorCollected)
+		void Flash(bool correctColorCollected)
 		{
             Log.Message("Запуск анимации мигания объекта: " + name);
 
-            Color flashColor = correctColorCollected ? c_correctColorCollected : c_incorrectColorCollected;
+            Color flashColor = correctColorCollected ? correctColor : incorrectColor;
 			SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
 			flashingDoubleShotRoutine = new CommonCoroutine(this, () => FlashDoubleShot(spriteRenderer, flashColor));
