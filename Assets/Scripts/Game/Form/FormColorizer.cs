@@ -2,8 +2,9 @@
 
 namespace Form
 {
-    public class Colorizer : MonoBehaviour
+    public class FormColorizer : MonoBehaviour
     {
+        //TODO: использовать SerializedObject
         [SerializeField] Color[] partColors = new Color[6];
         
         public void ColorizeForm(GameObject form)

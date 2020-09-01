@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Form
 {
-	public class Rotation : MonoBehaviour
+	public class FormRotation : MonoBehaviour
 	{
 		#region Fields
 		CommonCoroutine rotationRoutine = null;

@@ -1,8 +1,9 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Form
 {
-    public static class LevelController
+    public class FormLevelController : MonoBehaviour
     {
         #region Events
         public static event Action<int> OnFormLevelChange = null;
@@ -12,28 +13,20 @@ namespace Form
         #endregion
 
         #region Fields
-        static int minLevel = 1;
-        static int maxLevel = 6;
+        [Header("Ограничения уровня")]
+        [SerializeField] int minLevel = 1;
+        [SerializeField] int maxLevel = 6;
+
+        int level = 0;
         #endregion
 
-        #region Properties
-        public static int Level { get; private set; } = 0;
-        #endregion
-
-        public static void SetupLevelThresholds(int min, int max)
-        {
-            Log.Message($"Установка ограничений уровня. Min: {min}, Max: {max}.");
-            minLevel = min;
-            maxLevel = max;
-        }
-
-        public static void SetupLevel(int level)
+        void SetupLevel(int level)
         {
             Log.Message("Установка уровня формы: " + level);
             
-            Level = level;
+            this.level = level;
 
-            if (Level == maxLevel)
+            if (this.level == maxLevel)
             {
                 Log.Message("Достигнут максимальный уровень формы.");
                 OnFormMaxLevel?.Invoke();
@@ -42,30 +35,30 @@ namespace Form
             OnFormLevelChange?.Invoke(level);
         }
 
-        public static void LevelUp()
+        void LevelUp()
         {
-            if (Level == maxLevel)
+            if (level == maxLevel)
             {
                 Log.Message("Достигнут максимальный уровень формы.");
                 return;
             }
 
             Log.Message($"Уровень формы повышен.");
-            SetupLevel(Level + 1);
+            SetupLevel(level + 1);
         }
 
-        public static void LevelDown()
+        void LevelDown()
         {
             Log.Message($"Уровень формы понижен.");
 
-            if (Level - 1 < minLevel)
+            if (level - 1 < minLevel)
             {
                 Log.Message("Уровень формы ниже минимального.");
                 OnFormZeroLevel?.Invoke();
                 return;
             }
 
-            SetupLevel(Level - 1);
+            SetupLevel(level - 1);
         }
     }
 }

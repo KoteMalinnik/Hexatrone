@@ -2,8 +2,8 @@
 
 namespace Form
 {
-	[RequireComponent(typeof(Rotation))]
-	public class Controll : MonoBehaviour
+	[RequireComponent(typeof(FormRotation))]
+	public class FormRotationController : MonoBehaviour
 	{
 		#region Fields
 		[SerializeField] float rotationSpeed = 1;
@@ -12,12 +12,12 @@ namespace Form
 		#region MonoBehaviour Callbacks
 		private void OnEnable()
         {
-			Part.MouseKeyDownHandler.OnPartClick += CalculateRotation;
+			Part.PartClickListener.OnClick += CalculateRotation;
         }
 
         private void OnDisable()
         {
-			Part.MouseKeyDownHandler.OnPartClick -= CalculateRotation;
+			Part.PartClickListener.OnClick -= CalculateRotation;
 		}
         #endregion
 
@@ -45,7 +45,7 @@ namespace Form
 
 		void Rotate(Transform formTransform, float rotationAngle)
         {
-			GetComponent<Rotation>().RotateByAngle(formTransform, angleZ: rotationAngle);
+			GetComponent<FormRotation>().RotateByAngle(formTransform, angleZ: rotationAngle);
 		}
 	}
 }
