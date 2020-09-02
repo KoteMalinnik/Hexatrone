@@ -3,7 +3,7 @@
 namespace Orb
 {
 	[RequireComponent(typeof(OrbDataController))]
-	public class OrbCollisionListener : MonoBehaviour
+	public class OrbOnCollisionDestroyer : MonoBehaviour
 	{
 		void OnTriggerEnter2D(Collider2D collision)
 		{
