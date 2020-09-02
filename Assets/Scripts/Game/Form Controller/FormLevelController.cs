@@ -35,7 +35,7 @@ namespace Form
             OnFormLevelChange?.Invoke(level);
         }
 
-        void LevelUp()
+        public void LevelUp()
         {
             if (level == maxLevel)
             {
@@ -47,7 +47,7 @@ namespace Form
             SetupLevel(level + 1);
         }
 
-        void LevelDown()
+        public void LevelDown()
         {
             Log.Message($"Уровень формы понижен.");
 

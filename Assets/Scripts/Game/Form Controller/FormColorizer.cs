@@ -11,13 +11,13 @@ namespace Form
             Log.Message("Установка цветов частей формы.");
 
             Transform formTransform = form.transform;
-            if (partColors.Lenght != formTransform.childCount)
+            if (partColors.Lenght < formTransform.childCount)
             {
                 Log.Error("Количество частей и цветов не совпадает.");
                 return;
             }
 
-            for (int i = 0; i < partColors.Lenght; i++)
+            for (int i = 0; i < formTransform.childCount; i++)
             {
                 var spriteRenderer = formTransform.GetChild(i).GetComponent<SpriteRenderer>();
                 spriteRenderer.color = partColors.GetColor(i);
