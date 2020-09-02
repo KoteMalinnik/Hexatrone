@@ -14,13 +14,6 @@ namespace Orb
         #endregion
 
         #region MonoBehaviour Callbacks
-        private void Awake()
-        {
-            generator = GetComponent<OrbGenerator>();
-            colorizer = GetComponent<OrbColorizer>();
-
-            GenerateNewOrb();
-        }
 
         private void OnEnable()
         {
@@ -40,7 +33,7 @@ namespace Orb
             maxColorLevel = formLevel + 2;
         }
 
-        void GenerateNewOrb(OrbData e = null)
+        public void GenerateNewOrb(OrbData e = null)
         {
             var orb = generator.Generate();
             var orbDataController = orb.GetComponent<OrbDataController>();
