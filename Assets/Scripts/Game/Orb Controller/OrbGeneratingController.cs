@@ -15,13 +15,11 @@ namespace Orb
         private void OnEnable()
         {
             Form.FormLevelController.OnFormLevelChange += ChangeMaxColorLevel;
-            //OrbDataController.OnOrbCollision += GenerateNewOrb;
         }
 
         private void OnDisable()
         {
             Form.FormLevelController.OnFormLevelChange -= ChangeMaxColorLevel;
-            //OrbDataController.OnOrbCollision -= GenerateNewOrb;
         }
         #endregion
 
@@ -30,12 +28,10 @@ namespace Orb
             maxColorLevel = formLevel + 2;
         }
 
-        public void GenerateNewOrb(OrbData e = null)
+        public void GenerateNewOrb()
         {
             var orb = GetComponent<OrbGenerator>().Generate();
-            var orbDataController = orb.GetComponent<OrbDataController>();
             var color = GetComponent<OrbColorizer>().Colorize(orb, maxColorLevel);
-            orbDataController.Initialize(new OrbData(1, color));
         }
     }
 
