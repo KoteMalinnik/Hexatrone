@@ -10,18 +10,18 @@ namespace Part
 		[Range(0.01f, 10f)]
 		[SerializeField] float animationSpeed = 1f;
 
-		[SerializeField] Color incorrectColor = Color.black;
-		[SerializeField] Color correctColor = Color.white;
+		[SerializeField] Color matchedColor = Color.white;
+		[SerializeField] Color mismatchedColor = Color.black;
 
 		CommonCoroutine flashingOneShotRoutine = null;
 		CommonCoroutine flashingDoubleShotRoutine = null;
 		#endregion
 
-		void Flash(bool correctColorCollected)
+		public void Flash(bool match)
 		{
             Log.Message("Запуск анимации мигания объекта: " + name);
 
-            Color flashColor = correctColorCollected ? correctColor : incorrectColor;
+            Color flashColor = match ? matchedColor : mismatchedColor;
 			SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
 			flashingDoubleShotRoutine = new CommonCoroutine(this, () => FlashDoubleShot(spriteRenderer, flashColor));
