@@ -7,9 +7,6 @@ namespace Orb
     public class OrbGeneratingController : MonoBehaviour
     {
         #region Fields
-        OrbGenerator generator = null;
-        OrbColorizer colorizer = null;
-
         int maxColorLevel = 3;
         #endregion
 
@@ -18,13 +15,13 @@ namespace Orb
         private void OnEnable()
         {
             Form.FormLevelController.OnFormLevelChange += ChangeMaxColorLevel;
-            OrbDataController.OnOrbCollision += GenerateNewOrb;
+            //OrbDataController.OnOrbCollision += GenerateNewOrb;
         }
 
         private void OnDisable()
         {
             Form.FormLevelController.OnFormLevelChange -= ChangeMaxColorLevel;
-            OrbDataController.OnOrbCollision -= GenerateNewOrb;
+            //OrbDataController.OnOrbCollision -= GenerateNewOrb;
         }
         #endregion
 
@@ -35,9 +32,9 @@ namespace Orb
 
         public void GenerateNewOrb(OrbData e = null)
         {
-            var orb = generator.Generate();
+            var orb = GetComponent<OrbGenerator>().Generate();
             var orbDataController = orb.GetComponent<OrbDataController>();
-            var color = colorizer.Colorize(orb, maxColorLevel);
+            var color = GetComponent<OrbColorizer>().Colorize(orb, maxColorLevel);
             orbDataController.Initialize(new OrbData(1, color));
         }
     }
