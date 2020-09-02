@@ -48,9 +48,9 @@ public class GameInfoViewer : MonoBehaviour
 	{
 		if (instance == null) return;
 
-		instance.sliderOrbsAtFormLevel.value = CounterOrbsAtFormLevel.value;
-		instance.textTotalOrbs.text = CounterTotalOrbs.value.ToString();
-		instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
+		//instance.sliderOrbsAtFormLevel.value = CounterOrbsAtFormLevel.value;
+		//instance.textTotalOrbs.text = CounterTotalOrbs.value.ToString();
+		//instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
 	}
 
 	/// <summary>
@@ -60,7 +60,7 @@ public class GameInfoViewer : MonoBehaviour
 	{
 		if (instance == null) return;
 
-		instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
+		//instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
 	}
 
 	/// <summary>
@@ -88,7 +88,7 @@ public class GameInfoViewer : MonoBehaviour
 				instance.sliderOrbsAtFormLevel.gameObject.SetActive(true);
 
 		//обновляем максимальные значения слайдеров, чтобы не рассчитывать лишний раз какую часть добавить
-		instance.sliderOrbsAtFormLevel.maxValue = CounterOrbsAtFormLevel.valueToLevelUp;
+		//instance.sliderOrbsAtFormLevel.maxValue = CounterOrbsAtFormLevel.valueToLevelUp;
 
 		//if (FormPartColorazing.colors == null) return;
 

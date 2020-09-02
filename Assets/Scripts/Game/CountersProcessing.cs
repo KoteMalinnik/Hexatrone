@@ -55,7 +55,7 @@ public static class CountersProcessing
 	{
 		Debug.Log("[CountersProcessing] Базовая");
 
-		CounterOrbsAtFormLevel.incrementValue(delta);
+		//CounterOrbsAtFormLevel.incrementValue(delta);
 	}
 
 	/// <summary>
@@ -66,7 +66,7 @@ public static class CountersProcessing
 	{
 		Debug.Log("[CountersProcessing] Критический бонус");
 
-		CounterCriticalOrbs.incrementValue(delta);
+		//CounterCriticalOrbs.incrementValue(delta);
 	}
 
 	/// <summary>
@@ -77,7 +77,7 @@ public static class CountersProcessing
 	{
 		Debug.Log("[CountersProcessing] Дельта бонус");
 
-		CounterOrbsAtFormLevel.incrementValue(delta);
+		//CounterOrbsAtFormLevel.incrementValue(delta);
 	}
 
 	/// <summary>
