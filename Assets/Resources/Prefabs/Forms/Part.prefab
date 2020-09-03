@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 5
-  incorrectColor: {r: 0, g: 0, b: 0, a: 1}
-  correctColor: {r: 1, g: 1, b: 1, a: 1}
+  matchedColor: {r: 1, g: 1, b: 1, a: 1}
+  mismatchedColor: {r: 0, g: 0, b: 0, a: 1}
