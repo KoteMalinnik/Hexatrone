@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class PreloadSceneController : MonoBehaviour
 {
     #region Fields
     [SerializeField] bool loadNextScene = true;
-    [SerializeField] string nextSceneName = "1_MainMenu";
+    [SerializeField] SceneAsset mainMenuScene = null;
     #endregion
 
     void Start()
@@ -14,8 +18,8 @@ public class PreloadSceneController : MonoBehaviour
         {
             Deserialize();
 
-            Log.Message("Загрузка следующей сцены: " + nextSceneName);
-            SceneManager.LoadSceneAsync(nextSceneName);
+            Log.Message("Загрузка следующей сцены: " + mainMenuScene.name);
+            SceneManager.LoadSceneAsync(mainMenuScene.name);
         }
 	}
 
