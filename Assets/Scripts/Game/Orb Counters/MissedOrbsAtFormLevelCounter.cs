@@ -36,7 +36,7 @@ namespace OrbCounters
         protected override void Initialize(ushort orbsCountAllowedToMissAtFormLevel)
 		{
 			Counter = new DescendingCounter(orbsCountAllowedToMissAtFormLevel, "MissedOrbsAtFormLevel", 0);
-			Counter.OnMinValueReach += OnAllAllowedOrbsMissed.Invoke;
+			Counter.OnMinValueReach += OnAllAllowedOrbsMissed;
 		}
 
         private void Subtract() => Counter.Subtract(1);
