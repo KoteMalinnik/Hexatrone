@@ -590,7 +590,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295379}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __ShowPanel
         m_Mode: 2
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __Music
         m_Mode: 1
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __Sound
         m_Mode: 1
@@ -1076,9 +1076,6 @@ GameObject:
   - component: {fileID: 780295376}
   - component: {fileID: 780295375}
   - component: {fileID: 780295374}
-  - component: {fileID: 780295378}
-  - component: {fileID: 780295380}
-  - component: {fileID: 780295379}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1169,47 +1166,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &780295378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780295373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd31ce0363f8c864eb684f111d6ade4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelGraditudes: {fileID: 560586874}
---- !u!114 &780295379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780295373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 847944e5ac9457b4c83b5c7bb743690f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &780295380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780295373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79fa6b60096f68247922f224e0004765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageMusicButton: {fileID: 749639514}
-  imageSoundButton: {fileID: 777546588}
-  allowAudioColor: {r: 0, g: 1, b: 0, a: 0.69803923}
-  disallowAudioColor: {r: 1, g: 0, b: 0, a: 0.69803923}
 --- !u!1 &810638375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1860,7 @@ GameObject:
   - component: {fileID: 1601449368}
   - component: {fileID: 1601449370}
   - component: {fileID: 1601449369}
+  - component: {fileID: 1601449371}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1968,6 +1925,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601449367}
   m_CullTransparentMesh: 0
+--- !u!114 &1601449371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601449367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fdccf1a20f9cf49bdcee638eaeff38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenType: 0
 --- !u!1 &1681717733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,13 +2177,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295378}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1601449367}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2324,7 +2306,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295378}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __Quit
         m_Mode: 1
@@ -2481,7 +2463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 780295379}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: __HidePanel
         m_Mode: 2

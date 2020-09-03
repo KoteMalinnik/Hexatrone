@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadNextScene: 1
-  nextSceneName: 1_MainMenu
+  mainMenuScene: {fileID: 102900000, guid: 578b478d1edca4745accbf89f9abde6f, type: 3}
 --- !u!4 &970064036
 Transform:
   m_ObjectHideFlags: 0
