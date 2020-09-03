@@ -137,6 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2007451a789d5148b1122ac16574ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 5
+  animationSpeed: 7
   matchedColor: {r: 1, g: 1, b: 1, a: 1}
   mismatchedColor: {r: 0, g: 0, b: 0, a: 1}

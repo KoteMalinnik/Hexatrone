@@ -3,7 +3,7 @@
 /// <summary>
 /// Настройка классов при загрузке сцены GameLevel
 /// </summary>
-public class OnGameLevelLoad : MonoBehaviour
+public class GameSceneController : MonoBehaviour
 {
 	[SerializeField] int startingLevel = 0;
 
