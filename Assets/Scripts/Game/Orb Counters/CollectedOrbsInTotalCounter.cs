@@ -4,14 +4,28 @@ namespace OrbCounters
 {
 	public class CollectedOrbsInTotalCounter : BaseOrbCounter<AscendingCounter>
     {
-        public CollectedOrbsInTotalCounter(ushort initialValue)
+        #region MonoBehaviour Callbacks
+        private void Awake()
+        {
+            Initialize(0);
+        }
+
+        private void OnEnable()
+        {
+            OrbCollision.OrbCollisionHandler.OnMatch += Add;
+        }
+
+        private void OnDisable()
+        {
+            OrbCollision.OrbCollisionHandler.OnMatch -= Add;
+        }
+        #endregion
+
+        protected override void Initialize(ushort initialValue)
         {
             Counter = new AscendingCounter(initialValue, "TotalOrbsCollected");
         }
 
-        public void Add(ushort delta = 1)
-        {
-            Counter.Add(delta);
-        }
+        private void Add() => Counter.Add(1);
     }
 }
