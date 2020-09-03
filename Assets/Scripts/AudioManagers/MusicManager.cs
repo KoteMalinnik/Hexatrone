@@ -9,7 +9,8 @@ public class MusicManager : AudioManager
 	#region MonoBehaviour Callbacks
 	private void Awake()
 	{
-		SetupAudioSource(volume: 0.1f, loop: true, playOnAwake: false, clip: musicClip);
+		mainChanel = CreateAudioSource(volume: 0.1f, loop: true, playOnAwake: false);
+		mainChanel.clip = musicClip;
 	}
 
 	private void OnEnable()
@@ -25,12 +26,12 @@ public class MusicManager : AudioManager
 
 	public void Play()
     {
-		Source.UnPause();
-		if (!Source.isPlaying) Source.Play();
+		mainChanel.UnPause();
+		if (!mainChanel.isPlaying) mainChanel.Play();
     }
 
 	public void Stop()
     {
-		Source.Pause();
+		mainChanel.Pause();
     }
 }

@@ -10,13 +10,15 @@ public class SoundManager : AudioManager
 	[SerializeField] AudioClip GameOver = null;
 	[SerializeField] AudioClip GoalAchived = null;
 
+	AudioSource secondChanel = null;
 	bool audioIsAllowed = true;
 	#endregion
 
 	#region MonoBehaviour Callbacks
 	private void Awake()
 	{
-		SetupAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
+		mainChanel = CreateAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
+		secondChanel = CreateAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
 	}
 
 	private void OnEnable()
@@ -43,6 +45,13 @@ public class SoundManager : AudioManager
 	private void PlaySound(AudioClip audioClip)
 	{
 		if (!audioIsAllowed) return;
-		Source.PlayOneShot(audioClip);
+
+		if (mainChanel.isPlaying)
+        {
+			secondChanel.PlayOneShot(audioClip);
+			return;
+        }
+
+		mainChanel.PlayOneShot(audioClip);
 	}
 }
