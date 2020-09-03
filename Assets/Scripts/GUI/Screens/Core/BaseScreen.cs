@@ -13,14 +13,14 @@ namespace CustomScreen.Core
         public ScreenType ScreenType => screenType;
         #endregion
 
-        public virtual void Show(Action onShow = null)
+        public void Open(Action onOpen = null)
         {
             Log.Message("Показ экрана " + ScreenType);
             gameObject.SetActive(true);
-            onShow?.Invoke();
+            onOpen?.Invoke();
         }
 
-        public virtual void Hide(Action onHide = null)
+        public void Close(Action onHide = null)
         {
             Log.Message("Сокрытие экрана " + ScreenType);
             Destroy(gameObject);
