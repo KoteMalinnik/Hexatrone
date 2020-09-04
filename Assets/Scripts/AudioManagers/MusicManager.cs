@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CustomScreen;
+using UnityEngine;
 
 public class MusicManager : AudioManager
 {
@@ -15,14 +16,22 @@ public class MusicManager : AudioManager
 
 	private void OnEnable()
 	{
-		//подписаться на события включения/отключения музыки
+		SettingsScreen.OnMusicToggleChanged += ToggleAudio;
 	}
 
 	private void OnDisable()
 	{
-		//отписаться на события включения/отключения музыки
+		SettingsScreen.OnMusicToggleChanged -= ToggleAudio;
 	}
 	#endregion
+
+	protected override void ToggleAudio(bool state)
+	{
+		Log.Message("Переключение MusicManager: " + state);
+
+		if (state) Play();
+		else Stop();
+	}
 
 	public void Play()
     {

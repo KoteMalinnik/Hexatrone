@@ -18,4 +18,6 @@ public abstract class AudioManager : MonoBehaviour
 
 		return audioSource;
 	}
+
+	protected abstract void ToggleAudio(bool state);
 }
