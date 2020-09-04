@@ -6,7 +6,7 @@ namespace Form
 	public class FormRotationController : MonoBehaviour
 	{
 		#region Fields
-		[SerializeField] float rotationSpeed = 1;
+		[SerializeField] float rotationSpeed = 1.0f;
 		[SerializeField] Transform orbGeneratorTransform = null;
 		#endregion
 
@@ -45,7 +45,7 @@ namespace Form
 				var orbTransform = orbGeneratorTransform.GetChild(0);
 				Vector2 directionToOrb = orbTransform.position - partTransform.parent.position;
 
-				Debug.DrawLine(partTransform.parent.position, (Vector2)partTransform.parent.position + directionToOrb, Color.red, 5);
+				Debug.DrawLine(partTransform.parent.position, (Vector2)partTransform.parent.position + directionToOrb, Color.red, 1);
 
 				float deltaAngle = -Vector2.SignedAngle(Vector2.up, directionToOrb);
 				formRotation *= Quaternion.Euler(0, 0, deltaAngle);
@@ -58,7 +58,7 @@ namespace Form
 
 		void Rotate(Transform formTransform, float rotationAngle)
         {
-			GetComponent<FormRotation>().RotateByAngle(formTransform, angleZ: rotationAngle);
+			GetComponent<FormRotation>().RotateByAngle(formTransform, angleZ: rotationAngle, rotationSpeed: rotationSpeed);
 		}
 	}
 }
