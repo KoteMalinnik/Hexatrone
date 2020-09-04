@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenType: 1
-  imageMusicButton: {fileID: 0}
-  imageSoundButton: {fileID: 0}
-  allowAudioColor: {r: 0, g: 0, b: 1, a: 1}
-  disallowAudioColor: {r: 1, g: 0, b: 0, a: 1}
+  button_Music: {fileID: 2347567969476276306}
+  button_Sound: {fileID: 2347567969686368096}
+  color_allowAudio: {r: 0.12673402, g: 1, b: 0, a: 1}
+  color_disallowAudio: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2347567969476276308
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2347567969476276305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2347567969365053234}
+        m_TargetAssemblyTypeName: CustomScreen.SettingsScreen, Assembly-CSharp
+        m_MethodName: ToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2347567969555915159
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2347567969686368111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2347567969365053234}
+        m_TargetAssemblyTypeName: CustomScreen.SettingsScreen, Assembly-CSharp
+        m_MethodName: ToggleSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2347567969733253772
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,4 +769,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2347567969809538827}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2347567969365053234}
+        m_TargetAssemblyTypeName: CustomScreen.SettingsScreen, Assembly-CSharp
+        m_MethodName: OpenMainMenuScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
