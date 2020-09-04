@@ -20,4 +20,21 @@ public static class ObjectInstantiator
 		GameObject form = MonoBehaviour.Instantiate(prefab, position, rotation, parent);
 		return form;
 	}
+
+	public static GameObject Instantiate
+		(
+		GameObject prefab,
+		Transform transform
+		)
+	{
+		if (prefab == null)
+		{
+			Log.Warning("Префаб пуст.");
+			return null;
+		}
+
+		Log.Message("Создание объекта: " + prefab?.name);
+		GameObject form = MonoBehaviour.Instantiate(prefab, transform.position, transform.rotation);
+		return form;
+	}
 }

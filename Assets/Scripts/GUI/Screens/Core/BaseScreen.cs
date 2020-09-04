@@ -15,14 +15,14 @@ namespace CustomScreen.Core
 
         public void Open(Action onOpen = null)
         {
-            Log.Message("Показ экрана " + ScreenType);
+            Log.Message("Показ окна " + ScreenType);
             gameObject.SetActive(true);
             onOpen?.Invoke();
         }
 
         public void Close(Action onHide = null)
         {
-            Log.Message("Сокрытие экрана " + ScreenType);
+            Log.Message("Закрытие окна " + ScreenType);
             Destroy(gameObject);
             onHide?.Invoke();
         }

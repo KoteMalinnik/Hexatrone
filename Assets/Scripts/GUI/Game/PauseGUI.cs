@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PanelsActivitySwitcher))]
-[RequireComponent(typeof(AudioButtonsControll))]
 /// <summary>
 /// Управление GUI панели паузы.
 /// </summary>
@@ -17,8 +15,8 @@ public class PauseGUI : MonoBehaviour
 
 	void Awake()
 	{
-		var panelsSwitcher = GetComponent<PanelsActivitySwitcher>();
-		panelsSwitcher.__HidePanel(panelPause);
+		//var panelsSwitcher = GetComponent<PanelsActivitySwitcher>();
+		//panelsSwitcher.__HidePanel(panelPause);
 	}
 
 	/// <summary>

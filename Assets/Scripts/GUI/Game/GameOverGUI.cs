@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PanelsActivitySwitcher))]
 /// <summary>
 /// Управление GUI при конце игры.
 /// </summary>
@@ -14,8 +13,8 @@ public class GameOverGUI : MonoBehaviour
 	{
 		panelGameOver = _panelGameOver;
 
-		var panelsSwitcher = new PanelsActivitySwitcher();
-		panelsSwitcher.__HidePanel(panelGameOver);
+		//var panelsSwitcher = new PanelsActivitySwitcher();
+		//panelsSwitcher.__HidePanel(panelGameOver);
 
 		Destroy(this);
 	}
@@ -24,8 +23,8 @@ public class GameOverGUI : MonoBehaviour
 	{
 		Statements.setGameOver(true);
 
-		var panelsSwitcher = new PanelsActivitySwitcher();
-		panelsSwitcher.__ShowPanel(panelGameOver);
+		//var panelsSwitcher = new PanelsActivitySwitcher();
+		//panelsSwitcher.__ShowPanel(panelGameOver);
 
 		//SoundManager.playSound(5);
 	}
