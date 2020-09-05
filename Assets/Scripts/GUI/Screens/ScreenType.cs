@@ -1,4 +1,4 @@
-﻿namespace CustomScreen.Core
+﻿namespace CustomScreen
 {
 	/// <summary>
 	/// Перечисление показываемых окон.
