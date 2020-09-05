@@ -11,17 +11,17 @@ public class GameOverGUI : MonoBehaviour
 
 	void Awake()
 	{
-		panelGameOver = _panelGameOver;
+		//panelGameOver = _panelGameOver;
 
 		//var panelsSwitcher = new PanelsActivitySwitcher();
 		//panelsSwitcher.__HidePanel(panelGameOver);
 
-		Destroy(this);
+		//Destroy(this);
 	}
 
 	public static void gameOver()
 	{
-		Statements.setGameOver(true);
+		//Statements.setGameOver(true);
 
 		//var panelsSwitcher = new PanelsActivitySwitcher();
 		//panelsSwitcher.__ShowPanel(panelGameOver);

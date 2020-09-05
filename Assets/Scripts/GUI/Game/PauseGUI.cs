@@ -5,13 +5,13 @@
 /// </summary>
 public class PauseGUI : MonoBehaviour
 {
-	[Header("GUI Panels")]
+	//[Header("GUI Panels")]
 
-	[SerializeField]
+	//[SerializeField]
 	/// <summary>
 	/// Панель паузы.
 	/// </summary>
-	GameObject panelPause = null;
+	//GameObject panelPause = null;
 
 	void Awake()
 	{
@@ -25,7 +25,7 @@ public class PauseGUI : MonoBehaviour
 	/// <param name="state">Новое состояние паузы.</param>
 	public void __SetPause(bool state)
 	{
-		Statements.setPause(state);
+		//Statements.setPause(state);
 	}
 
 	/// <summary>

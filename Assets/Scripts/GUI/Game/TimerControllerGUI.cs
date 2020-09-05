@@ -8,35 +8,35 @@ using System.Text;
 public class TimerControllerGUI : MonoBehaviour
 {
 	//время игры на уровне
-	public static short sec { get; private set; }
-	public static short min { get; private set; }
+	//public static short sec { get; private set; }
+	//public static short min { get; private set; }
 
-	[SerializeField]
-	Text textTimer = null;
+	//[SerializeField]
+	//Text textTimer = null;
 
-	void Start()
-	{
-		sec = 0;
-		min = 0;
+	//void Start()
+	//{
+	//	sec = 0;
+	//	min = 0;
 
-		InvokeRepeating("Timer", 0, 1);
-	}
+	//	InvokeRepeating("Timer", 0, 1);
+	//}
 
-	readonly StringBuilder stringBuilder = new StringBuilder(5);
-	void Timer()
-	{
-		if (Statements.Pause) return;
+	//readonly StringBuilder stringBuilder = new StringBuilder(5);
+	//void Timer()
+	//{
+	//	if (Statements.Pause) return;
 
-		stringBuilder.Clear();
-		stringBuilder.AppendFormat("{0:00}:{1:00}", min, sec);
+	//	stringBuilder.Clear();
+	//	stringBuilder.AppendFormat("{0:00}:{1:00}", min, sec);
 
-		sec++;
-		if (sec >= 60)
-		{
-			sec = 0;
-			min++;
-		}
+	//	sec++;
+	//	if (sec >= 60)
+	//	{
+	//		sec = 0;
+	//		min++;
+	//	}
 
-		textTimer.text = stringBuilder.ToString();
-	}
+	//	textTimer.text = stringBuilder.ToString();
+	//}
 }

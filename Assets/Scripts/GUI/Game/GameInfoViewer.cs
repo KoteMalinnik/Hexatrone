@@ -33,10 +33,10 @@ public class GameInfoViewer : MonoBehaviour
 
 	void Start()
 	{
-		imageFillRect_sliderOrbsAtFormLevel = sliderOrbsAtFormLevel.fillRect.GetComponent<Image>();
-		imageFillRect_sliderCriticalOrbs = sliderCriticalOrbs.fillRect.GetComponent<Image>();
+		//imageFillRect_sliderOrbsAtFormLevel = sliderOrbsAtFormLevel.fillRect.GetComponent<Image>();
+		//imageFillRect_sliderCriticalOrbs = sliderCriticalOrbs.fillRect.GetComponent<Image>();
 
-		sliderCriticalOrbs.maxValue = 5;
+		//sliderCriticalOrbs.maxValue = 5;
 
 		//updateLevelGUI(FormLevelController.level);
 	}
@@ -46,7 +46,7 @@ public class GameInfoViewer : MonoBehaviour
 	/// </summary>
 	public static void updateMatchGUI()
 	{
-		if (instance == null) return;
+		//if (instance == null) return;
 
 		//instance.sliderOrbsAtFormLevel.value = CounterOrbsAtFormLevel.value;
 		//instance.textTotalOrbs.text = CounterTotalOrbs.value.ToString();
@@ -58,7 +58,7 @@ public class GameInfoViewer : MonoBehaviour
 	/// </summary>
 	public static void updateMismatchGUI()
 	{
-		if (instance == null) return;
+		//if (instance == null) return;
 
 		//instance.sliderCriticalOrbs.value = CounterCriticalOrbs.value;
 	}
@@ -68,24 +68,24 @@ public class GameInfoViewer : MonoBehaviour
 	/// </summary>
 	public static void updateLevelGUI(int formLevel)
 	{
-		if (instance == null) return;
+		//if (instance == null) return;
 
-		instance.textLevel.text = formLevel.ToString();
+		//instance.textLevel.text = formLevel.ToString();
 		//Обновление счетчиков
-		updateMatchGUI();
-		updateMismatchGUI();
+		//updateMatchGUI();
+		//updateMismatchGUI();
 
 		//если уровень формы равен 5, то надо скрыть слайдер прогресса
-		if (formLevel >= 5)
-		{
-			instance.sliderOrbsAtFormLevel.gameObject.SetActive(false);
-			return;
-		}
+		//if (formLevel >= 5)
+		//{
+		//	instance.sliderOrbsAtFormLevel.gameObject.SetActive(false);
+		//	return;
+		//}
 
 		//если уровень формы меньше 5 и слайдер прогресса скрыт, то показать его
-		if (formLevel < 5)
-			if (!instance.sliderOrbsAtFormLevel.gameObject.activeInHierarchy)
-				instance.sliderOrbsAtFormLevel.gameObject.SetActive(true);
+		//if (formLevel < 5)
+		//	if (!instance.sliderOrbsAtFormLevel.gameObject.activeInHierarchy)
+		//		instance.sliderOrbsAtFormLevel.gameObject.SetActive(true);
 
 		//обновляем максимальные значения слайдеров, чтобы не рассчитывать лишний раз какую часть добавить
 		//instance.sliderOrbsAtFormLevel.maxValue = CounterOrbsAtFormLevel.valueToLevelUp;
