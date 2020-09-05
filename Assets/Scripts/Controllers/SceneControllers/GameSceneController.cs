@@ -1,24 +1,36 @@
-﻿using UnityEngine;
+﻿using Form;
+using UnityEngine;
 
 /// <summary>
 /// Настройка классов при загрузке сцены GameLevel
 /// </summary>
 public class GameSceneController : MonoBehaviour
 {
-	[SerializeField] int startingLevel = 0;
+    #region Fields
+    [SerializeField] int startingLevel = 0;
+	[SerializeField] bool createFormOnStart = true;
 
+	[Space]
+
+	[SerializeField] bool pauseOnStart = true;
+	#endregion
 	void Awake()
 	{
-		Log.Message("Установка значений.");
+		Log.Message("Настройка сцены..");
 
-		Statements.setGameOver(false);
-		Statements.setPause(true);
+		if (createFormOnStart)
+        {
+			var formLevelController = FindObjectOfType<FormLevelController>();
+			if (formLevelController != null)
+			{
+				formLevelController.SetupLevel(startingLevel);
+			}
+		}
 
-		//CounterTotalOrbs.setValue(0);
+		Statements.Pause = pauseOnStart;
+		Statements.GameOver = false;
 
-		//FormLevelController.SetupLevel(startingLevel);
-
-		Log.Message("Установка значений завершена.");
+		Log.Message("Настройка сцены завершена.");
 
 		Destroy(gameObject);
 	}
