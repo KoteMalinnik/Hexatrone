@@ -25,7 +25,7 @@ public class TimerControllerGUI : MonoBehaviour
 	readonly StringBuilder stringBuilder = new StringBuilder(5);
 	void Timer()
 	{
-		if (Statements.pause) return;
+		if (Statements.Pause) return;
 
 		stringBuilder.Clear();
 		stringBuilder.AppendFormat("{0:00}:{1:00}", min, sec);

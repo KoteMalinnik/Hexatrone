@@ -9,7 +9,7 @@ namespace Part
 
 		void OnMouseDown()
 		{
-			if (Statements.pause) return;
+			if (Statements.Pause) return;
 
 			Log.Message($"Нажатие на {name}.");
 			OnClick?.Invoke(transform);

@@ -1,39 +1,43 @@
-﻿using UnityEngine;
+﻿using System;
 
 /// <summary>
 /// Состояния игрового процесса
 /// </summary>
 public static class Statements
 {
-    /// <summary>
-	/// Состояние паузы
-	/// </summary>
-	public static bool pause { get; private set; } = false;
+	#region Events
+	public static event Action OnPause = null;
+	public static event Action OnGameOver = null;
+	#endregion
 
-	/// <summary>
-	/// Установить состояние паузы
-	/// </summary>
-	public static void setPause(bool state)
+	#region Fields
+	static bool _pause = false;
+	static bool _gameOver = false;
+    #endregion
+
+    #region Properties
+    public static bool Pause
 	{
-		Debug.Log($"<color=yellow>Пауза: {state}</color>");
-		pause = state;
+		get => _pause;
+		set
+        {
+			Log.Message("Переключение состояния паузы: " + value);
+			_pause = value;
+
+			if (value) OnPause?.Invoke();
+        }
 	}
 
-
-	/// <summary>
-	/// Состояние конца игры
-	/// </summary>
-	public static bool gameOver { get; private set; } = false;
-
-	/// <summary>
-	/// Установить состояние конца игры
-	/// </summary>
-	public static void setGameOver(bool state)
+	public static bool GameOver
 	{
-		Debug.Log($"<color=yellow>Конец игры: {state}</color>");
-		gameOver = state;
+		get => _gameOver;
+		set
+		{
+			Log.Message("Переключение состояния конца игры: " + value);
+			_gameOver = value;
 
-		if (pause) return;
-		setPause(state);
+			if (value) OnGameOver?.Invoke();
+		}
 	}
+	#endregion
 }
