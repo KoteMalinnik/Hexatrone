@@ -27,6 +27,8 @@ namespace CustomScreen.Core
 
             ScreenManager.Initialize(screenPrefabs, screenTransform);
             ScreenManager.OpenScreen(openOnAwake);
+
+            Destroy(gameObject);
         }
     }
 }
