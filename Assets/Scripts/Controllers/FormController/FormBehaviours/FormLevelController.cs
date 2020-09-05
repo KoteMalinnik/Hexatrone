@@ -20,7 +20,7 @@ namespace Form
         int level = 0;
         #endregion
 
-        void SetupLevel(int level)
+        public void SetupLevel(int level)
         {
             Log.Message("Установка уровня формы: " + level);
             
