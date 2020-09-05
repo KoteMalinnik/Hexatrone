@@ -14,7 +14,7 @@ namespace CustomScreen.Core
         [SerializeField] Transform screenTransform = null;
 
         [Space]
-        [SerializeField] ScreenType openOnAwake;
+        [SerializeField] ScreenType openOnAwake = ScreenType.MainMenuScreen;
         #endregion
 
         private void Awake()
