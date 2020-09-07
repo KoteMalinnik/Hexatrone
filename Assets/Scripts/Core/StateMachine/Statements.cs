@@ -7,6 +7,8 @@ public static class Statements
 {
 	#region Events
 	public static event Action OnPause = null;
+	public static event Action OnUnpause = null;
+
 	public static event Action OnGameOver = null;
 	#endregion
 
@@ -25,6 +27,7 @@ public static class Statements
 			_pause = value;
 
 			if (value) OnPause?.Invoke();
+			else OnUnpause.Invoke();
         }
 	}
 
