@@ -1,4 +1,4 @@
-﻿using CustomScreen;
+﻿using CustomScreen.Logic;
 using UnityEngine;
 
 public class MusicManager : AudioManager
@@ -16,12 +16,12 @@ public class MusicManager : AudioManager
 
 	private void OnEnable()
 	{
-		SettingsScreen.OnMusicToggleChanged += ToggleAudio;
+		AudioButtonsController.OnMusicToggleChanged += ToggleAudio;
 	}
 
 	private void OnDisable()
 	{
-		SettingsScreen.OnMusicToggleChanged -= ToggleAudio;
+		AudioButtonsController.OnMusicToggleChanged -= ToggleAudio;
 	}
 	#endregion
 

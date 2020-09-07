@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-namespace CustomScreen
+namespace CustomScreen.MainMenu
 {
-	public class MainMenuScreen : BaseScreen
+	public class MainScreen : BaseScreen
 	{
 		#region Fields
 		[SerializeField] SceneAsset gameScene = null;

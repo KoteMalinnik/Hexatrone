@@ -10,7 +10,7 @@ namespace CustomScreen.Core
     public class BaseScreen : MonoBehaviour
     {
         #region Fields
-        [SerializeField] ScreenType screenType = ScreenType.MainMenuScreen;
+        [SerializeField] ScreenType screenType = ScreenType.MainScreen;
         #endregion
 
         #region Properties

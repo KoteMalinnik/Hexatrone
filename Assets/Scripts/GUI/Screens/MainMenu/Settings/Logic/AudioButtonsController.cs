@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
-using CustomScreen.Core;
 using UnityEngine.UI;
 using System;
 
-namespace CustomScreen
+namespace CustomScreen.Logic
 {
-    public class SettingsScreen : BaseScreen
-    {
+	public class AudioButtonsController : MonoBehaviour
+	{
 		#region Events
 		public static event Action<bool> OnMusicToggleChanged = null;
 		public static event Action<bool> OnSoundToggleChanged = null;
-        #endregion
+		#endregion
 
-        #region Fields
-        [Header("Кнопки")]
+		#region Fields
+		[Header("Кнопки")]
 		[SerializeField] Button button_Music = null;
 		[SerializeField] Button button_Sound = null;
 
@@ -23,11 +22,11 @@ namespace CustomScreen
 
 		bool state_Sound = true;
 		bool state_Music = true;
-        #endregion
+		#endregion
 
-        #region MonoBehaviour Callbacks
-        private void OnEnable()
-        {
+		#region MonoBehaviour Callbacks
+		private void OnEnable()
+		{
 			Log.Message("Загрузка и выставление значений.");
 			button_Music.interactable = true;
 			button_Sound.interactable = true;
@@ -38,31 +37,17 @@ namespace CustomScreen
 			SetupButtonColor(button_Music, state_Music);
 			SetupButtonColor(button_Sound, state_Sound);
 		}
-        #endregion
-
-        #region Screens Open Methods
-        public void OpenMainMenuScreen()
-		{
-			Log.Message("Нажатие на кнопку <Back>.");
-			ScreenManager.OpenScreen(ScreenType.MainMenuScreen);
-		}
 		#endregion
 
-		/// <summary>
-		/// Переключить звук.
-		/// </summary>
 		public void ToggleSound()
 		{
 			Log.Message("Переключение звука.");
 
 			state_Sound = ToggleAudio(SerializationKeys.SoundState, button_Sound, state_Sound);
 			OnSoundToggleChanged?.Invoke(state_Sound);
-        }
+		}
 
-        /// <summary>
-        /// Переключить музыку.
-        /// </summary>
-        public void ToggleMusic()
+		public void ToggleMusic()
 		{
 			Log.Message("Переключение музыки.");
 
@@ -71,7 +56,7 @@ namespace CustomScreen
 		}
 
 		bool ToggleAudio(SerializationKeys key, Button button, bool state)
-        {
+		{
 			state = !state;
 			SetupButtonColor(button, state);
 			Serialization.Save(key, state);

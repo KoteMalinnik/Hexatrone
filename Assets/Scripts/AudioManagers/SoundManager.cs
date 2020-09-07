@@ -1,20 +1,20 @@
-﻿using CustomScreen;
+﻿using CustomScreen.Logic;
 using UnityEngine;
 
 public class SoundManager : AudioManager
 {
 	#region Fields
-	[SerializeField] AudioClip CorrectCollorCollected = null;
-	[SerializeField] AudioClip IncorrectColorCollected = null;
-	[SerializeField] AudioClip LevelUp = null;
-	[SerializeField] AudioClip LevelDown = null;
-	[SerializeField] AudioClip GameOver = null;
-	[SerializeField] AudioClip GoalAchived = null;
+	//[SerializeField] AudioClip CorrectCollorCollected = null;
+	//[SerializeField] AudioClip IncorrectColorCollected = null;
+	//[SerializeField] AudioClip LevelUp = null;
+	//[SerializeField] AudioClip LevelDown = null;
+	//[SerializeField] AudioClip GameOver = null;
+	//[SerializeField] AudioClip GoalAchived = null;
 
 	AudioSource secondChanel = null;
 	bool audioIsAllowed = true;
 	#endregion
-
+	
 	#region MonoBehaviour Callbacks
 	private void Awake()
 	{
@@ -24,12 +24,12 @@ public class SoundManager : AudioManager
 
 	private void OnEnable()
 	{
-		SettingsScreen.OnSoundToggleChanged += ToggleAudio;
+		AudioButtonsController.OnSoundToggleChanged += ToggleAudio;
 	}
 
 	private void OnDisable()
 	{
-		SettingsScreen.OnSoundToggleChanged -= ToggleAudio;
+		AudioButtonsController.OnSoundToggleChanged -= ToggleAudio;
 	}
 	#endregion
 

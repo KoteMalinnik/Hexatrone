@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2347567968149992537}
   - component: {fileID: 2347567968149992519}
   - component: {fileID: 2347567968149992536}
+  - component: {fileID: 4470560502836686561}
   m_Layer: 5
   m_Name: Buttons_Audio
   m_TagString: Untagged
@@ -78,6 +79,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4470560502836686561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347567968149992538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0285eb8ad3d4241b16cf897b329e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button_Music: {fileID: 2347567969476276306}
+  button_Sound: {fileID: 2347567969686368096}
+  c_allowAudio: {r: 0, g: 0, b: 1, a: 1}
+  c_disallowAudio: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2347567969355453059
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,10 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenType: 1
-  button_Music: {fileID: 2347567969476276306}
-  button_Sound: {fileID: 2347567969686368096}
-  color_allowAudio: {r: 0.12673402, g: 1, b: 0, a: 1}
-  color_disallowAudio: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2347567969476276308
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +355,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2347567969365053234}
-        m_TargetAssemblyTypeName: CustomScreen.SettingsScreen, Assembly-CSharp
+      - m_Target: {fileID: 4470560502836686561}
+        m_TargetAssemblyTypeName: CustomScreen.Logic.AudioButtonsController, Assembly-CSharp
         m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
@@ -554,8 +567,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2347567969365053234}
-        m_TargetAssemblyTypeName: CustomScreen.SettingsScreen, Assembly-CSharp
+      - m_Target: {fileID: 4470560502836686561}
+        m_TargetAssemblyTypeName: CustomScreen.Logic.AudioButtonsController, Assembly-CSharp
         m_MethodName: ToggleSound
         m_Mode: 1
         m_Arguments:

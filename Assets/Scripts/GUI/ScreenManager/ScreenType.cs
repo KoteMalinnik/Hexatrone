@@ -5,7 +5,7 @@
 	/// </summary>
 	public enum ScreenType
 	{
-		MainMenuScreen,
+		MainScreen,
 		SettingsScreen,
 		CreditsScreen
 	}

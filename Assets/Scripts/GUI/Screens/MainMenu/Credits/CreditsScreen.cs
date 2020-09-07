@@ -1,6 +1,6 @@
 ﻿using CustomScreen.Core;
 
-namespace CustomScreen
+namespace CustomScreen.MainMenu
 {
     public class CreditsScreen : BaseScreen
     {
@@ -8,7 +8,7 @@ namespace CustomScreen
         public void OpenMainMenuScreen()
         {
             Log.Message("Нажатие на кнопку <Back>.");
-            ScreenManager.OpenScreen(ScreenType.MainMenuScreen);
+            ScreenManager.OpenScreen(ScreenType.MainScreen);
         }
         #endregion
     }
