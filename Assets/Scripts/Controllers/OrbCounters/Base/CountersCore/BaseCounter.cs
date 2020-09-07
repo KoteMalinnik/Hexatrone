@@ -39,5 +39,11 @@ namespace Counters
 
 			Log.Message($"Инициализация счетчика {ID} с начальным значением: {Value}.");
 		}
+
+		public void Reset(bool needOnValueChangedEventInvokation = false)
+        {
+			if (needOnValueChangedEventInvokation) Value = 0;
+			else value = 0;
+        }
 	}
 }
