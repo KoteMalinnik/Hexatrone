@@ -22,15 +22,6 @@ public class GameSceneController : MonoBehaviour
 	{
 		Log.Message("Настройка сцены..");
 
-		if (createFormOnStart)
-        {
-			var formLevelController = FindObjectOfType<FormLevelController>();
-			if (formLevelController != null)
-			{
-				formLevelController.SetupLevel(startingLevel);
-			}
-		}
-
 		if (createOrbCounters)
         {
 			Instantiate(orbCountersPrefab, orbCountersParent).name = "OrbCounters";
@@ -38,6 +29,15 @@ public class GameSceneController : MonoBehaviour
 
 		Statements.Pause = pauseOnStart;
 		Statements.GameOver = false;
+
+		if (createFormOnStart)
+		{
+			var formLevelController = FindObjectOfType<FormLevelController>();
+			if (formLevelController != null)
+			{
+				formLevelController.SetupLevel(startingLevel);
+			}
+		}
 
 		Log.Message("Настройка сцены завершена.");
 

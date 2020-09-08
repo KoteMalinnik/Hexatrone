@@ -8,6 +8,8 @@ namespace OrbCounters
 	{
         #region Events
         public static event Action OnAllOrbsToNextFormLevelCollected = null;
+        public static event Action<int> OnNewOrbCollected = null;
+        public static event Action<int> OnCounterReset = null;
         #endregion
 
         #region Fields
@@ -31,7 +33,10 @@ namespace OrbCounters
 
         private void ResetCounter(int formLevel)
         {
-            Initialize((ushort)(orbsCountAtFirstLevelNeedToCollectToLevelUp * orbsCountPerLevelMultipler * formLevel));
+            int orbsCountToNextFormLevel = orbsCountAtFirstLevelNeedToCollectToLevelUp * orbsCountPerLevelMultipler * formLevel;
+            Initialize((ushort)orbsCountToNextFormLevel);
+
+            OnCounterReset?.Invoke(orbsCountToNextFormLevel);
         }
 
         protected override void Initialize(ushort orbsCountToNextFormLevel)
@@ -40,6 +45,10 @@ namespace OrbCounters
 			Counter.OnMaxValueReach += OnAllOrbsToNextFormLevelCollected;
 		}
 
-		private void Add() => Counter.Add(1);
+		private void Add()
+        {
+            Counter.Add(1);
+            OnNewOrbCollected?.Invoke(Counter.Value);
+        }
 	}
 }
