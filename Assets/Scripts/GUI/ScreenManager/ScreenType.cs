@@ -7,6 +7,7 @@
 	{
 		MainScreen,
 		SettingsScreen,
-		CreditsScreen
+		CreditsScreen,
+		GameInfoScreen
 	}
 }
