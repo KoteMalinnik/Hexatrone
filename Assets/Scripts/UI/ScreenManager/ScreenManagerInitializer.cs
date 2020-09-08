@@ -32,7 +32,7 @@ namespace CustomScreen.Core
                 ScreenManager.OpenScreen(openOnAwake[i], false);
             }
 
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
 }
