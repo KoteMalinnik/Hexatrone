@@ -8,6 +8,8 @@
 		MainScreen,
 		SettingsScreen,
 		CreditsScreen,
-		GameInfoScreen
+		GameInfoScreen,
+		PauseScreen,
+		GameOverScreen
 	}
 }

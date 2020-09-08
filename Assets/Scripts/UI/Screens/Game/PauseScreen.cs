@@ -14,10 +14,10 @@ namespace CustomScreen.Game
 		[SerializeField] SceneAsset mainMenuScene = null;
 		#endregion
 
-		public void RestartLevel()
+		public void Continue()
         {
-			Log.Message("Нажатие на кнопку <RestartLevel>.");
-			SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+			Log.Message("Нажатие на кнопку <Continue>.");
+			ScreenManager.CloseScreen(ScreenType);
 		}
 
 		public void LoadMainMenu()
