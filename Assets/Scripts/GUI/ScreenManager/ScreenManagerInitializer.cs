@@ -14,7 +14,7 @@ namespace CustomScreen.Core
         [SerializeField] Transform screenTransform = null;
 
         [Space]
-        [SerializeField] ScreenType openOnAwake = ScreenType.MainScreen;
+        [SerializeField] List<ScreenType> openOnAwake = new List<ScreenType>();
         #endregion
 
         private void Awake()
@@ -26,7 +26,11 @@ namespace CustomScreen.Core
             }
 
             ScreenManager.Initialize(screenPrefabs, screenTransform);
-            ScreenManager.OpenScreen(openOnAwake);
+
+            for (int i = 0; i < openOnAwake.Count; i++)
+            {
+                ScreenManager.OpenScreen(openOnAwake[i], false);
+            }
 
             Destroy(gameObject);
         }
