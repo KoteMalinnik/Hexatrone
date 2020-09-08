@@ -27,7 +27,7 @@ public static class Statements
 			_pause = value;
 
 			if (value) OnPause?.Invoke();
-			else OnUnpause.Invoke();
+			else OnUnpause?.Invoke();
         }
 	}
 
