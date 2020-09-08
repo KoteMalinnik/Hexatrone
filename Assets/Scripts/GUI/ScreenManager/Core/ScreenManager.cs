@@ -53,10 +53,16 @@ namespace CustomScreen.Core
                 activeScreens = new List<BaseScreen>();
             }
 
-            if (activeScreens.Contains(screenPrefab))
+            if (activeScreens != null)
             {
-                Log.Message($"Окно {screenType} уже активно.");
-                return;
+                for (int i = 0; i < activeScreens.Count; i++)
+                {
+                    if (activeScreens[i].ScreenType == screenType)
+                    {
+                        Log.Message($"Окно {screenType} уже активно.");
+                        return;
+                    }
+                }
             }
 
             BaseScreen screenToOpen = MonoBehaviour.Instantiate(screenPrefab, screenTransform);
