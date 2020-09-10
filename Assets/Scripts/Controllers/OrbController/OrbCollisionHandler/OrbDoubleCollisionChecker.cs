@@ -29,10 +29,8 @@
 			}
 		}
 
-		~OrbDoubleCollisionChecker()
+		public static void ClearCollisionData()
         {
-			if (collision_1 == null && collision_2 == null) return;
-
 			Log.Message("Затирание коллизий.");
 			collision_1 = null;
 			collision_2 = null;

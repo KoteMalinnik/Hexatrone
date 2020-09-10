@@ -42,6 +42,7 @@ namespace OrbCollision
 				else SingleCollision(checker.Collision_1);
 
 				waitForLateUpdateRoutine = null;
+				OrbDoubleCollisionChecker.ClearCollisionData();
 			};
 
 			Log.Message("Запуск корутины ожидания.");
