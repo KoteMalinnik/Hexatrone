@@ -31,7 +31,6 @@ namespace CustomScreen.Game
 		{
 			Log.Message("Нажатие на кнопку <Settings>.");
 			ScreenManager.OpenScreen(ScreenType.SettingsScreen);
-			//TODO: SettingsScreen при нажатии на кнопку "НАЗАД" будет показывать MainScreen
 		}
 		#endregion
 	}
