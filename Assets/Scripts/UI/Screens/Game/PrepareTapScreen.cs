@@ -13,7 +13,12 @@ namespace CustomScreen.Game
         public void CloseThisScreen()
 		{
 			Log.Message("Нажатие на кнопку <PrepareTap>.");
+
+			ScreenManager.OpenScreen(ScreenType.InGameInteractiveScreen, false);
+			ScreenManager.OpenScreen(ScreenType.GameInfoScreen, false);
+
 			ScreenManager.CloseScreen(ScreenType);
+
 			Statements.Pause = false;
 			OnPrepareTapButtonDown?.Invoke();
 		}

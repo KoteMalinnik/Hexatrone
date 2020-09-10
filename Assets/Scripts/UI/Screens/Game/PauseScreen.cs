@@ -17,7 +17,13 @@ namespace CustomScreen.Game
 		public void Continue()
         {
 			Log.Message("Нажатие на кнопку <Continue>.");
+
+			ScreenManager.OpenScreen(ScreenType.InGameInteractiveScreen, false);
+			ScreenManager.OpenScreen(ScreenType.GameInfoScreen, false);
+
 			ScreenManager.CloseScreen(ScreenType);
+
+			Statements.Pause = false;
 		}
 
 		public void LoadMainMenu()
