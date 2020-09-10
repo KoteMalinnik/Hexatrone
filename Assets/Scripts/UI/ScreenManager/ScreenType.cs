@@ -10,6 +10,8 @@
 		CreditsScreen,
 		GameInfoScreen,
 		PauseScreen,
-		GameOverScreen
+		GameOverScreen,
+		PrepareTapScreen,
+		InGameButtonsScreen
 	}
 }
