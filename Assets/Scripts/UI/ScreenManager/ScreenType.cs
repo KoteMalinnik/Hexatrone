@@ -12,6 +12,6 @@
 		PauseScreen,
 		GameOverScreen,
 		PrepareTapScreen,
-		InGameButtonsScreen
+		InGameInteractiveScreen
 	}
 }
