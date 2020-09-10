@@ -19,6 +19,12 @@ namespace Part
 
 		public void Flash(bool match)
 		{
+			if (flashingDoubleShotRoutine != null)
+            {
+				Log.Message("Произведена попытка запуска двойной анимации мигания. Прошлая еще не завершила свое действие.");
+				return;
+            }
+
             Log.Message("Запуск анимации мигания объекта: " + name);
 
             Color flashColor = match ? matchedColor : mismatchedColor;
