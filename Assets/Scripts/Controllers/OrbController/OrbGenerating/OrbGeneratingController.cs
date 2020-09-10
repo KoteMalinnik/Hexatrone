@@ -7,6 +7,9 @@ namespace Orb
     public class OrbGeneratingController : MonoBehaviour
     {
         #region Fields
+        [Range(0, 10)]
+        [SerializeField] float orbGeneratingInterval = 1;
+
         int maxColorLevel = 3;
         #endregion
 
@@ -14,16 +17,22 @@ namespace Orb
 
         private void OnEnable()
         {
+            Statements.OnPause += StopGeneration;
+            Statements.OnUnpause += StartGeneration;
+
             Form.FormLevelController.OnFormLevelChange += ChangeMaxColorLevel;
         }
 
         private void OnDisable()
         {
+            Statements.OnPause -= StopGeneration;
+            Statements.OnUnpause -= StartGeneration;
+
             Form.FormLevelController.OnFormLevelChange -= ChangeMaxColorLevel;
         }
         #endregion
 
-        void ChangeMaxColorLevel(int formLevel)
+        private void ChangeMaxColorLevel(int formLevel)
         {
             maxColorLevel = formLevel + 2;
         }
@@ -33,6 +42,15 @@ namespace Orb
             var orb = GetComponent<OrbGenerator>().Generate();
             var color = GetComponent<OrbColorizer>().Colorize(orb, maxColorLevel);
         }
-    }
 
+        void StartGeneration()
+        {
+            InvokeRepeating(nameof(GenerateNewOrb), 0, orbGeneratingInterval);
+        }
+
+        void StopGeneration()
+        {
+            CancelInvoke();
+        }
+    }
 }
