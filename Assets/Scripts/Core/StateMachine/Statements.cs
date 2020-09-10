@@ -26,6 +26,8 @@ public static class Statements
 			Log.Message("Переключение состояния паузы: " + value);
 			_pause = value;
 
+			UnityEngine.Time.timeScale = value ? 0 : 1;
+
 			if (value) OnPause?.Invoke();
 			else OnUnpause?.Invoke();
         }
