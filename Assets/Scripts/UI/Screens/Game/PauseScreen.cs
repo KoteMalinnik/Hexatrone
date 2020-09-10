@@ -12,9 +12,22 @@ namespace CustomScreen.Game
     {
 		#region Fields
 		[SerializeField] SceneAsset mainMenuScene = null;
-		#endregion
+		Canvas canvas = null;
+        #endregion
 
-		public void Continue()
+        private void Awake()
+        {
+			canvas = FindObjectOfType<Canvas>(true);
+			if (canvas == null)
+            {
+				Log.Warning("Канвас отсутствует на сцене.");
+            }
+
+			SetCanvasSortingOrder(2);
+			Statements.Pause = true;
+        }
+
+        public void Continue()
         {
 			Log.Message("Нажатие на кнопку <Continue>.");
 
@@ -24,6 +37,8 @@ namespace CustomScreen.Game
 			ScreenManager.CloseScreen(ScreenType);
 
 			Statements.Pause = false;
+
+			SetCanvasSortingOrder(0);
 		}
 
 		public void LoadMainMenu()
@@ -39,5 +54,18 @@ namespace CustomScreen.Game
 			ScreenManager.OpenScreen(ScreenType.SettingsScreen);
 		}
 		#endregion
+
+		void SetCanvasSortingOrder(int sortingOrder)
+        {
+			if (canvas != null)
+			{
+				Log.Message("Установка очереди канваса в слое: " + sortingOrder);
+				canvas.sortingOrder = sortingOrder;
+			}
+			else
+            {
+				Log.Warning("Канвас не назначен.");
+            }
+		}
 	}
 }

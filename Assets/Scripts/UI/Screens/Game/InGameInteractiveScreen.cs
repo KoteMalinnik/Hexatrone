@@ -8,7 +8,6 @@ namespace CustomScreen.Game
         public void OpenPauseScreen()
         {
             Log.Message("Нажатие на кнопку <Pause>.");
-            Statements.Pause = true;
             ScreenManager.OpenScreen(ScreenType.PauseScreen);
         }
         #endregion
