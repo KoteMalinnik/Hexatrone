@@ -13,12 +13,13 @@ namespace Orb
 		[SerializeField] Vector3 targetPosition = new Vector3(0, -9, 0);
 		#endregion
 
-		void Awake()
+		#region MonoBehaviour CallBacks
+		private void Awake()
 		{
 			cachedTransform = transform;
 		}
 
-		void Update()
+		private void Update()
 		{
 			if (allowMovement)
 			{
@@ -28,13 +29,26 @@ namespace Orb
 			}
 		}
 
-		public void AllowMovement()
+        private void OnEnable()
+        {
+			Statements.OnPause += DisallowMovement;
+			Statements.OnUnpause += AllowMovement;
+        }
+
+        private void OnDisable()
+        {
+			Statements.OnPause -= DisallowMovement;
+			Statements.OnUnpause -= AllowMovement;
+		}
+		#endregion
+
+		private void AllowMovement()
         {
 			Log.Message("Разрешение перемещения сферы.");
 			allowMovement = true;
         }
 
-		public void DisallowMovement()
+		private void DisallowMovement()
         {
 			Log.Message("Запрет перемещения сферы.");
 			allowMovement = false;
