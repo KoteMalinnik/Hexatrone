@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Part;
+using UnityEngine;
 
 namespace Form
 {
@@ -19,8 +20,11 @@ namespace Form
 
             for (int i = 0; i < formTransform.childCount; i++)
             {
-                var spriteRenderer = formTransform.GetChild(i).GetComponent<SpriteRenderer>();
-                spriteRenderer.color = partColors.GetColor(i);
+                var part = formTransform.GetChild(i);
+                var partColor = partColors.GetColor(i);
+                part.GetComponent<SpriteRenderer>().color = partColor;
+                part.GetComponent<PartFlashing>().SetColor(partColor);
+
             }
         }
     }

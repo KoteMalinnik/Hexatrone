@@ -15,17 +15,29 @@ namespace Part
 
 		CommonCoroutine flashingOneShotRoutine = null;
 		CommonCoroutine flashingDoubleShotRoutine = null;
+
+		Color partColor;
 		#endregion
 
-		public void Flash(bool match)
+		#region Properties
+		public Color PartColor => partColor;
+        #endregion
+
+        public void SetColor(Color color)
+        {
+			partColor = color;
+			Log.Message($"Цвет части {name}: " + partColor.ToString());
+        }
+
+        public void Flash(bool match)
 		{
+			Log.Message("Запуск анимации мигания объекта: " + name);
+
 			if (flashingDoubleShotRoutine != null)
             {
 				Log.Message("Произведена попытка запуска двойной анимации мигания. Прошлая еще не завершила свое действие.");
 				return;
             }
-
-            Log.Message("Запуск анимации мигания объекта: " + name);
 
             Color flashColor = match ? matchedColor : mismatchedColor;
 			SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();

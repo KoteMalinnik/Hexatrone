@@ -1,6 +1,4 @@
-﻿using Orb;
-
-namespace OrbCollision
+﻿namespace OrbCollision
 {
 	public class OrbDoubleCollisionChecker
 	{

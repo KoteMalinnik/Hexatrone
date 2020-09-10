@@ -17,33 +17,18 @@ namespace Orb
 			Log.Message("Столкновение с " + collision.name);
 
 			Color partColor = Color.black;
-			Color orbColor = Color.black;
-			PartFlashing partFlashing = null;
-
-			SpriteRenderer spriteRendererChecker = null;
+			Color orbColor = GetComponent<SpriteRenderer>().color;
 			
-			if (collision.TryGetComponent(out spriteRendererChecker))
-            {
-				partColor = spriteRendererChecker.color;
-            }
-			else
-            {
-				Log.Error("Не удалось получить компонент SpriteRenderer части формы: " + collision.name);
-            }
+			PartFlashing partFlashing = null;
 
 			if (!collision.TryGetComponent(out partFlashing))
 			{
 				Log.Error("Не удалось получить компонент PartFlashing части формы: " + collision.name);
 			}
-
-			if (TryGetComponent(out spriteRendererChecker))
-			{
-				orbColor = spriteRendererChecker.color;
-			}
 			else
-			{
-				Log.Error("Не удалось получить компонент SpriteRenderer сферы.");
-			}
+            {
+				partColor = partFlashing.PartColor;
+            }
 
 			try
             {
