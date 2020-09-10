@@ -45,7 +45,7 @@ namespace Orb
 
         void StartGeneration()
         {
-            InvokeRepeating(nameof(GenerateNewOrb), 0, orbGeneratingInterval);
+            InvokeRepeating(nameof(GenerateNewOrb), 1, orbGeneratingInterval);
         }
 
         void StopGeneration()
