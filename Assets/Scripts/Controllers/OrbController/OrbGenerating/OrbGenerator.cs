@@ -6,6 +6,7 @@ namespace Orb
 	{
 		#region Fields
 		[SerializeField] GameObject prefab = null;
+		[SerializeField] bool randomGenerationX = true;
 
 		float spawnPositionXThreshold = 0;
 		Vector2 spawnPosition = Vector2.zero;
@@ -28,7 +29,16 @@ namespace Orb
         {
 			Log.Message("Генерация сферы.");
 
-			spawnPosition.x = Random.Range(-spawnPositionXThreshold, spawnPositionXThreshold);
+			if (randomGenerationX)
+            {
+				spawnPosition.x = Random.Range(-spawnPositionXThreshold, spawnPositionXThreshold);
+			}
+			else
+            {
+				spawnPosition.x = 0;
+
+			}
+
 			var generatedOrb = ObjectInstantiator.Instantiate(prefab, transform, spawnPosition, Quaternion.identity);
 			Log.Message("Сфера сгенерирована в позиции " + spawnPosition);
 
