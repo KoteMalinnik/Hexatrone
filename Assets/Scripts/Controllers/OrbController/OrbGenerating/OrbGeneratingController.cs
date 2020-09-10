@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CustomScreen.Game;
+using UnityEngine;
 
 namespace Orb
 {
@@ -17,16 +18,16 @@ namespace Orb
 
         private void OnEnable()
         {
-            Statements.OnPause += StopGeneration;
-            Statements.OnUnpause += StartGeneration;
+            PrepareTapScreen.OnPrepareTapButtonDown += StartGeneration;
+            Statements.OnGameOver += StopGeneration;
 
             Form.FormLevelController.OnFormLevelChange += ChangeMaxColorLevel;
         }
 
         private void OnDisable()
         {
-            Statements.OnPause -= StopGeneration;
-            Statements.OnUnpause -= StartGeneration;
+            PrepareTapScreen.OnPrepareTapButtonDown -= StartGeneration;
+            Statements.OnGameOver -= StopGeneration;
 
             Form.FormLevelController.OnFormLevelChange -= ChangeMaxColorLevel;
         }
@@ -45,7 +46,7 @@ namespace Orb
 
         void StartGeneration()
         {
-            InvokeRepeating(nameof(GenerateNewOrb), 1, orbGeneratingInterval);
+            InvokeRepeating(nameof(GenerateNewOrb), 0, orbGeneratingInterval);
         }
 
         void StopGeneration()
