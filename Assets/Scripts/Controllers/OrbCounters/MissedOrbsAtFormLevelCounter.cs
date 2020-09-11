@@ -7,7 +7,7 @@ namespace OrbCounters
 	public class MissedOrbsAtFormLevelCounter : BaseOrbCounter<DescendingCounter>
 	{
         #region Events
-        public static event Action<int> OnAllAllowedOrbsMissed = null;
+        public static event Action OnAllAllowedOrbsMissed = null;
         public static event Action<int> OnCounterReset = null;
         public static event Action<int> OnValueChanged = null;
         #endregion
@@ -38,8 +38,8 @@ namespace OrbCounters
 
         protected override void Initialize(ushort orbsCountAllowedToMissAtFormLevel)
 		{
-			Counter = new DescendingCounter(orbsCountAllowedToMissAtFormLevel, "MissedOrbsAtFormLevel", 0);
-			Counter.OnMinValueReach += InvokeEvent_OnAllAllowedOrbsMissed;
+			Counter = new DescendingCounter(orbsCountAllowedToMissAtFormLevel, typeof(MissedOrbsAtFormLevelCounter).ToString(), 0);
+			Counter.OnMinValueReach += OnAllAllowedOrbsMissed;
 		}
 
         private void Subtract()
@@ -47,11 +47,6 @@ namespace OrbCounters
             int delta = 1;
             Counter.Subtract((ushort)delta);
             OnValueChanged?.Invoke(delta);
-        }
-
-        private void InvokeEvent_OnAllAllowedOrbsMissed()
-        {
-            OnAllAllowedOrbsMissed?.Invoke(orbsCountAllowedToMissAtFormLevel);
         }
 	}
 }

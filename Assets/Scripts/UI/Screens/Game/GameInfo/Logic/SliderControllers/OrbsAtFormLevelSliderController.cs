@@ -17,8 +17,8 @@ namespace CustomScreen.Logic
         {
             FormLevelController.OnFormMaxLevel += HideSlider;
             FormLevelController.OnFormLevelChange += ShowSlider;
-
             FormLevelController.OnFormLevelChange += UpdateColor;
+
             CollectedOrbsAtFormLevelCounter.OnValueChanged += UpdateValue;
             CollectedOrbsAtFormLevelCounter.OnCounterReset += UpdateMaxValue;
         }
@@ -27,8 +27,8 @@ namespace CustomScreen.Logic
         {
             FormLevelController.OnFormMaxLevel -= HideSlider;
             FormLevelController.OnFormLevelChange -= ShowSlider;
-
             FormLevelController.OnFormLevelChange -= UpdateColor;
+
             CollectedOrbsAtFormLevelCounter.OnValueChanged -= UpdateValue;
             CollectedOrbsAtFormLevelCounter.OnCounterReset -= UpdateMaxValue;
         }

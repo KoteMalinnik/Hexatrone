@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrbCounters;
+using System;
 using UnityEngine;
 
 namespace Form
@@ -18,6 +19,20 @@ namespace Form
         [SerializeField] int maxLevel = 6;
 
         int level = 0;
+        #endregion
+
+        #region MonoBehaviour Callbacks
+        private void OnEnable()
+        {
+            CollectedOrbsAtFormLevelCounter.OnAllOrbsToNextFormLevelCollected += LevelUp;
+            MissedOrbsAtFormLevelCounter.OnAllAllowedOrbsMissed += LevelDown;
+        }
+
+        private void OnDisable()
+        {
+            CollectedOrbsAtFormLevelCounter.OnAllOrbsToNextFormLevelCollected -= LevelUp;
+            MissedOrbsAtFormLevelCounter.OnAllAllowedOrbsMissed -= LevelDown;
+        }
         #endregion
 
         public void SetupLevel(int level)

@@ -69,7 +69,5 @@ public class GameSceneController : MonoBehaviour
         {
 			Log.Warning("Попытка инициализации формы, но FormLevelController отсутствует на сцене.");
         }
-
-		Destroy(gameObject);
 	}
 }

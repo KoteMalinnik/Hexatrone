@@ -41,7 +41,7 @@ namespace OrbCounters
 
         protected override void Initialize(ushort orbsCountToNextFormLevel)
 		{
-			Counter = new AscendingCounter(0, "OrbsAtFormLevelCollected", orbsCountToNextFormLevel);
+			Counter = new AscendingCounter(0, typeof(CollectedOrbsAtFormLevelCounter).ToString(), orbsCountToNextFormLevel);
 			Counter.OnMaxValueReach += OnAllOrbsToNextFormLevelCollected;
 		}
 
