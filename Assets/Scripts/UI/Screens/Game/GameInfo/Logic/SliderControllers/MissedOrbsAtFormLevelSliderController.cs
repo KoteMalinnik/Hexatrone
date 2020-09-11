@@ -2,67 +2,57 @@
 using UnityEngine.UI;
 using OrbCounters;
 using Form;
-using OrbCollision;
 
 namespace CustomScreen.Logic
 {
-    public class MissedOrbsAtFormLevelSliderController : MonoBehaviour
+    public class MissedOrbsAtFormLevelSliderController : SliderController
     {
         #region Fields
-        [SerializeField] Slider slider = null;
-        Image fillRectImage = null;
-
-        [SerializeField] ColorSet colorSet = null;
         [SerializeField] Color zeroLevelColor = Color.gray;
         #endregion
 
-        #region MonoBehaviour Callbacks
-        private void Awake()
+        #region Overrided Methods
+        protected override void OnEnable()
         {
-            fillRectImage = slider.fillRect.GetComponent<Image>();
-        }
-
-        private void OnEnable()
-        {
-            OrbCollisionHandler.OnMismatch += UpdateValue;
+            MissedOrbsAtFormLevelCounter.OnValueChanged += UpdateValue;
             MissedOrbsAtFormLevelCounter.OnCounterReset += UpdateMaxValue;
+
             FormLevelController.OnFormLevelChange += UpdateColor;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
-            OrbCollisionHandler.OnMismatch -= UpdateValue;
+            MissedOrbsAtFormLevelCounter.OnValueChanged -= UpdateValue;
             MissedOrbsAtFormLevelCounter.OnCounterReset -= UpdateMaxValue;
+
             FormLevelController.OnFormLevelChange -= UpdateColor;
         }
-        #endregion
 
-        #region Slider Update
-        void UpdateValue()
+        protected override void UpdateValue(int delta = 1)
         {
             Log.Message("Обновление значения слайдера MissedOrbsAtFormLevelSliderController.");
-            slider.value--;
+            Slider.value -= delta;
         }
 
-        void UpdateColor(int formLevel)
+        protected override void UpdateColor(int formLevel)
         {
             Log.Message("Обновление цвета слайдера MissedOrbsAtFormLevelSliderController.");
 
             if (formLevel -2 < 0)
             {
-                fillRectImage.color = zeroLevelColor;
+                FillRectImage.color = zeroLevelColor;
             }
             else
             {
-                fillRectImage.color = colorSet.GetColor(formLevel + 1);
+                FillRectImage.color = ColorSet.GetColor(formLevel + 1);
             }
         }
 
-        void UpdateMaxValue(int orbsCountAllowedToMiss)
+        protected override void UpdateMaxValue(int orbsCountAllowedToMiss)
         {
             Log.Message("Обновление максимального значения слайдера MissedOrbsAtFormLevelSliderController: " + orbsCountAllowedToMiss);
-            slider.maxValue = orbsCountAllowedToMiss;
-            slider.value = orbsCountAllowedToMiss;
+            Slider.maxValue = orbsCountAllowedToMiss;
+            Slider.value = orbsCountAllowedToMiss;
         }
         #endregion
 	}
