@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CustomScreen.Core
+namespace UI.CustomScreen.Core
 {
     /// <summary>
     /// Базовый тип для всех окон, которые могут открываться с помощью ScreenManager.

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System;
 
-namespace CustomScreen.Logic
+namespace UI.CustomScreen.Logic
 {
 	public class AudioButtonsController : MonoBehaviour
 	{

@@ -365,8 +365,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 783695861}
+  - component: {fileID: 783695862}
   m_Layer: 0
-  m_Name: ---DestroyableOnAwake---
+  m_Name: ---Destroyable---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,11 +383,29 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1684692919100813898}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783695862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783695860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a69e8adf8e131240ac0234abd40e064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  createFormOnStart: 0
+  pauseOnStart: 1
+  orbCountersPrefab: {fileID: 3761058970383373066, guid: fa7c86e078fbb904abe5fb099954717e,
+    type: 3}
+  orbCountersParent: {fileID: 606888115}
+  createOrbCounters: 1
 --- !u!1 &1268207922
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef444d0104eb03d4295d63710fb0077e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbGeneratingInterval: 1
+  orbGeneratingInterval: 1.5
 --- !u!114 &1268207925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5009518388849945476, guid: 883f4740e8f8873459684a333078b725, type: 3}
-  randomGenerationX: 0
+  randomGenerationX: 1
 --- !u!1 &1358917176
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,37 +567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   formLevelController: {fileID: 2221289175379858559}
   orbGeneratingController: {fileID: 1268207924}
---- !u!1 &1684692919100813896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1684692919100813898}
-  - component: {fileID: 8686177434736273057}
-  m_Layer: 0
-  m_Name: GameSceneController
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1684692919100813898
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684692919100813896}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 783695861}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2221289175379858553
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +758,7 @@ GameObject:
   - component: {fileID: 5767776817162630951}
   - component: {fileID: 5767776817162630950}
   - component: {fileID: 5767776817162630952}
+  - component: {fileID: 5767776817162630953}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -837,6 +826,22 @@ MonoBehaviour:
   - {fileID: 5839196921783576594, guid: 07548e994fae0d740bd7a19a8486d94f, type: 3}
   screenTransform: {fileID: 5767776817218475464}
   openOnAwake: 06000000
+--- !u!114 &5767776817162630953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5767776817162630949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5857129905d0c848bc6d664239dcca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToDestroy:
+  - {fileID: 606888114}
+  - {fileID: 2221289175379858553}
+  - {fileID: 783695860}
 --- !u!223 &5767776817162630968
 Canvas:
   m_ObjectHideFlags: 0
@@ -914,22 +919,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8686177434736273057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684692919100813896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a69e8adf8e131240ac0234abd40e064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingLevel: 1
-  createFormOnStart: 0
-  pauseOnStart: 1
-  orbCountersPrefab: {fileID: 3761058970383373066, guid: fa7c86e078fbb904abe5fb099954717e,
-    type: 3}
-  orbCountersParent: {fileID: 606888115}
-  createOrbCounters: 1

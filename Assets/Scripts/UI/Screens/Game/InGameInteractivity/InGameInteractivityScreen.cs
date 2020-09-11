@@ -1,8 +1,8 @@
-﻿using CustomScreen.Core;
+﻿using UI.CustomScreen.Core;
 
-namespace CustomScreen.Game
+namespace UI.CustomScreen
 {
-    public class InGameInteractiveScreen : BaseScreen
+    public class InGameInteractivityScreen : BaseScreen
     {
         #region Screen Open Methods
         public void OpenPauseScreen()

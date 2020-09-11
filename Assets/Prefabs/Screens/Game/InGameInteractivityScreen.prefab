@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3959992633594458598}
   - component: {fileID: 5839196921783576594}
   m_Layer: 5
-  m_Name: InGameInteractiveScreen
+  m_Name: InGameInteractivityScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

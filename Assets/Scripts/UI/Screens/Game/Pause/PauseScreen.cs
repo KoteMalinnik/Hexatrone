@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using CustomScreen.Core;
+using UI.CustomScreen.Core;
 using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace CustomScreen.Game
+namespace UI.CustomScreen
 {
-    public class PauseScreen : BaseScreen
+    public class PauseScreen : BaseScreen, IOpenSettingsScreen
     {
 		#region Fields
 		[SerializeField] SceneAsset mainMenuScene = null;
@@ -31,7 +31,7 @@ namespace CustomScreen.Game
         {
 			Log.Message("Нажатие на кнопку <Continue>.");
 
-			ScreenManager.OpenScreen(ScreenType.InGameInteractiveScreen, false);
+			ScreenManager.OpenScreen(ScreenType.InGameInteractivityScreen, false);
 			ScreenManager.OpenScreen(ScreenType.GameInfoScreen, false);
 
 			ScreenManager.CloseScreen(ScreenType);

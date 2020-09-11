@@ -1,4 +1,4 @@
-﻿using CustomScreen.Game;
+﻿using UI.CustomScreen;
 using Form;
 using UnityEngine;
 
@@ -69,5 +69,7 @@ public class GameSceneController : MonoBehaviour
         {
 			Log.Warning("Попытка инициализации формы, но FormLevelController отсутствует на сцене.");
         }
+
+		Destroy(this);
 	}
 }

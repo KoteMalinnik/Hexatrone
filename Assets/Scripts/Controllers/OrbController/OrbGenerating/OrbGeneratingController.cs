@@ -1,4 +1,4 @@
-﻿using CustomScreen.Game;
+﻿using UI.CustomScreen;
 using UnityEngine;
 
 namespace Orb

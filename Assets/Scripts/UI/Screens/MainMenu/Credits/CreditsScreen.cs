@@ -1,8 +1,8 @@
-﻿using CustomScreen.Core;
+﻿using UI.CustomScreen.Core;
 
-namespace CustomScreen.MainMenu
+namespace UI.CustomScreen
 {
-    public class CreditsScreen : BaseScreen
+    public class CreditsScreen : BaseScreen, IOpenMainMenuScreen
     {
         #region Screens Open Methods
         public void OpenMainMenuScreen()

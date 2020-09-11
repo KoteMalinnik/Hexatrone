@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CustomScreen.Core
+namespace UI.CustomScreen.Core
 {
     /// <summary>
     /// Менеджер окон.

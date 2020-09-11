@@ -1,4 +1,4 @@
-﻿namespace CustomScreen
+﻿namespace UI.CustomScreen
 {
 	/// <summary>
 	/// Перечисление показываемых окон.
@@ -12,6 +12,6 @@
 		PauseScreen,
 		GameOverScreen,
 		PrepareTapScreen,
-		InGameInteractiveScreen
+		InGameInteractivityScreen
 	}
 }

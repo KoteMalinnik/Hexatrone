@@ -1,11 +1,11 @@
-﻿using CustomScreen.Core;
+﻿using UI.CustomScreen.Core;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace CustomScreen.MainMenu
+namespace UI.CustomScreen
 {
-    public class SettingsScreen : BaseScreen
+    public class SettingsScreen : BaseScreen, IOpenMainMenuScreen
     {
 		#region Fields
 		[SerializeField] SceneAsset mainMenuScene = null;

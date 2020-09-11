@@ -1,4 +1,4 @@
-﻿using CustomScreen.Logic;
+﻿using UI.CustomScreen.Logic;
 using UnityEngine;
 
 public class MusicManager : AudioManager

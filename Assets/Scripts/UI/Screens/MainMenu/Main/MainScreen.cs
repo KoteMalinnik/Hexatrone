@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using CustomScreen.Core;
+using UI.CustomScreen.Core;
 using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace CustomScreen.MainMenu
+namespace UI.CustomScreen
 {
-	public class MainScreen : BaseScreen
+	public class MainScreen : BaseScreen, IOpenSettingsScreen
 	{
 		#region Fields
 		[SerializeField] SceneAsset gameScene = null;
@@ -17,7 +17,6 @@ namespace CustomScreen.MainMenu
 		public void LoadGame()
 		{
 			Log.Message("Нажатие на кнопку <Play>.");
-			Log.Message("Запуск игры.");
 			Log.Message("Загрузка сцены: " + gameScene.name);
 			SceneManager.LoadSceneAsync(gameScene.name);
 		}

@@ -41,6 +41,7 @@ public static class Statements
 			Log.Message("Переключение состояния конца игры: " + value);
 			_gameOver = value;
 
+			if (value) Pause = true;
 			if (value) OnGameOver?.Invoke();
 		}
 	}

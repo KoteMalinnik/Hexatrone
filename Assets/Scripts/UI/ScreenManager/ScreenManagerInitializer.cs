@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace CustomScreen.Core
+namespace UI.CustomScreen.Core
 {
     /// <summary>
     /// Инициализатор ScreenManager.

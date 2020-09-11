@@ -9,7 +9,6 @@ namespace Form
         #region Events
         public static event Action<int> OnFormLevelChange = null;
 
-        public static event Action OnFormZeroLevel = null;
         public static event Action OnFormMaxLevel = null;
         #endregion
 
@@ -69,7 +68,7 @@ namespace Form
             if (level - 1 < minLevel)
             {
                 Log.Message("Уровень формы ниже минимального.");
-                OnFormZeroLevel?.Invoke();
+                Statements.GameOver = true;
                 return;
             }
 
