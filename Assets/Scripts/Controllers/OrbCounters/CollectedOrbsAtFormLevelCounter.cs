@@ -8,7 +8,7 @@ namespace OrbCounters
 	{
         #region Events
         public static event Action OnAllOrbsToNextFormLevelCollected = null;
-        public static event Action<int> OnNewOrbCollected = null;
+        public static event Action<int> OnValueChanged = null;
         public static event Action<int> OnCounterReset = null;
         #endregion
 
@@ -48,7 +48,7 @@ namespace OrbCounters
 		private void Add()
         {
             Counter.Add(1);
-            OnNewOrbCollected?.Invoke(Counter.Value);
+            OnValueChanged?.Invoke(Counter.Value);
         }
 	}
 }

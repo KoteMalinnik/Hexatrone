@@ -9,6 +9,7 @@ namespace OrbCounters
         #region Events
         public static event Action<int> OnAllAllowedOrbsMissed = null;
         public static event Action<int> OnCounterReset = null;
+        public static event Action<int> OnValueChanged = null;
         #endregion
 
         #region Fields
@@ -41,7 +42,12 @@ namespace OrbCounters
 			Counter.OnMinValueReach += InvokeEvent_OnAllAllowedOrbsMissed;
 		}
 
-        private void Subtract() => Counter.Subtract(1);
+        private void Subtract()
+        {
+            int delta = 1;
+            Counter.Subtract((ushort)delta);
+            OnValueChanged?.Invoke(delta);
+        }
 
         private void InvokeEvent_OnAllAllowedOrbsMissed()
         {
