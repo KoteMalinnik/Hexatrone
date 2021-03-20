@@ -6,7 +6,6 @@ namespace Part
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class PartFlashing : MonoBehaviour
 	{
-		#region Fields
 		[Range(0.01f, 10f)]
 		[SerializeField] float animationSpeed = 1f;
 
@@ -17,11 +16,8 @@ namespace Part
 		CommonCoroutine flashingDoubleShotRoutine = null;
 
 		Color partColor;
-		#endregion
 
-		#region Properties
 		public Color PartColor => partColor;
-        #endregion
 
         public void SetColor(Color color)
         {

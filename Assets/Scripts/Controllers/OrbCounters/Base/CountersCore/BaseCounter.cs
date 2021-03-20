@@ -4,15 +4,10 @@ namespace Counters
 {
     public abstract class BaseCounter
     {
-		#region Events
 		public event Action<int> OnValueChanged = null;
-		#endregion
 
-		#region Fields
 		ushort value = 0;
-		#endregion
 
-		#region Properties
 		protected string ID { get; }  = "Counter";
 
 		public ushort Value
@@ -27,7 +22,6 @@ namespace Counters
 				OnValueChanged?.Invoke(value);
             }
 		}
-		#endregion
 
 		public BaseCounter(ushort initialValue, string ID)
 		{

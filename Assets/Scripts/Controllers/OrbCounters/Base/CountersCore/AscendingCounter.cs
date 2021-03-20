@@ -10,13 +10,9 @@ namespace Counters
     /// </summary>
     public class AscendingCounter : BaseCounter
     {
-		#region Events
 		public event Action OnMaxValueReach = null;
-        #endregion
 
-        #region Fields
         ushort maxValue = 0;
-        #endregion
 
         public AscendingCounter(ushort initialValue, string counterID, ushort maxValue = ushort.MaxValue) : base(initialValue, counterID)
         {

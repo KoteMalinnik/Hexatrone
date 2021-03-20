@@ -8,9 +8,7 @@ namespace Orb
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class OrbCollisionListener : MonoBehaviour
 	{
-		#region Events
 		public static event Action<CollisionData> OnCollision = null;
-		#endregion
 
 		void OnTriggerEnter2D(Collider2D collision)
 		{

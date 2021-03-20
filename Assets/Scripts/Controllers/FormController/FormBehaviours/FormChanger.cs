@@ -6,7 +6,6 @@ namespace Form
 	[RequireComponent(typeof(FormColorizer))]
 	public class FormChanger : MonoBehaviour
 	{
-		#region Fields
 		[Range(1, 10)]
 		[SerializeField] float animationSpeed = 5;
 		
@@ -15,9 +14,7 @@ namespace Form
 		[SerializeField] string nameTemplate = "Level_";
 
 		GameObject currentForm = null;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void OnEnable()
         {
 			FormLevelController.OnFormLevelChange += DestroyOldForm;
@@ -27,7 +24,6 @@ namespace Form
         {
 			FormLevelController.OnFormLevelChange -= DestroyOldForm;
 		}
-        #endregion
 
 		void CreateNewForm(int level, FormRotation formRotation)
         {

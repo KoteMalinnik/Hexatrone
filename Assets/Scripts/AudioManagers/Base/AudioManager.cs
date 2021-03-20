@@ -2,9 +2,7 @@
 
 public abstract class AudioManager : MonoBehaviour
 {
-	#region Fields
 	protected AudioSource mainChanel = null;
-    #endregion
 
     protected AudioSource CreateAudioSource(float volume, bool loop, bool playOnAwake)
 	{

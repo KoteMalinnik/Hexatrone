@@ -6,21 +6,16 @@ namespace Form
 {
     public class FormLevelController : MonoBehaviour
     {
-        #region Events
         public static event Action<int> OnFormLevelChange = null;
 
         public static event Action OnFormMaxLevel = null;
-        #endregion
 
-        #region Fields
         [Header("Ограничения уровня")]
         [SerializeField] int minLevel = 1;
         [SerializeField] int maxLevel = 6;
 
         int level = 0;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void OnEnable()
         {
             CollectedOrbsAtFormLevelCounter.OnAllOrbsToNextFormLevelCollected += LevelUp;
@@ -32,7 +27,6 @@ namespace Form
             CollectedOrbsAtFormLevelCounter.OnAllOrbsToNextFormLevelCollected -= LevelUp;
             MissedOrbsAtFormLevelCounter.OnAllAllowedOrbsMissed -= LevelDown;
         }
-        #endregion
 
         public void SetupLevel(int level)
         {

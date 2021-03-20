@@ -3,19 +3,9 @@ using UnityEngine;
 
 public class SoundManager : AudioManager
 {
-	#region Fields
-	//[SerializeField] AudioClip CorrectCollorCollected = null;
-	//[SerializeField] AudioClip IncorrectColorCollected = null;
-	//[SerializeField] AudioClip LevelUp = null;
-	//[SerializeField] AudioClip LevelDown = null;
-	//[SerializeField] AudioClip GameOver = null;
-	//[SerializeField] AudioClip GoalAchived = null;
-
 	AudioSource secondChanel = null;
 	bool audioIsAllowed = true;
-	#endregion
 	
-	#region MonoBehaviour Callbacks
 	private void Awake()
 	{
 		mainChanel = CreateAudioSource(volume: 0.1f, loop: false, playOnAwake: false);
@@ -31,7 +21,6 @@ public class SoundManager : AudioManager
 	{
 		AudioButtonsController.OnSoundToggleChanged -= ToggleAudio;
 	}
-	#endregion
 
 	protected override void ToggleAudio(bool state)
 	{

@@ -6,9 +6,7 @@ namespace Form
 {
 	public class FormRotation : MonoBehaviour
 	{
-		#region Fields
 		CommonCoroutine rotationRoutine = null;
-		#endregion
 
         /// <summary>
         /// Вращение объекта. Положительный угол оси Z соответствует вращению по часовой стрелке.

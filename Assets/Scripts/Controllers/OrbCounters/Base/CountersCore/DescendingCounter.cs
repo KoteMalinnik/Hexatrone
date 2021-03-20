@@ -10,13 +10,9 @@ namespace Counters
     /// </summary>
     public class DescendingCounter : BaseCounter
     {
-        #region Events
         public event Action OnMinValueReach = null;
-        #endregion
 
-        #region Fields
         ushort minValue = 0;
-        #endregion
 
         public DescendingCounter(ushort initialValue, string ID, ushort minValue = 0) : base(initialValue, ID)
         {

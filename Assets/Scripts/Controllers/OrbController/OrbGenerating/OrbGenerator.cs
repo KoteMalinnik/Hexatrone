@@ -4,13 +4,11 @@ namespace Orb
 {
 	public class OrbGenerator : MonoBehaviour
 	{
-		#region Fields
 		[SerializeField] GameObject prefab = null;
 		[SerializeField] bool randomGenerationX = true;
 
 		float spawnPositionXThreshold = 0;
 		Vector2 spawnPosition = Vector2.zero;
-        #endregion
 
         private void Awake()
         {

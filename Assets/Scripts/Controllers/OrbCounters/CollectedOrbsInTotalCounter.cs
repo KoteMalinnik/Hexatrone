@@ -5,11 +5,8 @@ namespace OrbCounters
 {
 	public class CollectedOrbsInTotalCounter : BaseOrbCounter<AscendingCounter>
     {
-        #region Events
         public static event Action<int> OnNewOrbCollected = null;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void Awake()
         {
             int initCount = 0;
@@ -26,7 +23,6 @@ namespace OrbCounters
         {
             OrbCollision.OrbCollisionHandler.OnMatch -= Add;
         }
-        #endregion
 
         protected override void Initialize(ushort initialValue)
         {

@@ -7,10 +7,8 @@ using UnityEditor;
 
 public class PreloadSceneController : MonoBehaviour
 {
-    #region Fields
     [SerializeField] bool loadNextScene = true;
     [SerializeField] SceneAsset mainMenuScene = null;
-    #endregion
 
     void Start()
 	{

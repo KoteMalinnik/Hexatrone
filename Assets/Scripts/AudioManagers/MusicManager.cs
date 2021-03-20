@@ -3,11 +3,8 @@ using UnityEngine;
 
 public class MusicManager : AudioManager
 {
-	#region Fields
 	[SerializeField] AudioClip musicClip = null;
-	#endregion
 
-	#region MonoBehaviour Callbacks
 	private void Awake()
 	{
 		mainChanel = CreateAudioSource(volume: 0.1f, loop: true, playOnAwake: false);
@@ -23,7 +20,6 @@ public class MusicManager : AudioManager
 	{
 		AudioButtonsController.OnMusicToggleChanged -= ToggleAudio;
 	}
-	#endregion
 
 	protected override void ToggleAudio(bool state)
 	{

@@ -6,18 +6,13 @@ namespace OrbCounters
 {
 	public class CollectedOrbsAtFormLevelCounter : BaseOrbCounter<AscendingCounter>
 	{
-        #region Events
         public static event Action OnAllOrbsToNextFormLevelCollected = null;
         public static event Action<int> OnValueChanged = null;
         public static event Action<int> OnCounterReset = null;
-        #endregion
 
-        #region Fields
         [SerializeField] ushort orbsCountAtFirstLevelNeedToCollectToLevelUp = 10;
         [SerializeField] ushort orbsCountPerLevelMultipler = 2;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void OnEnable()
         {
             Form.FormLevelController.OnFormLevelChange += ResetCounter;
@@ -29,7 +24,6 @@ namespace OrbCounters
             Form.FormLevelController.OnFormLevelChange -= ResetCounter;
             OrbCollision.OrbCollisionHandler.OnMatch -= Add;
         }
-        #endregion
 
         private void ResetCounter(int formLevel)
         {

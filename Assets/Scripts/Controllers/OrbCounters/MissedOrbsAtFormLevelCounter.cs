@@ -6,17 +6,12 @@ namespace OrbCounters
 {
 	public class MissedOrbsAtFormLevelCounter : BaseOrbCounter<DescendingCounter>
 	{
-        #region Events
         public static event Action OnAllAllowedOrbsMissed = null;
         public static event Action<int> OnCounterReset = null;
         public static event Action<int> OnValueChanged = null;
-        #endregion
 
-        #region Fields
         [SerializeField] ushort orbsCountAllowedToMissAtFormLevel = 5;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void OnEnable()
         {
             Form.FormLevelController.OnFormLevelChange += ResetCounter;
@@ -28,7 +23,6 @@ namespace OrbCounters
             Form.FormLevelController.OnFormLevelChange -= ResetCounter;
             OrbCollision.OrbCollisionHandler.OnMismatch -= Subtract;
         }
-        #endregion
 
         private void ResetCounter(int e = 0)
         {

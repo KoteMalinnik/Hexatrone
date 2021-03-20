@@ -5,19 +5,14 @@
 /// </summary>
 public static class Statements
 {
-	#region Events
 	public static event Action OnPause = null;
 	public static event Action OnUnpause = null;
 
 	public static event Action OnGameOver = null;
-	#endregion
 
-	#region Fields
 	static bool _pause = false;
 	static bool _gameOver = false;
-    #endregion
 
-    #region Properties
     public static bool Pause
 	{
 		get => _pause;
@@ -45,5 +40,4 @@ public static class Statements
 			if (value) OnGameOver?.Invoke();
 		}
 	}
-	#endregion
 }

@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class GameSceneController : MonoBehaviour
 {
-    #region Fields
 	[Range(1, 6)]
     [SerializeField] int startingLevel = 0;
 #if UNITY_EDITOR
@@ -19,9 +18,7 @@ public class GameSceneController : MonoBehaviour
 	[SerializeField] GameObject orbCountersPrefab = null;
 	[SerializeField] Transform orbCountersParent = null;
 	[SerializeField] bool createOrbCounters = true;
-    #endregion
 
-    #region MonoBehaviour Callbacks
     void Awake()
 	{
 		Log.Message("Настройка сцены..");
@@ -56,7 +53,6 @@ public class GameSceneController : MonoBehaviour
     {
 		Log.Message("Настройка сцены завершена.");
 	}
-    #endregion
 
     private void InitializeForm()
     {

@@ -5,12 +5,9 @@ namespace Form
 	[RequireComponent(typeof(FormRotation))]
 	public class FormRotationController : MonoBehaviour
 	{
-		#region Fields
 		[SerializeField] float rotationSpeed = 1.0f;
 		[SerializeField] Transform orbGeneratorTransform = null;
-		#endregion
 
-		#region MonoBehaviour Callbacks
 		private void OnEnable()
         {
 			Part.PartClickListener.OnClick += CalculateRotation;
@@ -20,7 +17,6 @@ namespace Form
         {
 			Part.PartClickListener.OnClick -= CalculateRotation;
 		}
-        #endregion
 
         void CalculateRotation(Transform partTransform)
 		{

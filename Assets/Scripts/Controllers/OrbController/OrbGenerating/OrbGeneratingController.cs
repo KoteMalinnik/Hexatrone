@@ -7,14 +7,11 @@ namespace Orb
     [RequireComponent(typeof(OrbColorizer))]
     public class OrbGeneratingController : MonoBehaviour
     {
-        #region Fields
         [Range(0, 10)]
         [SerializeField] float orbGeneratingInterval = 1;
 
         int maxColorLevel = 3;
-        #endregion
 
-        #region MonoBehaviour Callbacks
 
         private void OnEnable()
         {
@@ -31,7 +28,6 @@ namespace Orb
 
             Form.FormLevelController.OnFormLevelChange -= ChangeMaxColorLevel;
         }
-        #endregion
 
         private void ChangeMaxColorLevel(int formLevel)
         {

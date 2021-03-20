@@ -10,18 +10,13 @@ using System;
 /// </summary>
 public sealed class CommonCoroutine
 {
-    #region Events
     /// <summary>
     /// Действие, которое необходимо совершить по завершению корутины.
     /// </summary>
     public event Action OnFinish;
-    #endregion
 
-    #region Fields
     Coroutine coroutine = null;
-    #endregion
 
-    #region Properties
     MonoBehaviour Owner { get; } = null;
     Func<IEnumerator> Routine { get; } = null;
 
@@ -29,7 +24,6 @@ public sealed class CommonCoroutine
     /// Вернет true, если корутина в данный момент выполняется.
     /// </summary>
     public bool IsRunning => coroutine != null;
-    #endregion
 
     /// <summary>
     /// Создаст экземпляр корутины.

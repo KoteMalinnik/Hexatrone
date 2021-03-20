@@ -4,16 +4,13 @@ namespace Orb
 {
 	public class OrbMovement : MonoBehaviour
 	{
-		#region Fields
 		bool allowMovement = true;
 		Transform cachedTransform = null;
 
 		[Range(0.01f, 10f)]
 		[SerializeField] float movementSpeed = 2f;
 		[SerializeField] Vector3 targetPosition = new Vector3(0, -9, 0);
-		#endregion
 
-		#region MonoBehaviour CallBacks
 		private void Awake()
 		{
 			cachedTransform = transform;
@@ -40,7 +37,6 @@ namespace Orb
 			Statements.OnPause -= DisallowMovement;
 			Statements.OnUnpause -= AllowMovement;
 		}
-		#endregion
 
 		private void AllowMovement()
         {

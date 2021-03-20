@@ -7,16 +7,11 @@ namespace OrbCollision
 {
     public class OrbCollisionHandler : MonoBehaviour
     {
-		#region Events
 		public static event Action OnMatch = null;
 		public static event Action OnMismatch = null;
-		#endregion
 
-		#region Fields
 		CommonCoroutine waitForLateUpdateRoutine = null;
-        #endregion
 
-        #region MonoBehaviour Callbacks
         private void OnEnable()
         {
 			OrbCollisionListener.OnCollision += TrackCollision;
@@ -26,7 +21,6 @@ namespace OrbCollision
         {
 			OrbCollisionListener.OnCollision -= TrackCollision;
 		}
-        #endregion
 
 		void TrackCollision(CollisionData data)
         {
