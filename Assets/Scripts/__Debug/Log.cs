@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿using UnityEngine;
 
 /// <summary>
 /// Логирование в консоль Unity.
@@ -9,10 +9,10 @@ public static class Log
 	/// Выведет сообщение message в консоль Unity.
 	/// </summary>
 	/// <param name="message">Сообщение.</param>
-	public static void Message(params object[] message)
+	public static void Message(object message, string color = "green")
 	{
-#if UNITY_EDITOR
-		UnityEngine.Debug.Log(createMessage(message));
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+		Debug.Log($"<color={color}>{GetMessageInfo()}</color> -> {message}");
 #endif
 	}
 
@@ -20,10 +20,10 @@ public static class Log
 	/// Выведет предупреждение message в консоль Unity.
 	/// </summary>
 	/// <param name="message">Сообщение.</param>
-	public static void Warning(params object[] message)
+	public static void Warning(object message, string color = "yellow")
 	{
-#if UNITY_EDITOR
-		UnityEngine.Debug.LogWarning($"<color=yellow>{createMessage(message)}</color>");
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+		Debug.LogWarning($"<color={color}>{GetMessageInfo()}</color> -> {message}");
 #endif
 	}
 
@@ -31,23 +31,34 @@ public static class Log
 	/// Выведет ошибку с сообщением message в консоль Unity.
 	/// </summary>
 	/// <param name="message">Сообщение.</param>
-	public static void Error(params object[] message)
+	public static void Error(object message, string color = "red")
 	{
-#if UNITY_EDITOR
-		UnityEngine.Debug.LogError($"<color=red>{createMessage(message)}</color>");
-		UnityEngine.Debug.Break();
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+		Debug.LogError($"<color={color}>{GetMessageInfo()}</color> -> {message}");
+		Debug.Break();
 #endif
 	}
 
-	static string createMessage(params object[] message)
+	/// <summary>
+	/// Выводит в лог заглушку с именем метода
+	/// </summary>
+	public static void Stub()
     {
-		StringBuilder messageToShow = new StringBuilder();
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+		Debug.Log($"<color=aqua>Stub -></color> {GetMessageInfo()}");
+#endif
+	}
 
-		for (int i = 0; i < message.Length; i++)
-		{
-			messageToShow = messageToShow.AppendLine(message[i].ToString());
-		}
+	private static string GetMessageInfo()
+	{
+		//Получение имени вызывающего класса и метода с учетом наследования
+		var stacktrace = new System.Diagnostics.StackTrace();
+		var frameCount = stacktrace.FrameCount;
+		var lastFrame = stacktrace.GetFrame(frameCount - 1);
 
-		return messageToShow.ToString();
+		var callbackClassName = lastFrame.GetMethod().ReflectedType.Name;
+		var methodName = stacktrace.GetFrame(2).GetMethod(); //2 фрейм, т.к. 1 - это один из методов данного класса
+
+		return $"[{callbackClassName} : {methodName}]";
 	}
 }
