@@ -12,13 +12,13 @@ obj/
 *.svd
 *.userprefs
 /*.csproj
-*.meta
 *.pidb
 *.suo
 /*.sln
 *.user
 *.unityproj
 *.booproj
+/Test.cs
 
 # ============ #
 # OS generated #
@@ -30,6 +30,3 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-/Assets/Scripts/__Debug/Test.cs
-/Assets/*.txt
