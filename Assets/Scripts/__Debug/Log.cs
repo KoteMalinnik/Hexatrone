@@ -11,9 +11,7 @@ public static class Log
 	/// <param name="message">Сообщение.</param>
 	public static void Message(object message, string color = "green")
 	{
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
 		Debug.Log($"<color={color}>{GetMessageInfo()}</color> -> {message}");
-#endif
 	}
 
 	/// <summary>
@@ -22,9 +20,7 @@ public static class Log
 	/// <param name="message">Сообщение.</param>
 	public static void Warning(object message, string color = "yellow")
 	{
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
 		Debug.LogWarning($"<color={color}>{GetMessageInfo()}</color> -> {message}");
-#endif
 	}
 
 	/// <summary>
@@ -33,10 +29,7 @@ public static class Log
 	/// <param name="message">Сообщение.</param>
 	public static void Error(object message, string color = "red")
 	{
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
 		Debug.LogError($"<color={color}>{GetMessageInfo()}</color> -> {message}");
-		Debug.Break();
-#endif
 	}
 
 	/// <summary>
@@ -44,9 +37,7 @@ public static class Log
 	/// </summary>
 	public static void Stub()
     {
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
 		Debug.Log($"<color=aqua>Stub -></color> {GetMessageInfo()}");
-#endif
 	}
 
 	private static string GetMessageInfo()
