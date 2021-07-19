@@ -16,7 +16,7 @@ public class ColorSet: ScriptableObject, IEnumerable<Color>
     public Color GetColor(int index)
     {
         if (index < 0 || index >= Count) throw new System.ArgumentOutOfRangeException();
-        
+
         return colors[index];
     }
 
