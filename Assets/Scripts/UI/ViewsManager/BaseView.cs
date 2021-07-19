@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UI.ViewsManager
+namespace UI.ViewManager
 {
     public interface IBaseView
     {

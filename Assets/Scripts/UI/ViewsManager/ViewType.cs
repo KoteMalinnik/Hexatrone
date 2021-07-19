@@ -1,4 +1,4 @@
-﻿namespace UI.ViewsManager
+﻿namespace UI.ViewManager
 {
 	/// <summary>
 	/// Перечисление показываемых окон.

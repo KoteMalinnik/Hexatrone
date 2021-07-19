@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using Core;
 
-namespace UI.ViewsManager
+namespace UI.ViewManager
 {
     interface IViewManager : IAddable<IBaseView>, IRemovable<ViewType>
     {
         bool Show(ViewType viewType);
         bool Hide(ViewType viewType);
+        void GoBack();
 
         bool IsActive(ViewType viewType);
     }
@@ -18,7 +19,7 @@ namespace UI.ViewsManager
         // === Fields ===
 
         private readonly Dictionary<ViewType, IBaseView> _views = new Dictionary<ViewType, IBaseView>();
-
+        private readonly Stack<IBaseView> _showedViews = new Stack<IBaseView>();
 
         // === Public Methods ===
 
@@ -62,6 +63,7 @@ namespace UI.ViewsManager
                 return false;
             }
 
+            _showedViews.Push(view);
             view.Show();
             return true;
         }
@@ -75,6 +77,7 @@ namespace UI.ViewsManager
                 return false;
             }
 
+            _showedViews.Pop();
             view.Hide();
             return true;
         }
@@ -82,9 +85,16 @@ namespace UI.ViewsManager
         public bool IsActive(ViewType viewType)
         {
             var view = GetView(viewType);
-            return view is null ? false : view.IsActive;
+
+            return _showedViews.Contains(view);
         }
 
+        public void GoBack()
+        {
+            var view = _showedViews.Peek();
+            
+            Hide(view.ViewType);
+        }
 
         // === Private Methods ===
 
