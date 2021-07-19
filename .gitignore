@@ -3,6 +3,7 @@
 # =============== #
 Temp/
 Library/
+Logs/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -18,7 +19,6 @@ obj/
 *.user
 *.unityproj
 *.booproj
-/Test.cs
 
 # ============ #
 # OS generated #
@@ -30,3 +30,5 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+Assets/Scripts/__Debug/
