@@ -1,25 +1,31 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Part
+namespace PartBehaviour
 {
 	[RequireComponent(typeof(SpriteRenderer))]
-	public class PartFlashing : MonoBehaviour
+	public class PartFlashingAnimation : MonoBehaviour
 	{
+		// --- Fields ---
+
 		[Range(0.01f, 10f)]
-		[SerializeField] float animationSpeed = 1f;
+		[SerializeField] private float animationSpeed = 1f;
 
-		[SerializeField] Color matchedColor = Color.white;
-		[SerializeField] Color mismatchedColor = Color.black;
+		[SerializeField] private Color matchedColor = Color.white;
+		[SerializeField] private Color mismatchedColor = Color.black;
 
-		CommonCoroutine flashingOneShotRoutine = null;
-		CommonCoroutine flashingDoubleShotRoutine = null;
+		private CommonCoroutine flashingOneShotRoutine = null;
+		private CommonCoroutine flashingDoubleShotRoutine = null;
 
-		Color partColor;
+		private Color partColor;
+
+		// --- Properties ---
 
 		public Color PartColor => partColor;
 
-        public void SetColor(Color color)
+		// --- Methods ---
+
+		public void SetColor(Color color)
         {
 			partColor = color;
 			Log.Message($"Цвет части {name}: " + partColor.ToString());
@@ -43,7 +49,9 @@ namespace Part
 			flashingDoubleShotRoutine.Start();
 		}
 
-		IEnumerator FlashDoubleShot(SpriteRenderer spriteRenderer, Color targetColor)
+		// --- Coroutines ---
+
+		private IEnumerator FlashDoubleShot(SpriteRenderer spriteRenderer, Color targetColor)
 		{
 			Log.Message("Начало двойной анимации мигания.");
 
@@ -63,7 +71,7 @@ namespace Part
 			Log.Message("Конец двойной анимации мигания.");
 		}
 
-		IEnumerator FlashOneShot(SpriteRenderer spriteRenderer, Color targetColor)
+		private IEnumerator FlashOneShot(SpriteRenderer spriteRenderer, Color targetColor)
 		{
 			Log.Message("Начало одиночной анимации мигания.");
 

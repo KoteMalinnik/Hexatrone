@@ -37,7 +37,7 @@ namespace Orb
 
 			}
 
-			var generatedOrb = ObjectInstantiator.Instantiate(prefab, transform, spawnPosition, Quaternion.identity);
+			var generatedOrb = ObjectCreator.Instantiate(prefab, transform, spawnPosition, Quaternion.identity);
 			Log.Message("Сфера сгенерирована в позиции " + spawnPosition);
 
 			return generatedOrb;

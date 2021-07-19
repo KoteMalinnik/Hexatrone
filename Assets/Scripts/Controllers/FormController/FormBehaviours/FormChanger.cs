@@ -29,8 +29,8 @@ namespace Form
         {
 			Log.Message("Создание новой формы.");
 
-			var prefab = ResourceLoader.Load<GameObject>(path, nameTemplate + level, null);
-			var instantiatedForm = ObjectInstantiator.Instantiate(prefab, transform, transform.position, Quaternion.Euler(0, 90, 0));
+			var prefab = ResourceManager.Load<GameObject>(path, nameTemplate + level, null);
+			var instantiatedForm = ObjectCreator.Instantiate(prefab, transform, transform.position, Quaternion.Euler(0, 90, 0));
 			
 			if (instantiatedForm == null) return;
 			currentForm = instantiatedForm;

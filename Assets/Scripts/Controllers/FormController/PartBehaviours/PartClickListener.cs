@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Part
+namespace PartBehaviour
 {
 	public class PartClickListener : MonoBehaviour
 	{
+		[SerializeField] private UnityEvent
 		public static event Action<Transform> OnClick = null;
 
 		void OnMouseDown()
