@@ -1,21 +1,32 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using Core;
 
-public abstract class AudioManager : MonoBehaviour
+namespace Sfx
 {
-	protected AudioSource mainChanel = null;
+	interface IAudioManager : IAddable<AudioSource>
+    {
+		void Stop();
+		void Play();
+    }
 
-    protected AudioSource CreateAudioSource(float volume, bool loop, bool playOnAwake)
+
+	class AudioManager : IAudioManager
 	{
-		if (volume < 0) volume = 0;
-		if (volume > 1.0f) volume = 1.0f;
+		// === Fields ===
 
-		AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-		audioSource.volume = volume;
-		audioSource.loop = loop;
-		audioSource.playOnAwake = playOnAwake;
+		private readonly List<AudioSource> _chanels = new List<AudioSource>();
 
-		return audioSource;
+		public bool Add(AudioSource source)
+        {
+			if (_chanels.Contains(source))
+				return false;
+
+			_chanels.Add(source);
+			return true;
+		}
+
+		public void Stop() => _chanels.ForEach((source) => source.Stop());
+		public void Play() => _chanels.Find((source) => source.isPlaying is false)?.Play();
 	}
-
-	protected abstract void ToggleAudio(bool state);
 }
